@@ -607,7 +607,7 @@ function pixiFn(){
         timerCount.addChild(timerOuter)
         // "img/part5/chang.png",
         // 唱片
-  
+        changCount  = new PIXI.Container();
         changCount.x = 18500;
         changCount.y = 0;
         chang= createSprite("img/part5/chang.png",{
