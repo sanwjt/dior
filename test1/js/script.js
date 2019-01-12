@@ -32,7 +32,7 @@ var imgArr = [
     "img/part4/house2.png",
     "img/part4/house3.png",
     "img/part4/mountains.png",
-    // "img/part4/house3.png",
+    "img/part4/meihua.png",
     
 
  
@@ -524,19 +524,28 @@ function pixiFn(){
 
         // 仙鹤5停
         part1birdfly2 = createSprite("img/part4/birdfly1.png",{
-            x:3200,
-            y:340,
+            x:3480,
+            y:200,
         });
+        part1birdfly2.scale.set(0.6,0.6);
+        part1birdfly2.scale.set(0.6,0.6);
+
 
         // 群山1
         part1mountains = createSprite("img/part4/mountains.png",{
-            x:3600,
-            y:340,
+            x:4000,
+            y:240,
+        });
+
+        // 梅花
+        parttmeihua= createSprite("img/part4/meihua.png",{
+            x:4000,
+            y:0,
         });
 
         
 
-        part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1house2,part1birdfly2,part1mountains);
+        part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1house2,part1birdfly2,part1mountains,parttmeihua);
 
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly);
         container.addChild(tilingSprite,part1);
