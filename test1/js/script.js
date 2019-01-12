@@ -33,9 +33,8 @@ var imgArr = [
     "img/part4/house3.png",
     "img/part4/mountains.png",
     "img/part4/meihua.png",
-    
-
- 
+    "img/part5/timeang.png",
+    "img/part5/yumao.png",
     
 ]
 
@@ -168,7 +167,7 @@ function pixiFn(){
         part1 = new PIXI.Container();
         part1.x = 0;
         part1.y = 0;
-        part1.width = 1400;
+        part1.width = 18000;
 
         // 背景图
         // var countBg = new PIXI.Container();
@@ -542,12 +541,46 @@ function pixiFn(){
             x:4000,
             y:0,
         });
+        
+        // 时间隧道
+        timerCount = new PIXI.Container();
+        timerCount.x = 16500;
+        timerCount.y = 0;
 
+        timerOuter  = new PIXI.Container();
+        timerOuter.x = 0;
+        timerOuter.y = 0;
+        timerOuter.width = 1140;
+        timerOuter.height = 640;
+
+        // 时光机
+        timerang= createSprite("img/part5/timeang.png",{
+          x:570,
+          y:320,
+        });
+        timerang.pivot.x=592;
+        timerang.pivot.y=606;
+        timerang.scale.x = 0.4;
+        timerang.scale.y = 0.4;
+        timerang.alpha = 1;
+        // timerang.rotation=4;
+        // 羽毛
+        yumao= createSprite("img/part5/yumao.png",{
+          x:570,
+          y:320,
+        });
+        yumao.pivot.x = 780;
+        yumao.pivot.y = 780;
+        yumao.rotation = -0.4;
+
+        timerOuter.addChild(timerang,yumao)
+
+        timerCount.addChild(timerOuter)
         
 
         part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1house2,part1birdfly2,part1mountains,parttmeihua);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,timerCount);
         container.addChild(tilingSprite,part1);
         app.stage.addChild(container);
         init()
@@ -741,8 +774,43 @@ function scrollBegin(){
             // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
             part1country1.alpha = scrollNum(8850,15000,scrollPro,0,1);
             }
+       
+       // 时光隧道旋转放大
+       
+       if(15600 < scrollPro && scrollPro < 16600){
+        // part1shou1.rotation=0.5;
+        // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
+        // part1country1.alpha = scrollNum(8850,15000,scrollPro,0,1);
+        timerang.scale.x =scrollNum(15600,16600,scrollPro,0.4,1.5);
+        timerang.scale.y =scrollNum(15600,16600,scrollPro,0.4,1.5);
+        timerang.rotation = scrollNum(15600,16600,scrollPro,0,3);
+        }
 
+        if(16000 < scrollPro && scrollPro < 16600){
+          // part1shou1.rotation=0.5;
+          // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
+          // part1country1.alpha = scrollNum(8850,15000,scrollPro,0,1);
+          // console.log(yumao.rotation)
+          // console.log('yumap'+scrollNum(15600,16600,scrollPro,0,-1))
+          yumao.rotation = scrollNum(15600,16600,scrollPro,0,-1);
+      }
 
+      if(16600 < scrollPro && scrollPro < 17600){
+        timerang.x =scrollNum(16600,17600,scrollPro,570,570+1000);
+        yumao.x =scrollNum(16600,17600,scrollPro,570,570+1000);
+        timerang.scale.x =scrollNum(16600,17600,scrollPro,1.5,8);
+        timerang.scale.y =scrollNum(16600,17600,scrollPro,1.5,8);
+        timerang.rotation = scrollNum(16600,17600,scrollPro,3,6);
+        yumao.rotation = scrollNum(16600,17600,scrollPro,-0.99,-6);
+        yumao.scale.x = scrollNum(16600,17600,scrollPro,1,0.2);
+        yumao.scale.y = scrollNum(16600,17600,scrollPro,1,0.2);
+        // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
+      }
+      if(17200 < scrollPro && scrollPro < 17600){
+        timerang.alpha = scrollNum(17200,17600,scrollPro,1,0);
+        yumao.alpha = scrollNum(17200,17600,scrollPro,1,0);
+        // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
+      }    
         
 
     },{
@@ -776,7 +844,8 @@ function scrollBegin(){
 
 // 区间最小值, 区间最大值, top, 初始位置, 终点, 速度, 方向
 function scrollNum(minNum,maxNum,top,start,end){
-    return start + ((top - minNum)/(maxNum - minNum)*(end-start));
+    var start = start + ((top - minNum)/(maxNum - minNum)*(end-start))
+    return start;
 }
 
 $(function(){
