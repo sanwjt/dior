@@ -368,7 +368,7 @@ function pixiFn(){
             x:-75,
             y:200,
           });
-
+          part1bird2.alpha=0;
         // 仙鹤3
         part1bird3 = createSprite("img/part2/bird3.png",{
             x:400,
@@ -381,7 +381,7 @@ function pixiFn(){
             x:910,
             y:42,
           });
-
+          part1bird4.alpha = 0;  
         // 假山2
         part1mountain2 = createSprite("img/part2/mountain2.png",{
             x:1146,
@@ -750,25 +750,46 @@ function scrollBegin(){
             part1bigsun.y = scrollNum(4830,5900,scrollPro,-1307,-190);
             }
         // 仙鹤1动画
-        if(5450 < scrollPro && scrollPro < 5880){
+        if(5450 < scrollPro && scrollPro < 5500){
             // part1shou1.rotation=0.5;
             // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
-            part1bird1.alpha = scrollNum(5450,5880,scrollPro,0,1);
-            }
+            // part1bird1.alpha = 1;
+            part1bird1.alpha = scrollNum(5450,5500,scrollPro,0,1);
+        }else if(5450 > scrollPro){
+            part1bird1.alpha = 0;
+            // part1shou1.x = scrollNum(5450,5450,scrollPro,1,0);
+        }
+        if(5500 < scrollPro && scrollPro < 5550){
+          // part1shou1.rotation=0.5;
+          // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
+          part1bird2.alpha = scrollNum(5500,5550,scrollPro,0,1);
+        }else if(5550 > scrollPro){
+          part1bird2.alpha = 0;
+        }
+
         // 仙鹤2动画
-        if(4700 < scrollPro && scrollPro < 5000){
-            part1bird2.rotation=0.5;
-            part1bird2.alpha = scrollNum(4700,5000,scrollPro,0,1);
-            // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
-            // part1bird2.y = scrollNum(4700,4700,scrollPro,-350,290);
-            }
+        // if(4700 < scrollPro && scrollPro < 5000){
+        //     part1bird2.rotation=0.5;
+        //     part1bird2.alpha = scrollNum(4700,5000,scrollPro,0,1);
+        //     // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
+        //     // part1bird2.y = scrollNum(4700,4700,scrollPro,-350,290);
+        //     }
         // 仙鹤3动画
-        if(5860 < scrollPro && scrollPro < 5900){
+        if(5650 < scrollPro && scrollPro < 5700){
             // part1bird3.rotation=0.5;
             // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
-            part1bird3.alpha = scrollNum(5860,5900,scrollPro,0,1);
-           
-            }
+            part1bird3.alpha = scrollNum(5650,5700,scrollPro,0,1);
+        }else if(5700>scrollPro){
+            part1bird3.alpha = 0;
+        }
+
+        if(6000 < scrollPro && scrollPro < 6050){
+          // part1bird3.rotation=0.5;
+          // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
+          part1bird4.alpha = scrollNum(6000,6050,scrollPro,0,1);
+      }else if(6050>scrollPro){
+          part1bird4.alpha = 0;
+      }
         
         // 帆船组逐渐出现
         if(6910+300 < scrollPro && scrollPro < 7830+300){
