@@ -385,9 +385,10 @@ function pixiFn(){
         // 假山2
         part1mountain2 = createSprite("img/part2/mountain2.png",{
             x:1146,
-            y:404,
-          });
+            y:404+100,
+        });
 
+        part1mountain2.alpha=0;
         
         part1BirdSun.addChild(part1bigsun,part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2)
 
@@ -486,7 +487,7 @@ function pixiFn(){
         });
         part1ship5.scale.set(1,1);
         
-        part1Ship.addChild(part1ship1,part1ship2,part1ship3,part1ship4,part1ship5);
+        part1Ship.addChild(part1ship5,part1ship4,part1ship3,part1ship2,part1ship1);
 
         // 第四部分
         // 仙鹤5飞
@@ -551,8 +552,9 @@ function pixiFn(){
         // 群山1
         part1mountains = createSprite("img/part4/mountains.png",{
             x:4000,
-            y:240,
+            y:240+50,
         });
+        part1mountains.alpha = 0;
 
         // 梅花
         part1meihua= createSprite("img/part4/meihua.png",{
@@ -622,10 +624,7 @@ function pixiFn(){
         // 第五部分
         // part5 = new PIXI.Container();
 
-
-
-        part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
-
+        part1BirdFly.addChild(part1house1,part1house3,part1country1,part1text3,part1house2,part1mountains,part1yumao1,part1birdfly1,part1meihua,part1birdfly3,part1yumao2,part1text4);
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1);
         app.stage.addChild(container);
@@ -783,7 +782,7 @@ function scrollBegin(){
                         }else{
                             part1Sailing.children[j].alpha = 1;
                         }
-                        if(j == 0) part1Sailing.children[0].alpha = 1;
+                        // if(j == 0) part1Sailing.children[0].alpha = 1;
                     }
                 }
             }
@@ -801,7 +800,7 @@ function scrollBegin(){
                         }else{
                             part1Ship.children[j].alpha = 1;
                         }
-                        if(j == 0) part1Ship.children[0].alpha = 1;
+                        // if(j == 0) part1Ship.children[0].alpha = 1;
                     }
                 }
             }
@@ -842,12 +841,19 @@ function scrollBegin(){
         // 仙鹤5到仙鹤6动画
         if(9356 < scrollPro && scrollPro < 13183){
             // part1shou1.rotation=0.5;
-            part1birdfly1.x = scrollNum(9356,13183,scrollPro,3480,5000);
-            part1birdfly1.y = scrollNum(9356,13183,scrollPro,0,340);
+            part1birdfly1.x = scrollNum(9356,13183,scrollPro,0,3840);
+            part1birdfly1.y = scrollNum(9356,13183,scrollPro,-300,200);
+            console.log('2222 '+scrollNum(9356,13183,scrollPro,0.8,0))
+            part1birdfly1.rotation = scrollNum(9356,13183,scrollPro,0.8,0);
 
             // part1yumao1.alpha = scrollNum(12486,14057,scrollPro,0,1);
-            }
-
+          }
+          if(scrollPro > 13183){
+            part1birdfly1.rotation =0;
+          }
+        // if(11555 < scrollPro && scrollPro < 13183){
+        //   part1birdfly1.rotation = scrollNum(11555,13183,scrollPro,0.8,0);
+        // }    
         if(16000 < scrollPro && scrollPro < 16600){
           // part1shou1.rotation=0.5;
           // part1shou1.x = scrollNum(4830,5900,scrollPro,-92,550);
@@ -886,7 +892,18 @@ function scrollBegin(){
           chang.scale.x = scrollNum(20350,22350,scrollPro,0.7,0.4);
           chang.scale.y = scrollNum(20350,22350,scrollPro,0.7,0.4);
         }     
-             
+        
+        // part1mountain2 y:404+100,
+        if(6548 < scrollPro && scrollPro < 6548+200){
+          part1mountain2.alpha = scrollNum(6548,6548+200,scrollPro,0,1);
+          part1mountain2.y = scrollNum(6548,6548+200,scrollPro,404+100,404);
+        } 
+        // 群山
+        // 13516    
+        if(13516 < scrollPro && scrollPro < 13516+200){
+          part1mountains.y = scrollNum(13516,13516+200,scrollPro,240+50,220);
+          part1mountains.alpha = scrollNum(13516,13516+200,scrollPro,0,1);
+        } 
         
 
     },{
