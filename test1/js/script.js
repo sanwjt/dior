@@ -36,6 +36,7 @@ var imgArr = [
     "img/part5/timeang.png",
     "img/part4/yumao.png",
     "img/part5/text4.png",
+    "img/part5/chang.png",
 
 
     
@@ -132,7 +133,7 @@ function v(){
             setTimeout(function(){
                 scrollDirection = "top";
                 lastWidth = wh;
-                contentLength = 20000+lastWidth;
+                contentLength = 30000+lastWidth;
                 scroller.setDimensions(app.view.width, app.view.height, app.view.height, contentLength);
                 scroller.scrollTo(0,scrollPro,false);
                 // 初始页提示
@@ -604,11 +605,28 @@ function pixiFn(){
         });
 
         timerCount.addChild(timerOuter)
-        
+        // "img/part5/chang.png",
+        // 唱片
+  
+        changCount.x = 18500;
+        changCount.y = 0;
+        chang= createSprite("img/part5/chang.png",{
+          x:570,
+          y:320,
+        });
+        chang.pivot.x = 689;
+        chang.pivot.y = 689;
+        changCount.addChild(chang)
+
+        // 时光机后的内容
+        // 第五部分
+        // part5 = new PIXI.Container();
+
+
 
         part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,timerCount);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1);
         app.stage.addChild(container);
         init()
@@ -837,24 +855,38 @@ function scrollBegin(){
           // console.log(yumao.rotation)
           // console.log('yumap'+scrollNum(15600,16600,scrollPro,0,-1))
           yumao.rotation = scrollNum(15600,16600,scrollPro,0,-1);
-      }
+        }
 
-      if(16600 < scrollPro && scrollPro < 17600){
-        timerang.x =scrollNum(16600,17600,scrollPro,570,570+1000);
-        yumao.x =scrollNum(16600,17600,scrollPro,570,570+1000);
-        timerang.scale.x =scrollNum(16600,17600,scrollPro,1.5,8);
-        timerang.scale.y =scrollNum(16600,17600,scrollPro,1.5,8);
-        timerang.rotation = scrollNum(16600,17600,scrollPro,3,6);
-        yumao.rotation = scrollNum(16600,17600,scrollPro,-0.99,-6);
-        yumao.scale.x = scrollNum(16600,17600,scrollPro,1,0.2);
-        yumao.scale.y = scrollNum(16600,17600,scrollPro,1,0.2);
-        // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
-      }
-      if(17200 < scrollPro && scrollPro < 17600){
-        timerang.alpha = scrollNum(17200,17600,scrollPro,1,0);
-        yumao.alpha = scrollNum(17200,17600,scrollPro,1,0);
-        // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
-      }    
+        if(16600 < scrollPro && scrollPro < 18600){
+          timerang.x =scrollNum(16600,18600,scrollPro,570,570+2000);
+          yumao.x =scrollNum(16600,18600,scrollPro,570,570+2000);
+          timerang.scale.x =scrollNum(16600,18600,scrollPro,1.5,3);
+          timerang.scale.y =scrollNum(16600,18600,scrollPro,1.5,3)
+          timerang.rotation = scrollNum(16600,18600,scrollPro,3,6);
+          yumao.rotation = scrollNum(16600,18600,scrollPro,-0.99,-6);
+          yumao.scale.x = scrollNum(16600,18600,scrollPro,1,0.2);
+          yumao.scale.y = scrollNum(16600,18600,scrollPro,1,0.2);
+          // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
+        }
+        if(18600 < scrollPro && scrollPro < 19600){
+          timerang.rotation = scrollNum(18600,19600,scrollPro,6,9);
+          yumao.rotation = scrollNum(18600,19600,scrollPro,-6,-9);
+        }
+
+        if(18750 < scrollPro && scrollPro < 20350){
+          chang.x = scrollNum(18750,20350,scrollPro,570,570+1800);
+          chang.rotation = scrollNum(18750,20350,scrollPro,0,2);
+          chang.scale.x = scrollNum(18750,20350,scrollPro,1,0.7);
+          chang.scale.y = scrollNum(18750,20350,scrollPro,1,0.7);
+        }
+        if(20350 < scrollPro && scrollPro < 22350){
+          chang.x = scrollNum(20350,22350,scrollPro,570+1800,570+2000+2000);
+          chang.y = scrollNum(20350,22350,scrollPro,320,0);
+          chang.rotation = scrollNum(20350,22350,scrollPro,2,6);
+          chang.scale.x = scrollNum(20350,22350,scrollPro,0.7,0.4);
+          chang.scale.y = scrollNum(20350,22350,scrollPro,0.7,0.4);
+        }     
+             
         
 
     },{
