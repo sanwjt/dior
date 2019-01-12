@@ -623,18 +623,18 @@ function pixiFn(){
         // 时光机后的内容
         // 第五部分
         part5 = new PIXI.Container();
-        part5.x = 0;
+        part5.x =   21000;
         part5.y = 0;
 
 
         // 柱子逐渐显示
         part5pillars=new PIXI.Container();
-        part5pillars.x = 22437;
+        part5pillars.x = 200;
         part5pillars.y = 0;
 
         var part5zhuzi1 = createSprite("img/part5/zhuzi.png",{
             x:300,
-            y:168,
+            y:150,
            alpha:1
 
 
@@ -642,37 +642,103 @@ function pixiFn(){
         part5zhuzi1.scale.set(0.2,0.2);
 
         var part5zhuzi2 = createSprite("img/part5/zhuzi.png",{
-            x:232,
-            y:204,
+            x:400,
+            y:120,
             alpha:1
         });
         part5zhuzi2.scale.set(0.4,0.4);
         
         var part5zhuzi3 = createSprite("img/part5/zhuzi.png",{
-            x:90,
-            y:236,
+            x:500,
+            y:100,
             alpha:1
         });
         part5zhuzi3.scale.set(0.6,0.6);
 
         var part5zhuzi4 = createSprite("img/part5/zhuzi.png",{
-            x:-100,
-            y:280,
+            x:600,
+            y:80,
             alpha:1
         });
         part5zhuzi4.scale.set(0.8,0.8);
         
         var part5zhuzi5 = createSprite("img/part5/zhuzi.png",{
-            x:-300,
-            y:368,
+            x:700,
+            y:60,
             alpha:1
         });
         part5zhuzi5.scale.set(1,1);
-        part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5);
+
+            
+        var part5zhuzi6 = createSprite("img/part5/zhuzi.png",{
+            x:800,
+            y:60,
+            alpha:1
+        });
+        part5zhuzi6.scale.set(0.8,0.8);
+        
+        var part5zhuzi7 = createSprite("img/part5/zhuzi.png",{
+            x:900,
+            y:80,
+            alpha:1
+        });
+        part5zhuzi7.scale.set(0.6,0.6);
+
+        var part5zhuzi8 = createSprite("img/part5/zhuzi.png",{
+            x:1000,
+            y:100,
+            alpha:1
+        });
+        part5zhuzi8.scale.set(0.4,0.4);
+
+        var part5zhuzi9 = createSprite("img/part5/zhuzi.png",{
+            x:1100,
+            y:120,
+            alpha:1
+        });
+        part5zhuzi9.scale.set(0.6,0.6);
+
+        var part5zhuzi10 = createSprite("img/part5/zhuzi.png",{
+            x:1200,
+            y:100,
+            alpha:1
+        });
+        part5zhuzi10.scale.set(0.8,0.8);
+
+        var part5zhuzi11 = createSprite("img/part5/zhuzi.png",{
+            x:1300,
+            y:80,
+            alpha:1
+        });
+        part5zhuzi11.scale.set(1,1);
+
+        var part5zhuzi12 = createSprite("img/part5/zhuzi.png",{
+            x:1400,
+            y:60,
+            alpha:1
+        });
+        part5zhuzi12.scale.set(0,8,0.8);
+
+        var part5zhuzi13 = createSprite("img/part5/zhuzi.png",{
+            x:1500,
+            y:40,
+            alpha:1
+        });
+        part5zhuzi13.scale.set(0,6,0.6);
+
+    
+
+        
+
+
+
+
+        part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi7,part5zhuzi8,part5zhuzi9,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
         part5.addChild(part5pillars);
+        
         part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount,part5);
         container.addChild(tilingSprite,part1);
         app.stage.addChild(container);
         init() 
