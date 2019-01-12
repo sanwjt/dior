@@ -38,6 +38,15 @@ var imgArr = [
     "img/part5/text4.png",
     "img/part5/chang.png",
     "img/part5/zhuzi.png",
+    "img/part5/men.png",
+    "img/part5/liushengji.png",
+    "img/part5/denglong1.png",
+    "img/part5/book1997.png",
+    "img/part5/yellowdenglong.png",
+    "img/part5/bluedenglong.png",
+    "img/part5/reddenglong.png",
+    "img/part5/whitedenglong.png",
+
     
 
 
@@ -717,16 +726,80 @@ function pixiFn(){
             y:60,
             alpha:1
         });
-        part5zhuzi12.scale.set(0,8,0.8);
+        part5zhuzi12.scale.set(0.8,0.8);
 
         var part5zhuzi13 = createSprite("img/part5/zhuzi.png",{
             x:1500,
             y:40,
             alpha:1
         });
-        part5zhuzi13.scale.set(0,6,0.6);
+        part5zhuzi13.scale.set(0.6,0.6);
 
-    
+        // 模糊的灯笼
+        part5denglonghu= createSprite("img/part6/denglong1.png",{
+            x:1900,
+            y:0,
+        });
+
+        // 夜上海拱门
+        part5men= createSprite("img/part5/men.png",{
+            x:2200,
+            y:0,
+        });
+
+        // 1997书
+        part5book= createSprite("img/part5/book1997.png",{
+            x:2800,
+            y:100,
+        });
+
+        // 留声机
+        part5liushengji= createSprite("img/part6/liushengji.png",{
+            x:600,
+            y:250,
+        });
+        
+        // 小伞1
+        part5smallsan= createSprite("img/part6/smallsan.png",{
+            x:600,
+            y:250,
+        });
+
+        // 中伞1
+        part5midsan= createSprite("img/part6/midsan.png",{
+            x:600,
+            y:250,
+        });
+        
+        // 三个灯笼组
+        part5denglongzu=new PIXI.Container();
+        part5denglongzu.x = 200;
+        part5denglongzu.y = 0;
+
+        // 黄灯笼
+        part5yellowdenglong= createSprite("img/part6/yellowdenglong.png",{
+            x:600,
+            y:250,
+        });
+        // 蓝灯笼
+        part5bluedenglong= createSprite("img/part6/bluedenglong.png",{
+            x:600,
+            y:250,
+        });
+        // 红灯笼
+        part5reddenglong= createSprite("img/part6/reddenglong.png",{
+            x:600,
+            y:250,
+        });
+        part5denglongzu.addChild(part5yellowdenglong,part5bluedenglong,part5reddenglong)
+        // 白灯笼
+        part5whitedenglong=createSprite("img/part6/whitedenglong.png",{
+            x:600,
+            y:250,
+        });
+
+
+
 
         
 
@@ -734,7 +807,7 @@ function pixiFn(){
 
 
         part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi7,part5zhuzi8,part5zhuzi9,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
-        part5.addChild(part5pillars);
+        part5.addChild(part5pillars,part5denglonghu,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan);
         
         part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
