@@ -34,7 +34,13 @@ var imgArr = [
     "img/part4/mountains.png",
     "img/part4/meihua.png",
     "img/part5/timeang.png",
-    "img/part5/yumao.png",
+    "img/part4/yumao.png",
+    "img/part5/text4.png",
+
+
+    
+
+ 
     
 ]
 
@@ -514,6 +520,17 @@ function pixiFn(){
             y:250,
         });
 
+        // 羽毛1
+        part1yumao1 = createSprite("img/part4/yumao.png",{
+            x:2800,
+            y:200,
+        });
+
+        // 羽毛2
+        part1yumao2 = createSprite("img/part4/yumao.png",{
+            x:5300,
+            y:340,
+        });
    
         // 房屋2
         part1house2 = createSprite("img/part4/house2.png",{
@@ -537,7 +554,7 @@ function pixiFn(){
         });
 
         // 梅花
-        parttmeihua= createSprite("img/part4/meihua.png",{
+        part1meihua= createSprite("img/part4/meihua.png",{
             x:4000,
             y:0,
         });
@@ -574,11 +591,22 @@ function pixiFn(){
         yumao.rotation = -0.4;
 
         timerOuter.addChild(timerang,yumao)
+        // 仙鹤6
+        part1birdfly3= createSprite("img/part5/birdfly.png",{
+            x:5000,
+            y:240,
+        });
+
+        // 文本4纵使
+        part1text4= createSprite("img/part5/text4.png",{
+            x:5500,
+            y:240,
+        });
 
         timerCount.addChild(timerOuter)
         
 
-        part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1house2,part1birdfly2,part1mountains,parttmeihua);
+        part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,timerCount);
         container.addChild(tilingSprite,part1);
@@ -785,6 +813,22 @@ function scrollBegin(){
         timerang.scale.y =scrollNum(15600,16600,scrollPro,0.4,1.5);
         timerang.rotation = scrollNum(15600,16600,scrollPro,0,3);
         }
+        // 羽毛1动画
+        if(12486 < scrollPro && scrollPro < 14057){
+            // part1shou1.rotation=0.5;
+            part1yumao1.x = scrollNum(12486,14057,scrollPro,2800,5400);
+            part1yumao1.y = scrollNum(12486,14057,scrollPro,100,340);
+
+            // part1yumao1.alpha = scrollNum(12486,14057,scrollPro,0,1);
+            }
+        // 仙鹤5到仙鹤6动画
+        if(9356 < scrollPro && scrollPro < 13183){
+            // part1shou1.rotation=0.5;
+            part1birdfly1.x = scrollNum(9356,13183,scrollPro,3480,5000);
+            part1birdfly1.y = scrollNum(9356,13183,scrollPro,0,340);
+
+            // part1yumao1.alpha = scrollNum(12486,14057,scrollPro,0,1);
+            }
 
         if(16000 < scrollPro && scrollPro < 16600){
           // part1shou1.rotation=0.5;
