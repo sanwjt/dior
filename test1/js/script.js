@@ -84,7 +84,6 @@ var imgArr = [
     "img/part8/petal2.png",
     "img/part8/ribbon1.png",
     "img/part8/ribbon2.png",
-    "img/part9/text7.png",
     "img/part9/text8.png",
     "img/part9/stove.png",
     "img/part9/slogan.png",
@@ -92,6 +91,7 @@ var imgArr = [
     "img/part9/bluebox.png",
     "img/part9/signboard.png",
     "img/displacement_map_repeat.jpg",
+    "img/part9/text9.png"
 
 
 
@@ -1375,16 +1375,76 @@ function pixiFn(){
 
         // 第九部分
         part9 = new PIXI.Container();
-        part9.x = 0;
+        part9.x = 26300+700+2200+900+300+200+6000+2700;
         part9.y = 0;
 
         // 宫女组
-        // 敏感而挑剔的中国风
-        // part9text8
+        // 
+        // text7敏感而挑剔的中国风
+        part9text7=createSprite("img/part9/text7.png",{
+            x:100,
+            y:350,
+        });
+        // 香炉组
+        part9stoves = new PIXI.Container();
+        part9stoves.x = 1000;
+        part9stoves.y = 0;
+        part9stoves.scale.set(0.8,0.8)
+
+        var part9stove1=createSprite("img/part9/stove.png",{
+            x:1000,
+            y:0,
+        });
+        var part9stove2=createSprite("img/part9/stove.png",{
+            x:1250,
+            y:0,
+        });
+        var part9stove3=createSprite("img/part9/stove.png",{
+            x:1500,
+            y:0,
+        });
+        // text8沉淀了几个朝代的紫禁城
+        part9text8=createSprite("img/part9/text8.png",{
+            x:2000,
+            y:300,
+        });
+        // slogan
+        part9slogan=createSprite("img/part9/slogan.png",{
+            x:3600,
+            y:150,
+        });
+        part9slogan.scale.set(0.6,0.6)
+         // 红盒子
+        part9redbox=createSprite("img/part9/redbox.png",{
+            x:3700,
+            y:20,
+        });
+        part9redbox.scale.set(0.6,0.6)
+        // 蓝盒子
+        part9bluebox=createSprite("img/part9/bluebox.png",{
+            x:4000,
+            y:10,
+        });
+        part9bluebox.scale.set(0.6,0.6)
+        // 牌匾
+        part9signboard=createSprite("img/part9/signboard.png",{
+        x:4700,
+        y:200,
+        });
+        // 传中华宝技之美text9
+        part9text9=createSprite("img/part9/text9.png",{
+            x:4600,
+            y:400,
+            });
 
 
 
 
+
+
+
+        part9stoves.addChild(part9stove1,part9stove2,part9stove3)
+        part9.addChild(part9text7,part9stoves,part9text8,part9slogan,part9redbox,part9bluebox,part9signboard,part9text9)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
         part8.addChild(part8chimes,flag1,flag2,part8text6,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
       // img/part6/zhuzi6.png
@@ -1402,7 +1462,7 @@ function pixiFn(){
         part1BirdFly.addChild(part1house1,part1house3,part1country1,part1text3,part1house2,part1mountains,part1yumao1,part1birdfly1,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
-        container.addChild(tilingSprite,part1,part5,part6,part7,part8);
+        container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
         app.ticker.add(function() {
