@@ -83,7 +83,19 @@ var imgArr = [
     "img/part8/petal1.png",
     "img/part8/petal2.png",
     "img/part8/ribbon1.png",
-    "img/part8/ribbon2.png"
+    "img/part8/ribbon2.png",
+    "img/part9/text7.png",
+    "img/part9/text8.png",
+    "img/part9/stove.png",
+    "img/part9/stove.png",
+    "img/part9/slogan.png",
+    "img/part9/redbox.png",
+    "img/part9/bluebox.png",
+    "img/part9/signboard.png",
+
+
+
+
 
 ]
 
@@ -1195,12 +1207,12 @@ function pixiFn(){
 
         // 第八部分
         part8 = new PIXI.Container();
-        part8.x = 26300+700+2200+900+300+200+3000;
+        part8.x = 26300+700+2200+900+300+200+6000;
         part8.y = 0;
         // 编钟组
         part8chimes=new PIXI.Container();
-        part8.x = 0;
-        part8.y = 0;
+        part8chimes.x = 0;
+        part8chimes.y = 0;
         // 编钟1
         var part8chime1= createSprite("img/part8/chime.png",{
             x:300,
@@ -1258,9 +1270,10 @@ function pixiFn(){
 
         // 文本6潜藏着丰富的时尚元素
         part8text6=createSprite("img/part8/text6.png",{
-            x:100,
+            x:200,
             y:300,
         });
+        
                 
         // 舞者1
         part8dancer1=createSprite("img/part8/dancer1.png",{
@@ -1305,6 +1318,18 @@ function pixiFn(){
             y:200,
         });
         part8bird.scale.set(0.6,0,6)
+
+        // 第九部分
+        part9 = new PIXI.Container();
+        part9.x = 0;
+        part9.y = 0;
+
+        // 宫女组
+        // 敏感而挑剔的中国风
+        // part9text8
+
+
+
 
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
         part8.addChild(part8chimes,part8ribbon1,part8text6,part8ribbon2,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
