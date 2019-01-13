@@ -81,7 +81,9 @@ var imgArr = [
     "img/part8/text6.png",
     "img/part8/cloud8cer3.png",
     "img/part8/petal1.png",
-    "img/part8/petal2.png"
+    "img/part8/petal2.png",
+    "img/part8/ribbon1.png",
+    "img/part8/ribbon2.png"
 
 ]
 
@@ -1220,6 +1222,18 @@ function pixiFn(){
             y:-10,
         });
         part8chime7.scale.set(0.8,0.8);
+        // 丝带1
+        part8ribbon1=createSprite("img/part8/ribbon1.png",{
+            x:100,
+            y:0,
+        });
+        part8ribbon1.scale.set(0.7,0.7);
+        // 丝带2
+        part8ribbon2=createSprite("img/part8/ribbon2.png",{
+            x:600,
+            y:320,
+        });
+        part8ribbon2.scale.set(0.7,0.7);
 
         // 文本6潜藏着丰富的时尚元素
         part8text6=createSprite("img/part8/text6.png",{
@@ -1272,7 +1286,7 @@ function pixiFn(){
         part8bird.scale.set(0.6,0,6)
 
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
-        part8.addChild(part8chimes,part8text6,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
+        part8.addChild(part8chimes,part8ribbon1,part8text6,part8ribbon2,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
       // img/part6/zhuzi6.png
 
       // img/part6/zhuzi4.png
