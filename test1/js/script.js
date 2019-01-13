@@ -1061,6 +1061,7 @@ function pixiFn(){
         part7 =  new PIXI.Container();
         part7.x = 26300+700+2200+900+300+200;
         part7.y = 0;
+        // part7.x = 0;
 
         part7zhuzi3=createSprite("img/part6/zhuzi3.png",{
           x:-700,
@@ -1082,9 +1083,12 @@ function pixiFn(){
         y:0,
       })
 
-    
-
-     
+      // 燕子2
+      part7swallow2=createSprite("img/part6/swallow2.png",{
+        x:1000,
+        y:20,
+      })
+      part7swallow2.scale.set(2,2)
 
        part7doorzu=new PIXI.Container();
        // part7.x = 26300+700+2200+900+300;
@@ -1094,12 +1098,18 @@ function pixiFn(){
        part7doors = new PIXI.Container();
        part7doors.x = 0;
        part7doors.y = 0;
-      // 燕子2
-        part7swallow2=createSprite("img/part6/swallow2.png",{
-          x:500,
-          y:155,
-        })
-        part7swallow2.scale.set(2,2)
+
+      // 燕子3
+      part7swallow3=createSprite("img/part6/swallow2.png",{
+        x:-750,
+        y:90,
+      })
+
+      part7swallow4=createSprite("img/part6/swallow2.png",{
+        x:-550,
+        y:30,
+      })
+      part7swallow4.scale.set(0.7,0.7)
         
        // 门1
        part7door1=createSprite("img/part7/door1.png",{
@@ -1107,20 +1117,23 @@ function pixiFn(){
         y:-80,
        })
     //    part7swallow2.scale.set(0.5,0.5)
-
+       part7door1.alpha = 0;
        // 门2
        part7door2=createSprite("img/part7/door2.png",{
         x:200,
         y:0,
        })
+       part7door2.alpha = 0;
 
        // 门3
        part7door3=createSprite("img/part7/door3.png",{
         x:-250,
         y:0,
        })
-       part7doors.addChild(part7door1,part7door2,part7door3)
-       part7doorzu.addChild(part7doors);
+       part7door3.alpha = 0;
+
+       part7doors.addChild(part7door3,part7door2,part7door1)
+       part7doorzu.addChild(part7swallow3,part7swallow4,part7doors);
         // 书2
         part7book2=createSprite("img/part7/book2.png",{
             x:3000,
@@ -1136,41 +1149,49 @@ function pixiFn(){
             x:80,
             y:60,
            })
+        part7nmodel1.alpha = 0;
         // 新模特2
         part7nmodel2=createSprite("img/part7/nmodel2.png",{
         x:400,
         y:0,
         })
+        part7nmodel2.alpha = 0;
         // 新模特3
         part7nmodel3=createSprite("img/part7/nmodel3.png",{
         x:600,
         y:0,
         })
+        part7nmodel3.alpha = 0;
         // 新模特4
         part7nmodel4=createSprite("img/part7/nmodel4.png",{
         x:1000,
         y:0,
         })
+        part7nmodel4.alpha = 0;
         // 新模特5
         part7nmodel5=createSprite("img/part7/nmodel5.png",{
         x:1350,
         y:0,
         })
+        part7nmodel5.alpha = 0;
         // 新模特6
         part7nmodel6=createSprite("img/part7/nmodel6.png",{
         x:1950,
         y:0,
         })
+        part7nmodel6.alpha = 0;
         // 新模特7
         part7nmodel7=createSprite("img/part7/nmodel7.png",{
         x:2350,
         y:20,
         })
+        part7nmodel7.alpha = 0;
         // 新模特8
         part7nmodel8=createSprite("img/part7/nmodel8.png",{
         x:2650,
         y:40,
         })
+        part7nmodel8.alpha = 0;
 
         // 第八部分
         part8 = new PIXI.Container();
@@ -1695,6 +1716,63 @@ function scrollBegin(){
         part6zhuzi2.x  = scrollNum(26770,28140,scrollPro,2150,2350);
         part6swallow1.x  = scrollNum(26770,28140,scrollPro,2100,2300);
       } 
+
+      // 们组出现
+      // 32068 32713
+
+      if(31868 < scrollPro && scrollPro < 32713){
+        for(var i = 0; i < 4; i++){
+            var num1 = 31868+ (32713-31868)/4 * i;
+            var num2 = 31868+ (32713-31868)/4* (i+1);
+            if(num1 < scrollPro && scrollPro < num2){
+                for(var j = 0; j < part7doors.children.length;j++){
+                    if(j >= i){
+                        part7doors.children[j].alpha = 0;
+                    }else{
+                        part7doors.children[j].alpha = 1;
+                    }
+                   //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+                }
+            }
+        }
+      }
+
+      if(31868 < scrollPro && scrollPro < 32713){
+        part7swallow3.x = scrollNum(31868,32713,scrollPro,-750,-750+950);
+        part7swallow4.x = scrollNum(31868,32713,scrollPro,-550,-550+1050);
+        part7swallow3.alpha = scrollNum(31868,32713,scrollPro,1,0);
+        part7swallow4.alpha = scrollNum(31868,32713,scrollPro,1,0);
+      }
+
+      // part7nmodelzu
+      if(33414 < scrollPro && scrollPro < 35965){
+        for(var i = 0; i < 9; i++){
+            var num1 = 33414+ (35965-33414)/9 * i;
+            var num2 = 33414+ (35965-33414)/9* (i+1);
+            if(num1 < scrollPro && scrollPro < num2){
+                for(var j = 0; j < part7nmodelzu.children.length;j++){
+                    if(j >= i){
+                        part7nmodelzu.children[j].alpha = 0;
+                    }else{
+                        part7nmodelzu.children[j].alpha = 1;
+                    }
+                }
+            }
+        }
+      }
+
+
+            // // 燕子3
+            // part7swallow3=createSprite("img/part6/swallow2.png",{
+            //   x:-750,
+            //   y:90,
+            // })
+      
+            // part7swallow4=createSprite("img/part6/swallow2.png",{
+            //   x:-550,
+            //   y:30,
+            // })
+            // part7swallow4.scale.set(0.7,0.7)
 
       //   // 燕子1
       //   part6swallow1=createSprite("img/part6/swallow1.png",{
