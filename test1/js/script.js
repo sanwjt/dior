@@ -662,35 +662,35 @@ function pixiFn(){
         var part5zhuzi1 = createSprite("img/part5/zhuzi.png",{
             x:300,
             y:150,
-           alpha:1
+           alpha:0,
         });
         part5zhuzi1.scale.set(0.2,0.2);
 
         var part5zhuzi2 = createSprite("img/part5/zhuzi.png",{
             x:400,
             y:120,
-            alpha:1
+            alpha:0,
         });
         part5zhuzi2.scale.set(0.4,0.4);
         
         var part5zhuzi3 = createSprite("img/part5/zhuzi.png",{
             x:500,
             y:100,
-            alpha:1
+            alpha:0
         });
         part5zhuzi3.scale.set(0.6,0.6);
 
         var part5zhuzi4 = createSprite("img/part5/zhuzi.png",{
             x:600,
             y:80,
-            alpha:1
+            alpha:0
         });
         part5zhuzi4.scale.set(0.8,0.8);
         
         var part5zhuzi5 = createSprite("img/part5/zhuzi.png",{
             x:700,
             y:60,
-            alpha:1
+            alpha:0
         });
         part5zhuzi5.scale.set(1,1);
 
@@ -698,56 +698,56 @@ function pixiFn(){
         var part5zhuzi6 = createSprite("img/part5/zhuzi.png",{
             x:800,
             y:60,
-            alpha:1
+            alpha:0
         });
         part5zhuzi6.scale.set(0.8,0.8);
         
         var part5zhuzi7 = createSprite("img/part5/zhuzi.png",{
             x:900,
             y:80,
-            alpha:1
+            alpha:0
         });
         part5zhuzi7.scale.set(0.6,0.6);
 
         var part5zhuzi8 = createSprite("img/part5/zhuzi.png",{
             x:1000,
             y:100,
-            alpha:1
+            alpha:0
         });
         part5zhuzi8.scale.set(0.4,0.4);
 
         var part5zhuzi9 = createSprite("img/part5/zhuzi.png",{
             x:1100,
             y:120,
-            alpha:1
+            alpha:0
         });
         part5zhuzi9.scale.set(0.6,0.6);
 
         var part5zhuzi10 = createSprite("img/part5/zhuzi.png",{
             x:1200,
             y:100,
-            alpha:1
+            alpha:0
         });
         part5zhuzi10.scale.set(0.8,0.8);
 
         var part5zhuzi11 = createSprite("img/part5/zhuzi.png",{
             x:1300,
             y:80,
-            alpha:1
+            alpha:0
         });
         part5zhuzi11.scale.set(1,1);
 
         var part5zhuzi12 = createSprite("img/part5/zhuzi.png",{
             x:1400,
             y:60,
-            alpha:1
+            alpha:0
         });
         part5zhuzi12.scale.set(0.8,0.8);
 
         var part5zhuzi13 = createSprite("img/part5/zhuzi.png",{
             x:1500,
             y:40,
-            alpha:1
+            alpha:0
         });
         part5zhuzi13.scale.set(0.6,0.6);
 
@@ -768,12 +768,14 @@ function pixiFn(){
             x:3500,
             y:100,
         });
+        part5book.alpha = 0;
 
         // 留声机
         part5liushengji= createSprite("img/part6/liushengji.png",{
             x:600,
             y:250,
         });
+        part5liushengji.alpha = 0;
         
         // 小伞1
         part5smallsan= createSprite("img/part5/smallsan.png",{
@@ -797,16 +799,19 @@ function pixiFn(){
             x:600,
             y:0,
         });
+        part5yellowdenglong.alpha = 0;
         // 蓝灯笼
         part5bluedenglong= createSprite("img/part5/bluedenglong.png",{
             x:650,
             y:0,
         });
+        part5bluedenglong.alpha = 0;
         // 红灯笼
         part5reddenglong= createSprite("img/part5/reddenglong.png",{
             x:700,
             y:0,
         });
+        part5reddenglong.alpha = 0;
         part5denglongzu.addChild(part5yellowdenglong,part5bluedenglong,part5reddenglong)
         // 白灯笼
         part5whitedenglong=createSprite("img/part5/whitedenglong.png",{
@@ -824,49 +829,58 @@ function pixiFn(){
             x:0,
             y:200,
         });
+        part5model1.alpha = 0;
         // 模特2
         part5model2= createSprite("img/part5/model2.png",{
             x:180,
             y:180,
         });
+        part5model2.alpha = 0;
         // 模特3
         part5model3= createSprite("img/part5/model3.png",{
             x:330,
             y:48,
         });
+        part5model3.alpha = 0;
         // 模特4
         part5model4= createSprite("img/part5/model4.png",{
             x:530,
             y:60,
         });
+        part5model4.alpha = 0;
         // 模特5
         part5model5= createSprite("img/part5/model5.png",{
             x:930,
             y:10,
         });
+        part5model5.alpha = 0;
         // 模特6
         part5model6= createSprite("img/part5/model6.png",{
             x:1230,
             y:60,
         });
+        part5model6.alpha = 0;
 
         // 模特7
         part5model7= createSprite("img/part5/model7.png",{
             x:1730,
             y:135,
         });
+        part5model7.alpha = 0;
 
          // 模特8
          part5model8= createSprite("img/part5/model8.png",{
             x:1930,
             y:150,
         });
+        part5model8.alpha = 0;
+
         changpian  = new PIXI.Container();
         changpian.x = 4150;
         changpian.y = 0;
         changpianImg= createSprite("img/part5/chang.png",{
           x:570,
-          y:320,
+          y:640,
         });
         changpian.addChild(changpianImg)
 
@@ -881,6 +895,7 @@ function pixiFn(){
             x:900,
             y:0,
         });
+        part5bluedenglong2.alpha = 0;
 
         // 第六部分
         part6=new PIXI.Container();
@@ -1012,7 +1027,7 @@ function pixiFn(){
         })
         part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peoqin,part6peo4,part6peo5)
         // part6.addChild(part6bluedenglong,part6bigtree,part6leves1,part6trees,part6leves1,part6text5,part6swallow1,part6swallow2,part6swallow3)
-        part6.addChild(part6san3,part6bluedenglong,part6bigtree,part6san1,part6leves1,part6zhuzi1,part6swallow1,part6zhuzi2,part6trees,part6treesmount,part6san2,part6swallow2,part6zhuzi7,part6text5,part6peos)
+        part6.addChild(part6san3,part6bluedenglong,part6bigtree,part6san1,part6leves1,part6trees,part6zhuzi1,part6swallow1,part6zhuzi2,part6treesmount,part6san2,part6swallow2,part6zhuzi7,part6text5,part6peos)
 
 
         // 竹子&&门
@@ -1362,8 +1377,130 @@ function scrollBegin(){
           part1mountains.y = scrollNum(13516,13516+200,scrollPro,240+50,220);
           part1mountains.alpha = scrollNum(13516,13516+200,scrollPro,0,1);
         } 
-        
 
+        // 留声机
+        if(20160 < scrollPro && scrollPro < 20160+200){
+          part5liushengji.alpha = scrollNum(20160,20160+200,scrollPro,0,1);
+        } 
+
+        if(20160-50 < scrollPro && scrollPro < 20160+200-50){
+          part5bluedenglong2.alpha = scrollNum(20160-50,20160+200-50,scrollPro,0,1);
+        } 
+        
+         // 柱子
+         if(20550+300 < scrollPro && scrollPro < 21710+300){
+           console.log(part5pillars.children.length)
+          for(var i = 0; i < 14; i++){
+              var num1 = 20550+300+ (21710-20550)/14 * i;
+              var num2 = 20550+300+ (21710-20550)/14* (i+1);
+              if(num1 < scrollPro && scrollPro < num2){
+                  for(var j = 0; j < part5pillars.children.length;j++){
+                      if(j >= i){
+                          part5pillars.children[j].alpha = 0;
+                      }else{
+                          part5pillars.children[j].alpha = 1;
+                      }
+                      // if(j == 0) part5pillars.children[0].alpha = 1;
+                  }
+              }
+          }
+       }
+
+      //  part5book
+      if(22901 < scrollPro && scrollPro < 22901+200){
+        part5book.alpha = scrollNum(22901,22901+200,scrollPro,0,1);
+      } 
+      // 灯笼组合 part5denglongzu
+      // 23070
+      if(23070 < scrollPro && scrollPro < 23070+200){
+       for(var i = 0; i < 4; i++){
+           var num1 = 23070+ (23070+200-23070)/4 * i;
+           var num2 = 23070+ (23070+200-23070)/4* (i+1);
+           if(num1 < scrollPro && scrollPro < num2){
+               for(var j = 0; j < part5denglongzu.children.length;j++){
+                   if(j >= i){
+                       part5denglongzu.children[j].alpha = 0;
+                   }else{
+                       part5denglongzu.children[j].alpha = 1;
+                   }
+                  //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+               }
+           }
+       }
+     }
+
+
+     //云组
+    //  part5cloudzu
+    // 23360  24070.66875517615
+
+      if(23360 < scrollPro && scrollPro < 24370){
+        part5cloudzu.x = scrollNum(23360,24070,scrollPro,3700,3700-300);
+      } 
+      
+
+      // 23480 模特 25470
+      if(23480 < scrollPro && scrollPro < 25470+200){
+        for(var i = 0; i < 9; i++){
+            var num1 = 23480+ (25470-23480)/9 * i;
+            var num2 = 23480+ (25470-23480)/9* (i+1);
+            if(num1 < scrollPro && scrollPro < num2){
+                for(var j = 0; j < part5modelzu.children.length;j++){
+                    if(j >= i){
+                        part5modelzu.children[j].alpha = 0;
+                    }else{
+                        part5modelzu.children[j].alpha = 1;
+                    }
+                   //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+                }
+            }
+        }
+      }
+
+      // 24506.77907118165 changpianImg
+      if(24506 < scrollPro && scrollPro < 24506+200){
+        changpianImg.y = scrollNum(24506,24506+200,scrollPro,640,320);
+      } 
+
+      // 柱子错位
+      // 26777 28144
+
+      if(26770 < scrollPro && scrollPro < 28140){
+        part6trees.x = scrollNum(26770,28140,scrollPro,1000,800);
+        part6zhuzi1.x = scrollNum(26770,28140,scrollPro,1540,1740);
+        part6zhuzi2.x  = scrollNum(26770,28140,scrollPro,2150,2350);
+        part6swallow1.x  = scrollNum(26770,28140,scrollPro,2100,2300);
+      } 
+
+      //   // 燕子1
+      //   part6swallow1=createSprite("img/part6/swallow1.png",{
+      //     x:2100,
+      //     y:0,
+      // })
+      // // 前景竹子
+      // part6zhuzi1 = createSprite(" img/part6/zhuzi1.png",{
+      //   x:1540,
+      //   y:0,
+      // })
+
+      // // 前景竹子
+      // part6zhuzi2 = createSprite(" img/part6/zhuzi2.png",{
+      //   x:2150,
+      //   y:0,
+      // })
+
+      // // 竹子组
+      // part6trees=createSprite("img/part6/trees.png",{
+      //     x:1000,
+      //     y:0,
+      // })
+
+      // // 假山和竹子
+      // part6treesmount=createSprite("img/part6/rockery.png",{
+      //     x:2200,
+      //     y:0,
+      // })
+ 
     },{
         zooming: true,
         bouncing: false
