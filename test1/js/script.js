@@ -87,11 +87,11 @@ var imgArr = [
     "img/part9/text7.png",
     "img/part9/text8.png",
     "img/part9/stove.png",
-    "img/part9/stove.png",
     "img/part9/slogan.png",
     "img/part9/redbox.png",
     "img/part9/bluebox.png",
     "img/part9/signboard.png",
+    "img/displacement_map_repeat.jpg",
 
 
 
@@ -1209,6 +1209,7 @@ function pixiFn(){
         part8 = new PIXI.Container();
         part8.x = 26300+700+2200+900+300+200+6000;
         part8.y = 0;
+        // part8.x = 0;
         // 编钟组
         part8chimes=new PIXI.Container();
         part8chimes.x = 0;
@@ -1255,11 +1256,64 @@ function pixiFn(){
             y:-10,
         });
         part8chime7.scale.set(0.8,0.8);
+
         // 丝带1
         part8ribbon1=createSprite("img/part8/ribbon1.png",{
             x:100,
             y:0,
         });
+          // var app = new PIXI.Application(800, 600);
+          // document.body.appendChild(app.view);
+
+          app.stage.interactive = true;
+
+          // var container = new PIXI.Container();
+          // app.stage.addChild(container);
+
+          var flag1 = PIXI.Sprite.fromImage("img/part8/ribbon1.png");
+          var flag2 = PIXI.Sprite.fromImage("img/part8/ribbon2.png");
+          flag2.scale.set(0.7,0.7);
+          flag2.x=600;
+          flag2.y=320;
+
+          var displacementSprite = PIXI.Sprite.fromImage('img/displacement_map_repeat.jpg');
+          var displacementSprite1 = PIXI.Sprite.fromImage('img/displacement_map_repeat.jpg');
+          //Make sure the sprite is wrapping.
+          displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+          displacementSprite1.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+          var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+          var displacementFilter1 = new PIXI.filters.DisplacementFilter(displacementSprite1);
+
+          displacementFilter.padding = 10;
+          displacementFilter1.padding = 10;
+
+          displacementSprite.position = flag1.position;
+          displacementSprite1.position = flag2.position;
+
+          app.stage.addChild(displacementSprite,displacementSprite1);
+
+          flag1.filters = [displacementFilter];
+          flag2.filters = [displacementFilter1];
+
+          displacementFilter.scale.x = 30;
+          displacementFilter.scale.y = 60;
+          displacementFilter1.scale.x = 30;
+          displacementFilter1.scale.y = 60;
+
+        app.ticker.add(function() {
+            //Offset the sprite position to make vFilterCoord update to larger value. Repeat wrapping makes sure there's still pixels on the coordinates.
+            displacementSprite.x+=1;
+            displacementSprite.y+=2;
+            displacementSprite1.x+=1;
+            displacementSprite1.y+=2;
+            //Reset x to 0 when it's over width to keep values from going to very huge numbers.
+            if(displacementSprite.x > displacementSprite.width)
+              displacementSprite.x = 0;
+            
+            if(displacementSprite1.x > displacementSprite1.width)
+            displacementSprite1.x = 0;
+        });
+
         part8ribbon1.scale.set(0.7,0.7);
         // 丝带2
         part8ribbon2=createSprite("img/part8/ribbon2.png",{
@@ -1332,7 +1386,7 @@ function pixiFn(){
 
 
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
-        part8.addChild(part8chimes,part8ribbon1,part8text6,part8ribbon2,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
+        part8.addChild(part8chimes,flag1,flag2,part8text6,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
       // img/part6/zhuzi6.png
 
       // img/part6/zhuzi4.png
