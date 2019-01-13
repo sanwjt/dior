@@ -70,6 +70,7 @@ var imgArr = [
     "img/part6/zhuzi5.png",
     "img/part6/zhuzi4.png",
     "img/part6/zhuzi6.png",
+    "img/part6/land2.png",
 ]
 
 // 横屏内容长度
@@ -884,8 +885,8 @@ function pixiFn(){
 
         // 第六部分
         part6=new PIXI.Container();
-        part6.x = 26300;
-          // part6.x = 200;
+        // part6.x = 26300;
+          part6.x = 0;
         part6.y = 0;
 
         // 紫色伞
@@ -977,8 +978,8 @@ function pixiFn(){
 
         // 人弹琴组
         part6peos=new PIXI.Container();
-        part6peos.x = 2200+900+300;
-        part6peos.y = 0;
+        part6peos.x = 2200+800;
+        part6peos.y = 300;
         
         // 人1
          part6peo1=createSprite("img/part6/peo1.png",{
@@ -987,30 +988,36 @@ function pixiFn(){
         })
         // 人弹琴
         part6peoqin=createSprite("img/part6/peoqin.png",{
-            x:0,
+            x:200+200+10,
             y:0,
         })
         // 人2
         part6peo2=createSprite("img/part6/peo2.png",{
-            x:0,
-            y:0,
+            x:200,
+            y:100,
         })
         // 人3
         part6peo3=createSprite("img/part6/peo3.png",{
-            x:0,
+            x:200+200,
             y:0,
         })
         // 人4
         part6peo4=createSprite("img/part6/peo4.png",{
-            x:0,
+            x:200+200+200,
             y:0,
         })
         // 人5
         part6peo5=createSprite("img/part6/peo5.png",{
-            x:0,
+            x:200+200+10+100,
             y:0,
         })
+
         part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peoqin,part6peo4,part6peo5)
+        //    绿地2
+        // part6land2=createSprite("img/part6/land2.png",{
+        //     x:520,
+        //     y:200
+        // })
         // part6.addChild(part6bluedenglong,part6bigtree,part6leves1,part6trees,part6leves1,part6text5,part6swallow1,part6swallow2,part6swallow3)
         part6.addChild(part6san3,part6bluedenglong,part6bigtree,part6san1,part6leves1,part6zhuzi1,part6swallow1,part6zhuzi2,part6trees,part6treesmount,part6san2,part6swallow2,part6zhuzi7,part6text5,part6peos)
 
@@ -1047,6 +1054,11 @@ function pixiFn(){
        })
 
        part7swallow2.scale.set(2,2)
+
+       
+
+        
+
 
       // img/part6/zhuzi6.png
 
