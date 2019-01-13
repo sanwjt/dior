@@ -39,13 +39,29 @@ var imgArr = [
     "img/part5/chang.png",
     "img/part5/zhuzi.png",
     "img/part5/men.png",
-    "img/part5/liushengji.png",
-    "img/part5/denglong1.png",
+    "img/part6/liushengji.png",
+    "img/part6/denglong1.png",
     "img/part5/book1997.png",
     "img/part5/yellowdenglong.png",
     "img/part5/bluedenglong.png",
     "img/part5/reddenglong.png",
     "img/part5/whitedenglong.png",
+    "img/part5/cloudzu.png",
+    "img/part6/bigtree.png",
+    "img/part6/leves1.png",
+    "img/part6/trees.png",
+    "img/part6/text5.png",
+    "img/part6/swallow1.png",
+    "img/part6/swallow2.png",
+    "img/part6/swallow3.png",
+    "img/part6/peoqin.png",
+    "img/part6/peo1.png",
+    "img/part6/peo2.png",
+    "img/part6/peo3.png",
+    "img/part6/peo4.png",
+    "img/part6/peo5.png",
+
+    
 
     
 
@@ -760,43 +776,193 @@ function pixiFn(){
         });
         
         // 小伞1
-        part5smallsan= createSprite("img/part6/smallsan.png",{
-            x:600,
-            y:250,
+        part5smallsan= createSprite("img/part5/smallsan.png",{
+            x:3100,
+            y:400,
         });
 
         // 中伞1
-        part5midsan= createSprite("img/part6/midsan.png",{
-            x:600,
-            y:250,
+        part5midsan= createSprite("img/part5/midsan.png",{
+            x:3300,
+            y:330,
         });
         
         // 三个灯笼组
         part5denglongzu=new PIXI.Container();
-        part5denglongzu.x = 200;
+        part5denglongzu.x = -100;
         part5denglongzu.y = 0;
 
         // 黄灯笼
-        part5yellowdenglong= createSprite("img/part6/yellowdenglong.png",{
+        part5yellowdenglong= createSprite("img/part5/yellowdenglong.png",{
             x:600,
-            y:250,
+            y:0,
         });
         // 蓝灯笼
-        part5bluedenglong= createSprite("img/part6/bluedenglong.png",{
-            x:600,
-            y:250,
+        part5bluedenglong= createSprite("img/part5/bluedenglong.png",{
+            x:650,
+            y:0,
         });
         // 红灯笼
-        part5reddenglong= createSprite("img/part6/reddenglong.png",{
-            x:600,
-            y:250,
+        part5reddenglong= createSprite("img/part5/reddenglong.png",{
+            x:700,
+            y:0,
         });
         part5denglongzu.addChild(part5yellowdenglong,part5bluedenglong,part5reddenglong)
         // 白灯笼
-        part5whitedenglong=createSprite("img/part6/whitedenglong.png",{
-            x:600,
-            y:250,
+        part5whitedenglong=createSprite("img/part5/whitedenglong.png",{
+            x:4200,
+            y:0,
         });
+        // 模特组
+        part5modelzu=new PIXI.Container();
+        part5denglongzu.x = 10000;
+        part5denglongzu.y = 0;
+
+        // 模特1
+        part5model1= createSprite("img/part5/model1.png",{
+            x:800,
+            y:0,
+        });
+        // 模特2
+        part5model2= createSprite("img/part5/model2.png",{
+            x:650,
+            y:0,
+        });
+        // 模特3
+        part5model3= createSprite("img/part5/model3.png",{
+            x:700,
+            y:0,
+        });
+        // 模特4
+        part5model4= createSprite("img/part5/model4.png",{
+            x:600,
+            y:0,
+        });
+        // 模特5
+        part5model5= createSprite("img/part5/model5.png",{
+            x:650,
+            y:0,
+        });
+        // 模特6
+        part5model6= createSprite("img/part5/model6.png",{
+            x:700,
+            y:0,
+        });
+
+        // 模特7
+        part5model7= createSprite("img/part5/model7.png",{
+            x:700,
+            y:0,
+        });
+
+         // 模特8
+         part5model8= createSprite("img/part5/model8.png",{
+            x:700,
+            y:0,
+        });
+
+        // 云组
+        part5cloudzu=createSprite("img/part5/cloudzu.png",{
+            x:3300,
+            y:330,
+        });
+
+        // 蓝灯笼2
+        part5bluedenglong2= createSprite("img/part5/bluedenglong.png",{
+            x:900,
+            y:0,
+        });
+
+        // 第六部分
+        part6=new PIXI.Container();
+        part6.x = 8000;
+        part6.y = 0;
+
+        // 大竹子
+        part6bigtree=createSprite("img/part6/bigtree.png",{
+            x:900,
+            y:0,
+        })
+
+        // 竹子叶子
+        part6leves1=createSprite("img/part6/leves1.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 竹子组
+        part6trees=createSprite("img/part6/trees.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 假山和竹子
+        part6trees=createSprite("img/part6/rockery.png",{
+            x:1000,
+            y:0,
+        })
+
+         // 文本从改良到原创
+         part6text5=createSprite("img/part6/text5.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 燕子1
+        part6swallow1=createSprite("img/part6/swallow1.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 燕子2
+        part6swallow2=createSprite("img/part6/swallow2.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 燕子3
+        part6swallow3=createSprite("img/part6/swallow3.png",{
+            x:1000,
+            y:0,
+        })
+
+        // 人弹琴组
+        part6peos=new PIXI.Container();
+        part6.x = 8000;
+        part6.y = 0;
+        
+        // 人1
+         part6peo1=createSprite("img/part6/peo1.png",{
+            x:1000,
+            y:0,
+        })
+        // 人弹琴
+        part6peoqin=createSprite("img/part6/peoqin.png",{
+            x:1000,
+            y:0,
+        })
+        // 人2
+        part6peo2=createSprite("img/part6/peo2.png",{
+            x:1000,
+            y:0,
+        })
+        // 人3
+        part6peo3=createSprite("img/part6/peo3.png",{
+            x:1000,
+            y:0,
+        })
+        // 人4
+        part6peo4=createSprite("img/part6/peo4.png",{
+            x:1000,
+            y:0,
+        })
+        // 人5
+        part6peo5=createSprite("img/part6/peo5.png",{
+            x:1000,
+            y:0,
+        })
+        part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peoqin,part6peo4,part6peo5)
+        part6.addChild(part6bigtree,part6leves1,part6trees,part6leves1,part6text5,part6swallow1,part6swallow2,part6swallow3,part6peos)
 
 
 
@@ -805,13 +971,13 @@ function pixiFn(){
 
 
 
-
+        part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi7,part5zhuzi8,part5zhuzi9,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
-        part5.addChild(part5pillars,part5denglonghu,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan);
+        part5.addChild(part5pillars,part5denglonghu,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5modelzu,part5cloudzu,part5bluedenglong2);
         
         part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount,part5);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount,part5,part6);
         container.addChild(tilingSprite,part1);
         app.stage.addChild(container);
         init() 
