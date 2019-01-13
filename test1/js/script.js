@@ -84,9 +84,8 @@ var imgArr = [
     "img/part8/petal2.png",
     "img/part8/ribbon1.png",
     "img/part8/ribbon2.png",
-    "img/part9/text7.png",
+    "img/part9/text9.png",
     "img/part9/text8.png",
-    "img/part9/stove.png",
     "img/part9/stove.png",
     "img/part9/slogan.png",
     "img/part9/redbox.png",
@@ -1284,12 +1283,63 @@ function pixiFn(){
         part9.y = 0;
 
         // 宫女组
-        // 敏感而挑剔的中国风
-        // part9text8
+        // 
+        // text7敏感而挑剔的中国风
+        part9text7=createSprite("img/part9/text7.png",{
+            x:100,
+            y:350,
+        });
+        // 香炉组
+        part9stoves = new PIXI.Container();
+        part9stoves.x = 1000;
+        part9stoves.y = 0;
+
+        var part9stove1=createSprite("img/part9/stove.png",{
+            x:1000,
+            y:0,
+        });
+        var part9stove2=createSprite("img/part9/stove.png",{
+            x:1250,
+            y:0,
+        });
+        var part9stove3=createSprite("img/part9/stove.png",{
+            x:1500,
+            y:0,
+        });
+        // text8沉淀了几个朝代的紫禁城
+        part9text8=createSprite("img/part9/text8.png",{
+            x:3400,
+            y:300,
+        });
+        // slogan
+        part9slogan=createSprite("img/part9/slogan.png",{
+            x:1400,
+            y:200,
+        });
+         // 红盒子
+         part9redbox=createSprite("img/part9/redbox.png",{
+            x:1400,
+            y:200,
+        });
+        // 蓝盒子
+        part9bluebox=createSprite("img/part9/bluebox.png",{
+            x:1400,
+            y:200,
+        });
+        // 牌匾
+        part9signboard=createSprite("img/part9/signboard.png",{
+        x:1400,
+        y:200,
+    });
 
 
 
 
+
+
+
+        part9stoves.addChild(part9stove1,part9stove2,part9stove3)
+        part9.addChild(part9text7,part9stoves,part9text8,part9slogan,part9redbox,part9bluebox,part9signboard)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
         part8.addChild(part8chimes,part8ribbon1,part8text6,part8ribbon2,part8dancer1,part8dancer2,part8bird,part8dancer3,part8cloud8,part8petal1,part8petal1,part8petal2)
       // img/part6/zhuzi6.png
@@ -1307,7 +1357,7 @@ function pixiFn(){
         part1BirdFly.addChild(part1house1,part1house3,part1country1,part1text3,part1house2,part1mountains,part1yumao1,part1birdfly1,part1meihua,part1birdfly3,part1yumao2,part1text4);
 
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
-        container.addChild(tilingSprite,part1,part5,part6,part7,part8);
+        container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
         app.ticker.add(function() {
