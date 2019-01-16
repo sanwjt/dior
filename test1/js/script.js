@@ -600,14 +600,14 @@ function pixiFn(){
 
          // 小梅花
         part1sflower = createSprite("img/part3/sflower.png",{
-            x:0,
+            x:-100,
             y:100,
         
         });
 
         // 大梅花
         part1bflower = createSprite("img/part3/bflower.png",{
-            x:100,
+            x:0,
             y:368,
         
         });
@@ -1722,7 +1722,7 @@ function pixiFn(){
         
         part1BirdFly.addChild(part1house1,part1country1,part1house3,part1sflower,part1bflower,part1house2,part1mountains,part1sunrise,part1birdfly1,part1yumao1,part1meihua,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount,part1redsan);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
@@ -1949,22 +1949,22 @@ function scrollBegin(){
             part1ship5.x = scrollNum(7660,8400,scrollPro,-300,-1400);
         }
 
-        // 红伞漂落动画
-        if(7800 < scrollPro && scrollPro < 8686){
-            part1redsan.y = scrollNum(7800,8686,scrollPro,20,200);
-            part1redsan.x = scrollNum(7800,8686,scrollPro,8500,9000);
-            // part1redsan.alpha = scrollNum(7800,8686,scrollPro,1,0);
-        }
+        // // 红伞漂落动画
+        // if(7800 < scrollPro && scrollPro < 8686){
+        //     part1redsan.y = scrollNum(7800,8686,scrollPro,20,200);
+        //     part1redsan.x = scrollNum(7800,8686,scrollPro,8500,9000);
+        //     // part1redsan.alpha = scrollNum(7800,8686,scrollPro,1,0);
+        // }
 
-        // 小梅花动画
-        if(9710 < scrollPro && scrollPro < 10600){
-            part1sflower.x = scrollNum(9710,10600,scrollPro,300,0);
-        }
+        // // 小梅花动画
+        // if(9710 < scrollPro && scrollPro < 10600){
+        //     part1sflower.x = scrollNum(9710,10600,scrollPro,300,0);
+        // }
 
-        // 大梅花动画
-         if(9710 < scrollPro && scrollPro < 10600){
-            part1bflower.x = scrollNum(9710,10600,scrollPro,400,-180);
-        }
+        // // 大梅花动画
+        //  if(9710 < scrollPro && scrollPro < 10600){
+        //     part1bflower.x = scrollNum(9710,10600,scrollPro,400,-180);
+        // }
 
         // 房屋1动画
         if(10000 < scrollPro && scrollPro < 10450){
