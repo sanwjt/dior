@@ -417,10 +417,10 @@ function pixiFn(){
           });
           part1wu5.alpha=0;
         // 伞2
-        part1san2 = createSprite("img/part1/san.png",{
-            x:1498,
-            y:190,
-          });
+        // part1san2 = createSprite("img/part1/san.png",{
+        //     x:1498,
+        //     y:190,
+        //   });
 
         // 伞
         part1shouCounter = new PIXI.Container();
@@ -592,22 +592,22 @@ function pixiFn(){
         //     x=250,
         //     y:20,
         // })
-        part1redsan = createSprite("img/part1/san.png",{
-            x:8500,
-            y:-400,
+        // part1redsan = createSprite("img/part1/san.png",{
+        //     x:8500,
+        //     y:-400,
         
-        });
+        // });
 
          // 小梅花
         part1sflower = createSprite("img/part3/sflower.png",{
-            x:300,
+            x:0,
             y:100,
         
         });
 
         // 大梅花
         part1bflower = createSprite("img/part3/bflower.png",{
-            x:400,
+            x:100,
             y:368,
         
         });
@@ -780,7 +780,7 @@ function pixiFn(){
         part5 = new PIXI.Container();
         part5.x = 20000;
         part5.y = 0;
-
+        // part5.x = 0;
 
         // 柱子逐渐显示
         part5pillars=new PIXI.Container();
@@ -978,45 +978,45 @@ function pixiFn(){
         // part5model1.alpha = 0;
         // 模特2
         part5model2= createSprite("img/part5/model2.png",{
-            x:180,
+            x:180-100,
             y:180,
         });
         // part5model2.alpha = 0;
         // 模特3
         part5model3= createSprite("img/part5/model3.png",{
-            x:330,
+            x:330-190,
             y:48,
         });
         // part5model3.alpha = 0;
         // 模特4
         part5model4= createSprite("img/part5/model4.png",{
-            x:530,
+            x:530-320,
             y:60,
         });
         // part5model4.alpha = 0;
         // 模特5
         part5model5= createSprite("img/part5/model5.png",{
-            x:930,
+            x:930-500,
             y:10,
         });
         // part5model5.alpha = 0;
         // 模特6
         part5model6= createSprite("img/part5/model6.png",{
-            x:1230,
+            x:1230-660,
             y:60,
         });
         // part5model6.alpha = 0;
 
         // 模特7
         part5model7= createSprite("img/part5/model7.png",{
-            x:1730,
+            x:1730-800,
             y:135,
         });
         // part5model7.alpha = 0;
 
          // 模特8
          part5model8= createSprite("img/part5/model8.png",{
-            x:1930,
+            x:1930-900,
             y:150,
         });
         // part5model8.alpha = 0;
@@ -1707,7 +1707,7 @@ function pixiFn(){
         // part1BirdFly.addChild(part1birdfly1,part1house1,part1house3,part1country1,part1text3,part1yumao1,part1house2,part1birdfly2,part1mountains,part1meihua,part1birdfly3,part1yumao2,part1text4);
         part1BirdFly.addChild(part1house1,part1country1,part1house3,part1sflower,part1bflower,part1house2,part1mountains,part1sunrise,part1birdfly1,part1yumao1,part1meihua,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount,part1redsan);
+        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
@@ -1808,8 +1808,7 @@ function scrollBegin(){
           part1shouCounter.x = scrollNum(3470,3660,scrollPro,0,500);
           part1shouCounter.y = scrollNum(3470,3660,scrollPro,0,80);
           part1shouCounter.rotation = scrollNum(3470,3660,scrollPro,0,0.4)
-          console.log('伞'+part1san.y)
-          } 
+        } 
 
         //  伞被扔出去动画2
          if(3880 < scrollPro && scrollPro < 3880+1230){
@@ -1823,10 +1822,16 @@ function scrollBegin(){
          } 
 
          //  伞被扔出去动画3
-         if(3880+1230 < scrollPro && scrollPro < 3880+1230+500){
-            part1san.x = scrollNum(3880+1230,3880+1230+500,scrollPro,1230,1230+400);
-            part1san.y = scrollNum(3880+1230,3880+1230+500,scrollPro,-400,-600);
-           } 
+         if(3880+1230 < scrollPro && scrollPro < 7426){
+            part1san.x = scrollNum(3880+1230,7426,scrollPro,1230,1230+2000);
+            part1san.y = scrollNum(3880+1230,7426,scrollPro,-400,-2000);
+        }
+
+         //  伞被扔出去动画4
+         if(7426 < scrollPro && scrollPro < 9284){
+          part1san.x = scrollNum(7426,9284,scrollPro,1230+2000,1230+2000+1858);
+          part1san.y = scrollNum(7426,9284,scrollPro,-2000,-2000);
+         }  
 
         //  伞被扔出去动画4
         // if(3880+1230 < scrollPro && scrollPro < 3880+1230+200){
@@ -1937,14 +1942,14 @@ function scrollBegin(){
         }
 
         // 小梅花动画
-        if(9710 < scrollPro && scrollPro < 10600){
-            part1sflower.x = scrollNum(9710,10600,scrollPro,300,0);
-        }
+        // if(9710 < scrollPro && scrollPro < 10600){
+        //     part1sflower.x = scrollNum(9710,10600,scrollPro,300,0);
+        // }
 
-        // 大梅花动画
-         if(9710 < scrollPro && scrollPro < 10600){
-            part1bflower.x = scrollNum(9710,10600,scrollPro,400,-180);
-        }
+        // // 大梅花动画
+        //  if(9710 < scrollPro && scrollPro < 10600){
+        //     part1bflower.x = scrollNum(9710,10600,scrollPro,400,-180);
+        // }
 
         // 房屋1动画
         if(10000 < scrollPro && scrollPro < 10450){
@@ -2232,37 +2237,37 @@ function scrollBegin(){
       
     // 模特组动画
     // 模特1
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model1.x = scrollNum(24326,25849,scrollPro,0,100);
-    } 
-    // 模特2
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model2.x = scrollNum(24326,25849,scrollPro,180,-100);
-    }
-    // 模特3
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model3.x = scrollNum(24326,25849,scrollPro,330,-300);
-    }
-     // 模特4
-     if(24326 < scrollPro && scrollPro < 25849){
-        part5model4.x = scrollNum(24326,25849,scrollPro,530,-1660);
-    }
-    // 模特5
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model5.x = scrollNum(24326,25849,scrollPro,930,-4000);
-    }
-    // 模特6
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model6.x = scrollNum(24326,25849,scrollPro,1230,-6000);
-    }
-    // 模特7
-    if(24576 < scrollPro && scrollPro < 25819){
-        part5model7.x = scrollNum(24576,25819,scrollPro,1730,1100);
-    }
-     // 模特8
-     if(24576 < scrollPro && scrollPro < 25819){
-        part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
-    }
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model1.x = scrollNum(24326,25849,scrollPro,0,100);
+    // } 
+    // // 模特2
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model2.x = scrollNum(24326,25849,scrollPro,180,-100);
+    // }
+    // // 模特3
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model3.x = scrollNum(24326,25849,scrollPro,330,-300);
+    // }
+    //  // 模特4
+    //  if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model4.x = scrollNum(24326,25849,scrollPro,530,-1660);
+    // }
+    // // 模特5
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model5.x = scrollNum(24326,25849,scrollPro,930,-4000);
+    // }
+    // // 模特6
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model6.x = scrollNum(24326,25849,scrollPro,1230,-6000);
+    // }
+    // // 模特7
+    // if(24576 < scrollPro && scrollPro < 25819){
+    //     part5model7.x = scrollNum(24576,25819,scrollPro,1730,1100);
+    // }
+    //  // 模特8
+    //  if(24576 < scrollPro && scrollPro < 25819){
+    //     part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
+    // }
      // 紫色伞动画
      if(25350 < scrollPro && scrollPro < 25550){
         // part6san3.rotation = scrollNum(25760,25850,scrollPro,0,Math.PI*-0.4);
