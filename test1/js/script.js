@@ -417,10 +417,10 @@ function pixiFn(){
           });
           part1wu5.alpha=0;
         // 伞2
-        part1san2 = createSprite("img/part1/san.png",{
-            x:1498,
-            y:190,
-          });
+        // part1san2 = createSprite("img/part1/san.png",{
+        //     x:1498,
+        //     y:190,
+        //   });
 
         // 伞
         part1shouCounter = new PIXI.Container();
@@ -592,22 +592,22 @@ function pixiFn(){
         //     x=250,
         //     y:20,
         // })
-        part1redsan = createSprite("img/part1/san.png",{
-            x:8500,
-            y:-400,
+        // part1redsan = createSprite("img/part1/san.png",{
+        //     x:8500,
+        //     y:-400,
         
-        });
+        // });
 
          // 小梅花
         part1sflower = createSprite("img/part3/sflower.png",{
-            x:300,
+            x:0,
             y:100,
         
         });
 
         // 大梅花
         part1bflower = createSprite("img/part3/bflower.png",{
-            x:400,
+            x:100,
             y:368,
         
         });
@@ -982,45 +982,45 @@ function pixiFn(){
         // part5model1.alpha = 0;
         // 模特2
         part5model2= createSprite("img/part5/model2.png",{
-            x:180,
+            x:180-100,
             y:180,
         });
         // part5model2.alpha = 0;
         // 模特3
         part5model3= createSprite("img/part5/model3.png",{
-            x:330,
+            x:330-190,
             y:48,
         });
         // part5model3.alpha = 0;
         // 模特4
         part5model4= createSprite("img/part5/model4.png",{
-            x:530,
+            x:530-320,
             y:60,
         });
         // part5model4.alpha = 0;
         // 模特5
         part5model5= createSprite("img/part5/model5.png",{
-            x:930,
+            x:930-500,
             y:10,
         });
         // part5model5.alpha = 0;
         // 模特6
         part5model6= createSprite("img/part5/model6.png",{
-            x:1230,
+            x:1230-660,
             y:60,
         });
         // part5model6.alpha = 0;
 
         // 模特7
         part5model7= createSprite("img/part5/model7.png",{
-            x:1730,
+            x:1730-800,
             y:135,
         });
         // part5model7.alpha = 0;
 
          // 模特8
          part5model8= createSprite("img/part5/model8.png",{
-            x:1930,
+            x:1930-900,
             y:150,
         });
         // part5model8.alpha = 0;
@@ -1823,8 +1823,7 @@ function scrollBegin(){
           part1shouCounter.x = scrollNum(3470,3660,scrollPro,0,500);
           part1shouCounter.y = scrollNum(3470,3660,scrollPro,0,80);
           part1shouCounter.rotation = scrollNum(3470,3660,scrollPro,0,0.4)
-          console.log('伞'+part1san.y)
-          } 
+        } 
 
         //  伞被扔出去动画2
          if(3880 < scrollPro && scrollPro < 3880+1230){
@@ -1838,10 +1837,16 @@ function scrollBegin(){
          } 
 
          //  伞被扔出去动画3
-         if(3880+1230 < scrollPro && scrollPro < 3880+1230+500){
-            part1san.x = scrollNum(3880+1230,3880+1230+500,scrollPro,1230,1230+400);
-            part1san.y = scrollNum(3880+1230,3880+1230+500,scrollPro,-400,-600);
-           } 
+         if(3880+1230 < scrollPro && scrollPro < 7426){
+            part1san.x = scrollNum(3880+1230,7426,scrollPro,1230,1230+2000);
+            part1san.y = scrollNum(3880+1230,7426,scrollPro,-400,-2000);
+        }
+
+         //  伞被扔出去动画4
+         if(7426 < scrollPro && scrollPro < 9284){
+          part1san.x = scrollNum(7426,9284,scrollPro,1230+2000,1230+2000+1858);
+          part1san.y = scrollNum(7426,9284,scrollPro,-2000,-2000);
+         }  
 
         //  伞被扔出去动画4
         // if(3880+1230 < scrollPro && scrollPro < 3880+1230+200){
@@ -2247,37 +2252,37 @@ function scrollBegin(){
       
     // 模特组动画
     // 模特1
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model1.x = scrollNum(24326,25849,scrollPro,0,100);
-    } 
-    // 模特2
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model2.x = scrollNum(24326,25849,scrollPro,180,-100);
-    }
-    // 模特3
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model3.x = scrollNum(24326,25849,scrollPro,330,-300);
-    }
-     // 模特4
-     if(24326 < scrollPro && scrollPro < 25849){
-        part5model4.x = scrollNum(24326,25849,scrollPro,530,-1660);
-    }
-    // 模特5
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model5.x = scrollNum(24326,25849,scrollPro,930,-4000);
-    }
-    // 模特6
-    if(24326 < scrollPro && scrollPro < 25849){
-        part5model6.x = scrollNum(24326,25849,scrollPro,1230,-6000);
-    }
-    // 模特7
-    if(24576 < scrollPro && scrollPro < 25819){
-        part5model7.x = scrollNum(24576,25819,scrollPro,1730,1100);
-    }
-     // 模特8
-     if(24576 < scrollPro && scrollPro < 25819){
-        part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
-    }
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model1.x = scrollNum(24326,25849,scrollPro,0,100);
+    // } 
+    // // 模特2
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model2.x = scrollNum(24326,25849,scrollPro,180,-100);
+    // }
+    // // 模特3
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model3.x = scrollNum(24326,25849,scrollPro,330,-300);
+    // }
+    //  // 模特4
+    //  if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model4.x = scrollNum(24326,25849,scrollPro,530,-1660);
+    // }
+    // // 模特5
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model5.x = scrollNum(24326,25849,scrollPro,930,-4000);
+    // }
+    // // 模特6
+    // if(24326 < scrollPro && scrollPro < 25849){
+    //     part5model6.x = scrollNum(24326,25849,scrollPro,1230,-6000);
+    // }
+    // // 模特7
+    // if(24576 < scrollPro && scrollPro < 25819){
+    //     part5model7.x = scrollNum(24576,25819,scrollPro,1730,1100);
+    // }
+    //  // 模特8
+    //  if(24576 < scrollPro && scrollPro < 25819){
+    //     part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
+    // }
      // 紫色伞动画
      if(25350 < scrollPro && scrollPro < 25550){
         // part6san3.rotation = scrollNum(25760,25850,scrollPro,0,Math.PI*-0.4);
@@ -2304,6 +2309,60 @@ function scrollBegin(){
     //         }
     //     }
     //   }
+      
+     if(24244 < scrollPro && scrollPro < 24695){
+      part5model2.x  = scrollNum(24244,24695,scrollPro,180-100,180-100+100);
+      part5model3.x  = scrollNum(24244,24695,scrollPro,330-190,330-190+190);
+      part5model4.x  = scrollNum(24244,24695,scrollPro,530-320,530-320+320);
+      part5model5.x  = scrollNum(24244,24695,scrollPro,930-500,930-500+500);
+      part5model6.x  = scrollNum(24244,24695,scrollPro,1230-660,1230-660+660);
+      part5model7.x  = scrollNum(24244,24695,scrollPro,1730-800,1730-800+800);
+      part5model8.x  = scrollNum(24244,24695,scrollPro,1930-900,1930-900+900);
+     }
+
+
+  //    part5model2= createSprite("img/part5/model2.png",{
+  //     x:180-100,
+  //     y:180,
+  // });
+  // // part5model2.alpha = 0;
+  // // 模特3
+  // part5model3= createSprite("img/part5/model3.png",{
+  //     x:330-190,
+  //     y:48,
+  // });
+  // // part5model3.alpha = 0;
+  // // 模特4
+  // part5model4= createSprite("img/part5/model4.png",{
+  //     x:530-320,
+  //     y:60,
+  // });
+  // // part5model4.alpha = 0;
+  // // 模特5
+  // part5model5= createSprite("img/part5/model5.png",{
+  //     x:930-500,
+  //     y:10,
+  // });
+  // // part5model5.alpha = 0;
+  // // 模特6
+  // part5model6= createSprite("img/part5/model6.png",{
+  //     x:1230-660,
+  //     y:60,
+  // });
+  // // part5model6.alpha = 0;
+
+  // // 模特7
+  // part5model7= createSprite("img/part5/model7.png",{
+  //     x:1730-800,
+  //     y:135,
+  // });
+  // // part5model7.alpha = 0;
+
+  //  // 模特8
+  //  part5model8= createSprite("img/part5/model8.png",{
+  //     x:1930-900,
+  //     y:150,
+  // });
 
       // 24506.77907118165 changpianImg
       if(23700 < scrollPro && scrollPro < 25000){
@@ -2441,21 +2500,55 @@ function scrollBegin(){
 
 
 
-      // part7nmodelzu
-      if(33414 < scrollPro && scrollPro < 35965){
-        for(var i = 0; i < 9; i++){
-            var num1 = 33414+ (35965-33414)/9 * i;
-            var num2 = 33414+ (35965-33414)/9* (i+1);
-            if(num1 < scrollPro && scrollPro < num2){
-                for(var j = 0; j < part7nmodelzu.children.length;j++){
-                    if(j >= i){
-                        part7nmodelzu.children[j].alpha = 0;
-                    }else{
-                        part7nmodelzu.children[j].alpha = 1;
-                    }
-                }
-            }
-        }
+       
+    //   }
+    if(28168 < scrollPro && scrollPro < 30220){
+            
+            part6peo1.x =scrollNum(28168,29294,scrollPro,-800,-100);
+            part6peo2.x =scrollNum(28168,29294,scrollPro,-600,0);
+            part6peo3.x =scrollNum(28168,29294,scrollPro,-200,200);
+            part6peo4.x =scrollNum(28168,29294,scrollPro,1400,1300);
+            part6peo5.x =scrollNum(28168,29294,scrollPro,1600,1400);
+            
+       
+      }
+      //   弹琴人左侧
+    //   if(29176 < scrollPro && scrollPro < 29294){
+    //     part6peo2.x =scrollNum(29176,29294,scrollPro,200,700);
+    //     part6peo1.x =scrollNum(29176,29294,scrollPro,0,600);
+    //     part6peo3.x =scrollNum(29176,29294,scrollPro,400,600);
+    //     part6peoqin.x=scrollNum(29176,29294,scrollPro,200+200+10,0);
+       
+    //   }
+      //   弹琴人右侧
+    //   if(29361 < scrollPro && scrollPro < 29869){
+    //     part6zhuzi3.x =scrollNum(29361,29869,scrollPro,520,0);
+    //     part6peo4.x =scrollNum(29176,29294,scrollPro,200+200+600,0);
+    //     part6peo5.x =scrollNum(29176,29653,scrollPro,200+200+600+600,200+200+600+600-600);
+       
+    //   }
+    //   三扇门动画
+      if(32445 < scrollPro && scrollPro < 32640){
+        part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
+        part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
+        part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+        part7door1.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+        part7door2.x =scrollNum(32445,32640,scrollPro,300,250);
+        part7door2.y =scrollNum(32445,32640,scrollPro,0,50);
+        part7door2.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+        part7door2.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+        part7door3.x =scrollNum(32445,32640,scrollPro,-250,-200);
+        part7door3.y =scrollNum(32445,32640,scrollPro,0,30);
+        part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,1.2);
+        part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
+        // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+        // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+      }
+      if(32990 < scrollPro && scrollPro < 33210){
+        part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
+        part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
+        part7door3.alpha =scrollNum(32990,33210,scrollPro,1,0);
+        
       }
     //   第八部分
     // 小飞天和大飞天动画
@@ -2468,8 +2561,6 @@ function scrollBegin(){
         part8birdfly1.x=scrollNum(37091,37480,scrollPro,1200,1500);
         part8birdfly1.y=scrollNum(37091,37480,scrollPro,340,-100);
         part8birdfly1.alpha=scrollNum(37091,37480,scrollPro,1,0);
-
-
       }
     //   中间舞者大大飞天 
     if(37300 < scrollPro && scrollPro < 37980){
