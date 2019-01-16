@@ -28,6 +28,7 @@ body{ -wibkit-touch-callout: default; -webkit-user-select: none; }
     bottom: 0;
     margin: auto;
     background: url("../img/loading.png") no-repeat;
+    background:transparent;
     -webkit-background-size: cover;
     background-size: cover;
     -webkit-transform: scale(0.8);
@@ -38,19 +39,20 @@ body{ -wibkit-touch-callout: default; -webkit-user-select: none; }
     position: absolute;
     left: 0;
     top: 0;
-    background: url(../img/loading-hand.png) no-repeat;
-    -webkit-animation: loading 3s linear infinite;
+    background: url(../img/loading-hand.gif) no-repeat;
+    -webkit-transform: rotate(90deg);
+    /* -webkit-animation: loading 3s linear infinite; */
     -webkit-background-size: cover;
     background-size: cover;
 }
-@-webkit-keyframes loading {
+/* @-webkit-keyframes loading {
     0%{
         -webkit-transform: rotate(0);
     }
     100%{
         -webkit-transform: rotate(360deg);
     }
-}
+} */
 /*@-webkit-keyframes loadingAni{*/
     /*0%{*/
         /*background-position: 300px 0;*/
@@ -68,6 +70,8 @@ body{ -wibkit-touch-callout: default; -webkit-user-select: none; }
     font-size: 0.26rem;
     z-index: 100;
     font-weight: bolder;
+    margin-top:2rem;
+    -webkit-transform: rotate(90deg);
 }
 /*内容页*/
 .main{
