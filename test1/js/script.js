@@ -1699,7 +1699,7 @@ function pixiFn(){
         part7nmodelzu.addChild(part7nmodel1,part7nmodel2,part7nmodel3,part7nmodel4,part7nmodel5,part7nmodel6,part7nmodel7,part7nmodel8)
         part7.addChild(part7blueqiliu2,part7blueqiliu3,part7zhuzi6,part7zhuzi3,part7zhuzi5,part7doorzu,part7zhuzi4,part7swallow2,part7ye1,part7ye2,part7ye3,part7ye4,part7ye5,part7book2,part7blueqiliu1,part7pink2,part7nmodelzu);
         // part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
-        part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
+        part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model7,part5model8,part5model6)
         part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi8,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
         part5.addChild(part5pillars,part5denglonghu,part5redsan,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5cloudzu,changpian,part5modelzu,part5bluedenglong2);
         // part5.addChild(part5modelzu);
@@ -1935,11 +1935,11 @@ function scrollBegin(){
         }
 
         // 红伞漂落动画
-        if(7800 < scrollPro && scrollPro < 8686){
-            part1redsan.y = scrollNum(7800,8686,scrollPro,20,200);
-            part1redsan.x = scrollNum(7800,8686,scrollPro,8500,9000);
-            // part1redsan.alpha = scrollNum(7800,8686,scrollPro,1,0);
-        }
+        // if(7800 < scrollPro && scrollPro < 8686){
+        //     part1redsan.y = scrollNum(7800,8686,scrollPro,20,200);
+        //     part1redsan.x = scrollNum(7800,8686,scrollPro,8500,9000);
+        //     // part1redsan.alpha = scrollNum(7800,8686,scrollPro,1,0);
+        // }
 
         // 小梅花动画
         // if(9710 < scrollPro && scrollPro < 10600){
@@ -2294,6 +2294,60 @@ function scrollBegin(){
     //         }
     //     }
     //   }
+      
+     if(24244 < scrollPro && scrollPro < 24695){
+      part5model2.x  = scrollNum(24244,24695,scrollPro,180-100,180-100+100);
+      part5model3.x  = scrollNum(24244,24695,scrollPro,330-190,330-190+190);
+      part5model4.x  = scrollNum(24244,24695,scrollPro,530-320,530-320+320);
+      part5model5.x  = scrollNum(24244,24695,scrollPro,930-500,930-500+500);
+      part5model6.x  = scrollNum(24244,24695,scrollPro,1230-660,1230-660+660);
+      part5model7.x  = scrollNum(24244,24695,scrollPro,1730-800,1730-800+800);
+      part5model8.x  = scrollNum(24244,24695,scrollPro,1930-900,1930-900+900);
+     }
+
+
+  //    part5model2= createSprite("img/part5/model2.png",{
+  //     x:180-100,
+  //     y:180,
+  // });
+  // // part5model2.alpha = 0;
+  // // 模特3
+  // part5model3= createSprite("img/part5/model3.png",{
+  //     x:330-190,
+  //     y:48,
+  // });
+  // // part5model3.alpha = 0;
+  // // 模特4
+  // part5model4= createSprite("img/part5/model4.png",{
+  //     x:530-320,
+  //     y:60,
+  // });
+  // // part5model4.alpha = 0;
+  // // 模特5
+  // part5model5= createSprite("img/part5/model5.png",{
+  //     x:930-500,
+  //     y:10,
+  // });
+  // // part5model5.alpha = 0;
+  // // 模特6
+  // part5model6= createSprite("img/part5/model6.png",{
+  //     x:1230-660,
+  //     y:60,
+  // });
+  // // part5model6.alpha = 0;
+
+  // // 模特7
+  // part5model7= createSprite("img/part5/model7.png",{
+  //     x:1730-800,
+  //     y:135,
+  // });
+  // // part5model7.alpha = 0;
+
+  //  // 模特8
+  //  part5model8= createSprite("img/part5/model8.png",{
+  //     x:1930-900,
+  //     y:150,
+  // });
 
       // 24506.77907118165 changpianImg
       if(23700 < scrollPro && scrollPro < 25000){
@@ -2432,21 +2486,21 @@ function scrollBegin(){
 
 
       // part7nmodelzu
-      if(33414 < scrollPro && scrollPro < 35965){
-        for(var i = 0; i < 9; i++){
-            var num1 = 33414+ (35965-33414)/9 * i;
-            var num2 = 33414+ (35965-33414)/9* (i+1);
-            if(num1 < scrollPro && scrollPro < num2){
-                for(var j = 0; j < part7nmodelzu.children.length;j++){
-                    if(j >= i){
-                        part7nmodelzu.children[j].alpha = 0;
-                    }else{
-                        part7nmodelzu.children[j].alpha = 1;
-                    }
-                }
-            }
-        }
-      }
+      // if(33414 < scrollPro && scrollPro < 35965){
+      //   for(var i = 0; i < 9; i++){
+      //       var num1 = 33414+ (35965-33414)/9 * i;
+      //       var num2 = 33414+ (35965-33414)/9* (i+1);
+      //       if(num1 < scrollPro && scrollPro < num2){
+      //           for(var j = 0; j < part7nmodelzu.children.length;j++){
+      //               if(j >= i){
+      //                   part7nmodelzu.children[j].alpha = 0;
+      //               }else{
+      //                   part7nmodelzu.children[j].alpha = 1;
+      //               }
+      //           }
+      //       }
+      //   }
+      // }
     //   第八部分
     // 小飞天和大飞天动画
     if(37091 < scrollPro && scrollPro < 37480){
