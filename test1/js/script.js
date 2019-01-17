@@ -1239,7 +1239,7 @@ function pixiFn(){
       part7swallow2.scale.set(2,2)
 
        part7doorzu=new PIXI.Container();
-       // part7.x = 26300+700+2200+900+300;
+      //  part7.x = 26300+700+2200+900+300;
        part7doorzu.x = 2300;
        part7doorzu.y = 0;
 
@@ -1266,33 +1266,34 @@ function pixiFn(){
       part7swallow4.scale.set(0.7,0.7)
         
        // 门1
-       part7door1=createSprite("img/part7/door1.png",{
-        x:600,
+       part7door3=createSprite("img/part7/door1.png",{
+        x:600-400,
         y:-80,
        })
     //    part7swallow2.scale.set(0.5,0.5)
     //    part7door1.alpha = 0;
        // 门2
        part7door2=createSprite("img/part7/door2.png",{
-        x:200,
+        x:200-200,
         y:0,
        })
     //    part7door2.alpha = 0;
 
        // 门3
-       part7door3=createSprite("img/part7/door3.png",{
+       part7door1=createSprite("img/part7/door3.png",{
         x:-250,
         y:0,
        })
     //    part7door3.alpha = 0;
 
-       part7doors.addChild(part7door3,part7door2,part7door1)
+       part7doors.addChild(part7door1,part7door2,part7door3)
        part7doorzu.addChild(part7swallow3,part7swallow4,part7doors,part1text8);
         // 书2
         part7book2=createSprite("img/part7/book2.png",{
-            x:3000,
+            x:3000+50,
             y:60,
            })
+        part7book2.alpha = 0;   
         // 竹叶1
         part7ye1=createSprite("img/part7/ye1.png",{
             x:3000,
@@ -2338,6 +2339,20 @@ function scrollBegin(){
       part5model8.x  = scrollNum(24244,24695,scrollPro,1930-900,1930-900+900);
      }
 
+     if(32249  < scrollPro && scrollPro < 32518){
+      part7door2.x = scrollNum(32249,32518,scrollPro,200-200,200-200+200);
+      part7door3.x = scrollNum(32249,32518,scrollPro,600-400,600-400+400);
+     }
+
+     if(33017  < scrollPro && scrollPro < 33017+200){
+       part7book2.x = scrollNum(33017,33017+200,scrollPro,3000+50,3000+100);
+       part7book2.alpha = scrollNum(33017,33017+200,scrollPro,0,1);
+     }
+
+    //  part7book2=createSprite("img/part7/book2.png",{
+    //   x:3000+100,
+    //   y:60,
+    //  })
 
   //    part5model2= createSprite("img/part5/model2.png",{
   //     x:180-100,
@@ -2492,27 +2507,27 @@ function scrollBegin(){
     //   }
     //   三扇门动画
       if(32445 < scrollPro && scrollPro < 32640){
-        part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
-        part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
-        part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door1.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door2.x =scrollNum(32445,32640,scrollPro,300,250);
-        part7door2.y =scrollNum(32445,32640,scrollPro,0,50);
-        part7door2.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door2.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door3.x =scrollNum(32445,32640,scrollPro,-250,-200);
-        part7door3.y =scrollNum(32445,32640,scrollPro,0,30);
-        part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,1.2);
-        part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
+        // part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
+        // part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
+        // part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+        // part7door1.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+        // part7door2.x =scrollNum(32445,32640,scrollPro,300,250);
+        // part7door2.y =scrollNum(32445,32640,scrollPro,0,50);
+        // part7door2.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+        // part7door2.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+        // part7door3.x =scrollNum(32445,32640,scrollPro,-250,-200);
+        // part7door3.y =scrollNum(32445,32640,scrollPro,0,30);
+        // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,1.2);
+        // part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
         // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
         // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
       }
-      if(32990 < scrollPro && scrollPro < 33210){
-        part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
-        part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
-        part7door3.alpha =scrollNum(32990,33210,scrollPro,1,0);
+      // if(32990 < scrollPro && scrollPro < 33210){
+      //   part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
+      //   part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
+      //   part7door3.alpha =scrollNum(32990,33210,scrollPro,1,0);
         
-      }
+      // }
 
      
 
@@ -2546,28 +2561,28 @@ function scrollBegin(){
        
     //   }
     //   三扇门动画
-      if(32445 < scrollPro && scrollPro < 32640){
-        part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
-        part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
-        part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door1.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door2.x =scrollNum(32445,32640,scrollPro,300,250);
-        part7door2.y =scrollNum(32445,32640,scrollPro,0,50);
-        part7door2.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door2.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
-        part7door3.x =scrollNum(32445,32640,scrollPro,-250,-200);
-        part7door3.y =scrollNum(32445,32640,scrollPro,0,30);
-        part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,1.2);
-        part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
-        // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-        // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-      }
-      if(32990 < scrollPro && scrollPro < 33210){
-        part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
-        part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
-        part7door3.alpha =scrollNum(32990,33210,scrollPro,1,0);
+      // if(32445 < scrollPro && scrollPro < 32640){
+      //   part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
+      //   part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
+      //   part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+      //   part7door1.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+      //   part7door2.x =scrollNum(32445,32640,scrollPro,300,250);
+      //   part7door2.y =scrollNum(32445,32640,scrollPro,0,50);
+      //   part7door2.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+      //   part7door2.scale.y =scrollNum(32445,32640,scrollPro,1,0.8);
+      //   part7door3.x =scrollNum(32445,32640,scrollPro,-250,-200);
+      //   part7door3.y =scrollNum(32445,32640,scrollPro,0,30);
+      //   part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,1.2);
+      //   part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
+      //   // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+      //   // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
+      // }
+      // if(32990 < scrollPro && scrollPro < 33210){
+      //   part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
+      //   part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
+      //   part7door3.alpha =scrollNum(32990,33210,scrollPro,1,0);
         
-      }
+      // }
     //   第八部分
     // 小飞天和大飞天动画
     if(37091 < scrollPro && scrollPro < 37480){
