@@ -230,9 +230,31 @@ var loadThenFlag = false;
 
 function loadThen(){
   loader2 = new PIXI.loaders.Loader();
-  // test1/img/audio/nizhidaoma.mp3
-  loader2.add("nzdm","img/audio/nizhidaoma.mp3");
-
+  loader2.add("nzdm","img/audio/nizhidaoma.mp3")
+        //  声音2
+         .add("zz18sj","img/audio/zaozai18shij.mp3")
+         //  声音3
+         .add("jss","img/audio/jiangshishang.mp3")
+         //  声音4
+        //  .add("brwq","img/audio/baorongwanq.mp3")
+        //  //  声音5
+        //  .add("ljmx","img/audio/lijiumixin.mp3")
+        //  //  声音6
+        //  .add("zs","img/audio/zongshi.mp3")
+        //  //  声音7
+        //  .add("cggl","img/audio/conggailiang.mp3")
+        //  //  声音8
+        //  .add("yylc","img/audio/yuanyuanliuchang.mp3")
+        //  //  声音9
+        //  .add("ssys","img/audio/shishangyuansu.mp3")
+        //  //  声音10
+        //  .add("yrmg","img/audio/yirumingan.mp3")
+        //  //  声音11
+        //  .add("cdljg","img/audio/chendianljige.mp3")
+        //  //  声音12
+        //  .add("symk","img/audio/sanyuanmilk.mp3")
+        //  //  声音13
+        //  .add("zhzm","img/audio/zhonghua.mp3")
   loader2.load(function(loader){
       // loader.resources.bgm.sound.loop = true;
       loadThenFlag = true;
@@ -247,7 +269,32 @@ function musicPause(){
   loader.resources.bgm.sound.pause();
 
   if(loadThenFlag){
+    //   声音1
       loader2.resources.nzdm.sound.pause();
+       //   声音2
+      loader2.resources.jss.sound.pause();
+       //   声音3
+      loader2.resources.brwq.sound.pause();
+       //   声音4
+    //   loader2.resources.ljmx.sound.pause();
+    //    //   声音5
+    //   loader2.resources.zs.sound.pause();
+    //    //   声音6
+    //   loader2.resources.cggl.sound.pause();
+    //    //   声音8
+    //   loader2.resources.yylc.sound.pause();
+
+    //    //   声音9
+    //   loader2.resources.ssys.sound.pause();
+    //    //   声音10
+    //   loader2.resources.yrmg.sound.pause();
+    //    //   声音11
+    //   loader2.resources.cdljg.sound.pause();
+    //    //   声音12
+    //   loader2.resources.symk.sound.pause();
+    //    //   声音13
+    //   loader2.resources.zhzm.sound.pause();
+      
   }
 }
 
@@ -2716,6 +2763,7 @@ function scrollBegin(){
 
     // 声音 /////////////////////////////////
     if(loadThenFlag){
+        // 你知道吗 声音1
           if(550 < scrollPro && scrollPro < 700){
             if(!loader2.resources.nzdm.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
                 loader2.resources.nzdm.sound.volume = 1;
@@ -2725,6 +2773,137 @@ function scrollBegin(){
           }else{
               loader2.resources.nzdm.sound.flag = true;
           }
+        //   早在18世纪 声音2
+          if(2178 < scrollPro && scrollPro < 3084){
+            if(!loader2.resources.zz18sj.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.zz18sj.sound.volume = 1;
+                loader2.resources.zz18sj.sound.play();
+                loader2.resources.zz18sj.sound.flag = false;
+            }
+          }else{
+              loader2.resources.zz18sj.sound.flag = true;
+          }
+
+          //   早在18世纪 声音3
+          if(2178 < scrollPro && scrollPro < 3084){
+            if(!loader2.resources.jss.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.jss.sound.volume = 1;
+                loader2.resources.jss.sound.play();
+                loader2.resources.jss.sound.flag = false;
+            }
+          }else{
+              loader2.resources.jss.sound.flag = true;
+          }
+
+        //   //    包容万千 声音4
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.brwq.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.brwq.sound.volume = 1;
+        //         loader2.resources.brwq.sound.play();
+        //         loader2.resources.brwq.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.brwq.sound.flag = true;
+        //   }
+
+        //   //   历久弥新 声音5
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.ljmx.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.ljmx.sound.volume = 1;
+        //         loader2.resources.ljmx.sound.play();
+        //         loader2.resources.ljmx.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   纵使 声音6
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.zs.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.zs.sound.volume = 1;
+        //         loader2.resources.zs.sound.play();
+        //         loader2.resources.zs.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   从古改良 声音7
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.cggl.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.cggl.sound.volume = 1;
+        //         loader2.resources.cggl.sound.play();
+        //         loader2.resources.cggl.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //    //   源远流长 声音8
+        //    if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.yylc.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.yylc.sound.volume = 1;
+        //         loader2.resources.yylc.sound.play();
+        //         loader2.resources.yylc.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   时尚元素 声音9
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.ssys.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.ssys.sound.volume = 1;
+        //         loader2.resources.ssys.sound.play();
+        //         loader2.resources.ssys.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   源远流长 声音10
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.yrmg.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.yrmg.sound.volume = 1;
+        //         loader2.resources.yrmg.sound.play();
+        //         loader2.resources.yrmg.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   沉淀了几个 声音11
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.cdljg.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.cdljg.sound.volume = 1;
+        //         loader2.resources.cdljg.sound.play();
+        //         loader2.resources.cdljg.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   三元牛奶 声音12
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.symk.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.symk.sound.volume = 1;
+        //         loader2.resources.symk.sound.play();
+        //         loader2.resources.symk.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
+
+        //   //   中华之美 声音13
+        //   if(2178 < scrollPro && scrollPro < 3084){
+        //     if(!loader2.resources.zhzm.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.zhzm.sound.volume = 1;
+        //         loader2.resources.zhzm.sound.play();
+        //         loader2.resources.zhzm.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.jss.sound.flag = true;
+        //   }
     }
 
  
