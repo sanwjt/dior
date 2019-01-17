@@ -620,6 +620,26 @@ function pixiFn(){
             x:0,
             y:-300,
           });
+        // 光1
+        part1light1 = createSprite("img/part3/light1.png",{
+            x:0,
+            y:0,
+        });
+         // 光2
+         part1light2 = createSprite("img/part3/light2.png",{
+            x:1300,
+            y:540,
+        });
+        // 烟
+        part1smoke = createSprite("img/part3/smoke.png",{
+            x:3200,
+            y:-80,
+        });
+        // 云
+        part1cloud = createSprite("img/part3/cloud.png",{
+            x:500,
+            y:0,
+        });
         // //   房屋1
         part1house1 = createSprite("img/part4/house1.png",{
             x:100,
@@ -694,6 +714,18 @@ function pixiFn(){
         part1birdfly5.scale.set(0.5,0.5);
         part1birdfly5.scale.set(0.5,0.5);
         part1birdfly5.rotation=-0.3
+
+        // 梅花后的中仙鹤后的雾
+        part1birdflywu = createSprite("img/part4/birdflywu.png",{
+            x:6300,
+            y:200,
+        });
+
+        // 梅花后的大仙鹤后的雾
+        part1bigbirdflywu = createSprite("img/part4/bigbirdflywu.png",{
+            x:4000,
+            y:200,
+        });
       
          // 历久弥新 text5
          part1text5=createSprite("img/part1/text5.png",{
@@ -783,6 +815,17 @@ function pixiFn(){
         part1text6= createSprite("img/part5/text6.png",{
             x:6700,
             y:306,
+        });
+        // 唱片后的云1
+        part1changyun1= createSprite("img/part5/changyun1.png",{
+            x:600,
+            y:-100,
+        });
+
+        // 柱子底部的烟
+        part1zhuzismoke= createSprite("img/part5/zhuziyan.png",{
+            x:800,
+            y:100,
         });
         // 柱子逐渐显示
         part5pillars=new PIXI.Container();
@@ -1069,6 +1112,12 @@ function pixiFn(){
             x:200,
             y:0,
         })
+        // 底部水汽
+          // 大竹子后的云
+          part6bigtreeyun=createSprite("img/part6/bigtreeyun.png",{
+            x:230,
+            y:0,
+        })
         // part6雾1
         part6wu1=createSprite("img/part6/wu1.png",{
                     x:200,
@@ -1201,7 +1250,7 @@ function pixiFn(){
             y:200
         })
 
-        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6peos,part6treesmount)
+        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtreeyun,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6peos,part6treesmount)
 
 
         // 竹子&&门
@@ -1716,10 +1765,10 @@ function pixiFn(){
         // part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi8,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
-        part5.addChild(part5pillars,part5denglonghu,part5redsan,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5cloudzu,changpian,part5modelzu,part5bluedenglong2,part1text6);
+        part5.addChild(part1changyun1,part1zhuzismoke,part5pillars,part5denglonghu,part5redsan,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5cloudzu,changpian,part5modelzu,part5bluedenglong2,part1text6);
         // part5.addChild(part5modelzu);
         
-        part1BirdFly.addChild(part1house1,part1country1,part1house3,part1sflower,part1bflower,part1house2,part1mountains,part1sunrise,part1birdfly1,part1yumao1,part1meihua,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1text4);
+        part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
 
         part1.addChild(part1ClouCover,part1HandMove,part1BirdSun,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
@@ -2185,6 +2234,8 @@ function scrollBegin(){
     // 灯笼组动画
     if(23749 < scrollPro && scrollPro < 24140){
         part5denglongzu.x=scrollNum(23749,24140,scrollPro,3300,3000);
+        part5whitedenglong.x=scrollNum(23749,24140,scrollPro,4200,4100);
+
     }
     
     // 夜上海门的动画
