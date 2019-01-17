@@ -1464,17 +1464,17 @@ function pixiFn(){
         // 气流2
         part7blueqiliu2=createSprite("img/part7/blueqiliu2.png",{
             x:-150,
-            y:200,
+            y:530,
            })
         // 气流1
         part7blueqiliu1=createSprite("img/part7/blueqiliu1.png",{
             x:1500,
-            y:180,
+            y:510,
            })
         // 气流3
         part7blueqiliu3=createSprite("img/part7/blueqiliu3.png",{
             x:1400,
-            y:100,
+            y:530,
            })
         // 新模特组
         part7nmodelzu=new PIXI.Container();
@@ -2717,32 +2717,45 @@ function scrollBegin(){
 
 
     // // 第九部分
-    // // 侍女1错位移动
-    // if(0 < scrollPro && scrollPro < 1000){
-    //     part9maid1.x=scrollNum(0,1000,scrollPro,200,200-104);
-    //   }
+    // 侍女1错位移动
+    if(38625 < scrollPro && scrollPro < 39167){
+        part9maid1.x=scrollNum(38625,39167,scrollPro,200,200-104);
+      }
     // // 侍女2错位移动
-    // if(0 < scrollPro && scrollPro < 1000){
-    //     part9maid2.x=scrollNum(0,1000,scrollPro,600,-500);
-    //   }
+    if(38625 < scrollPro && scrollPro < 39167){
+        part9maid2.x=scrollNum(38625,39167,scrollPro,600,400);
+      }
     // // 城门错位移动
-    // if(534 < scrollPro && scrollPro < 1145){
-    //     part9men2.x=scrollNum(534,1145,scrollPro,1000,-100);
-    //   }
+    if(39260 < scrollPro && scrollPro < 40172){
+        part9men2.x=scrollNum(39260,40172,scrollPro,1000,800);
+      }
     // // 香炉错位移动
-    // if(708 < scrollPro && scrollPro < 1158){
-    //     part9stoves.x=scrollNum(708,1158,scrollPro,1000,0);
-    //   }
+    if(39900 < scrollPro && scrollPro < 40298){
+        part9stoves.x=scrollNum(39900,40298,scrollPro,1000,780);
+      }
 
     // // 仙鹤飞人奶盒
-    // if(2744 < scrollPro && scrollPro < 3400){
-    //     part9birdfly.x = scrollNum(2744,3400,scrollPro,2800,2800+1334);
-    //     part9birdfly.y = scrollNum(2744,3400,scrollPro,320,320-38);
-    //     part9birdfly.scale.x=scrollNum(2744,3400,scrollPro,1,0.3);
-    //     part9birdfly.scale.y=scrollNum(2744,3400,scrollPro,1,0.3);
-    //     part9birdfly.rotation = scrollNum(2744,3400,scrollPro,0,-0.4)
-    //     part9birdfly.alpha = scrollNum(2744,3400,scrollPro,1,0);
-    //   }
+    if(42231 < scrollPro && scrollPro < 42523){
+        part9birdfly.x = scrollNum(42231,42523,scrollPro,2800,2800+1334);
+        part9birdfly.y = scrollNum(42231,42523,scrollPro,320,320-38);
+        part9birdfly.scale.x=scrollNum(42231,42523,scrollPro,1,0.3);
+        part9birdfly.scale.y=scrollNum(42231,42523,scrollPro,1,0.3);
+        part9birdfly.rotation = scrollNum(42231,42523,scrollPro,0,-0.4)
+        part9birdfly.alpha = scrollNum(42231,42523,scrollPro,1,0);
+      }
+
+    //   奶盒缩小
+    if(42522 < scrollPro && scrollPro < 42815){
+        part9redbox.x = scrollNum(42523,42815,scrollPro,3700,3500);
+        part9redbox.y = scrollNum(42523,42815,scrollPro,20,100);
+        part9redbox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
+        part9redbox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
+        part9bluebox.x = scrollNum(42523,42815,scrollPro,4000,3800);
+        part9bluebox.y = scrollNum(42523,42815,scrollPro,10,100);
+        part9bluebox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
+        part9bluebox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
+        
+      }
 
 
     // 声音 /////////////////////////////////
