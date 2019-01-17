@@ -460,7 +460,7 @@ function pixiFn(){
           });
           part1bird2.alpha=0;
         // 仙鹤3
-        part1bird3 = createSprite("img/part2/bird3.png",{
+        part1bird3 = createSprite("img/part2/bird3.gif",{
             x:400,
             y:94,
           });
@@ -481,7 +481,7 @@ function pixiFn(){
          // 湖水
          part1hushui = createSprite("img/part2/hushui.png",{
             x:100,
-            y:25,
+            y:70,
           });
         
         part1BirdSun.addChild(part1bigsun,part1land,part1hushui,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
@@ -600,14 +600,14 @@ function pixiFn(){
 
          // 小梅花
         part1sflower = createSprite("img/part3/sflower.png",{
-            x:-100,
+            x:-700,
             y:100,
         
         });
 
         // 大梅花
         part1bflower = createSprite("img/part3/bflower.png",{
-            x:0,
+            x:-600,
             y:368,
         
         });
@@ -679,11 +679,11 @@ function pixiFn(){
         });
 
         // 羽毛2
-        part1yumao2 = createSprite("img/part4/yumao.png",{
+        part1yumao2 = createSprite("img/part4/yumao2.png",{
             x:3500,
             y:100,
         });
-        part1yumao2.scale.set(0.4,0.4);
+        part1yumao2.scale.set(0.6,0.6);
    
         // 房屋2
         part1house2 = createSprite("img/part4/house2.png",{
@@ -740,7 +740,12 @@ function pixiFn(){
             x:4600,
             y:240+50,
         });
-        // part1mountains.alpha = 0;
+
+        // 群山1后的伞
+        part1mountainssan = createSprite("img/part4/mountainssan.png",{
+            x:4400,
+            y:60,
+        });
 
         // 梅花
         part1meihua= createSprite("img/part4/meihua.png",{
@@ -815,7 +820,7 @@ function pixiFn(){
 
         // 纵使见证东方魅力
         part1text6= createSprite("img/part5/text6.png",{
-            x:6700,
+            x:7200,
             y:306,
         });
         // 唱片后的云1
@@ -833,108 +838,113 @@ function pixiFn(){
         part5pillars=new PIXI.Container();
         part5pillars.x = 1100;
         part5pillars.y = 0;
-        part5zu1=createSprite("img/part5/zu1.png",{
-                x:200,
-                y:200,
-              
+        part5zhuzi=createSprite("img/part5/zhuzichang.png",{
+                        x:80,
+                        y:100,
          });
-        part5zu2=createSprite("img/part5/zu2.png",{
-            x:200,
-            y:100,
+   
+    //     part5zu1=createSprite("img/part5/zu1.png",{
+    //             x:200,
+    //             y:200,
+              
+    //      });
+    //     part5zu2=createSprite("img/part5/zu2.png",{
+    //         x:200,
+    //         y:100,
        
-     });
+    //  });
 
-        var part5zhuzi1 = createSprite("img/part5/zhuzi.png",{
-            x:300,
-            y:150,
-           alpha:0,
-        });
-        part5zhuzi1.scale.set(0.2,0.2);
+        // var part5zhuzi1 = createSprite("img/part5/zhuzi.png",{
+        //     x:300,
+        //     y:150,
+        //    alpha:0,
+        // });
+        // part5zhuzi1.scale.set(0.2,0.2);
 
-        var part5zhuzi2 = createSprite("img/part5/zhuzi.png",{
-            x:400,
-            y:120,
-            alpha:0,
-        });
-        part5zhuzi2.scale.set(0.4,0.4);
+        // var part5zhuzi2 = createSprite("img/part5/zhuzi.png",{
+        //     x:400,
+        //     y:120,
+        //     alpha:0,
+        // });
+        // part5zhuzi2.scale.set(0.4,0.4);
         
-        var part5zhuzi3 = createSprite("img/part5/zhuzi.png",{
-            x:500,
-            y:100,
-            alpha:0
-        });
-        part5zhuzi3.scale.set(0.6,0.6);
+        // var part5zhuzi3 = createSprite("img/part5/zhuzi.png",{
+        //     x:500,
+        //     y:100,
+        //     alpha:0
+        // });
+        // part5zhuzi3.scale.set(0.6,0.6);
 
-        var part5zhuzi4 = createSprite("img/part5/zhuzi.png",{
-            x:600,
-            y:80,
-            alpha:0
-        });
-        part5zhuzi4.scale.set(0.8,0.8);
+        // var part5zhuzi4 = createSprite("img/part5/zhuzi.png",{
+        //     x:600,
+        //     y:80,
+        //     alpha:0
+        // });
+        // part5zhuzi4.scale.set(0.8,0.8);
         
-        var part5zhuzi5 = createSprite("img/part5/zhuzi.png",{
-            x:700,
-            y:60,
-            alpha:0
-        });
-        part5zhuzi5.scale.set(1,1);
+        // var part5zhuzi5 = createSprite("img/part5/zhuzi.png",{
+        //     x:700,
+        //     y:60,
+        //     alpha:0
+        // });
+        // part5zhuzi5.scale.set(1,1);
 
             
-        var part5zhuzi6 = createSprite("img/part5/zhuzi.png",{
-            x:800,
-            y:60,
-            alpha:0
-        });
-        part5zhuzi6.scale.set(0.8,0.8);
+        // var part5zhuzi6 = createSprite("img/part5/zhuzi.png",{
+        //     x:800,
+        //     y:60,
+        //     alpha:0
+        // });
+        // part5zhuzi6.scale.set(0.8,0.8);
         
-        var part5zhuzi7 = createSprite("img/part5/zhuzi.png",{
-            x:900,
-            y:80,
-            alpha:0
-        });
-        part5zhuzi7.scale.set(0.6,0.6);
+        // var part5zhuzi7 = createSprite("img/part5/zhuzi.png",{
+        //     x:900,
+        //     y:80,
+        //     alpha:0
+        // });
+        // part5zhuzi7.scale.set(0.6,0.6);
 
-        var part5zhuzi8 = createSprite("img/part5/zhuzi.png",{
-            x:1000,
-            y:100,
-            alpha:0
-        });
-        part5zhuzi8.scale.set(0.4,0.4);
+        // var part5zhuzi8 = createSprite("img/part5/zhuzi.png",{
+        //     x:1000,
+        //     y:100,
+        //     alpha:0
+        // });
+        // part5zhuzi8.scale.set(0.4,0.4);
 
-        var part5zhuzi9 = createSprite("img/part5/zhuzi.png",{
-            x:1100,
-            y:120,
-            alpha:0
-        });
-        part5zhuzi9.scale.set(0.6,0.6);
+        // var part5zhuzi9 = createSprite("img/part5/zhuzi.png",{
+        //     x:1100,
+        //     y:120,
+        //     alpha:0
+        // });
+        // part5zhuzi9.scale.set(0.6,0.6);
 
-        var part5zhuzi10 = createSprite("img/part5/zhuzi.png",{
-            x:1200,
-            y:100,
-            alpha:0
-        });
-        part5zhuzi10.scale.set(0.8,0.8);
+        // var part5zhuzi10 = createSprite("img/part5/zhuzi.png",{
+        //     x:1200,
+        //     y:100,
+        //     alpha:0
+        // });
+        // part5zhuzi10.scale.set(0.8,0.8);
 
-        var part5zhuzi11 = createSprite("img/part5/zhuzi.png",{
-            x:1300,
-            y:80,
-            alpha:0
-        });
-        part5zhuzi11.scale.set(1,1);
+        // var part5zhuzi11 = createSprite("img/part5/zhuzi.png",{
+        //     x:1300,
+        //     y:80,
+        //     alpha:0
+        // });
+        // part5zhuzi11.scale.set(1,1);
 
-        var part5zhuzi12 = createSprite("img/part5/zhuzi.png",{
-            x:1400,
-            y:60,
-            alpha:0
-        });
-        part5zhuzi12.scale.set(0.8,0.8);
+        // var part5zhuzi12 = createSprite("img/part5/zhuzi.png",{
+        //     x:1400,
+        //     y:60,
+        //     alpha:0
+        // });
+        // part5zhuzi12.scale.set(0.8,0.8);
 
-        var part5zhuzi13 = createSprite("img/part5/zhuzi.png",{
-            x:1500,
-            y:40,
-            alpha:0
-        });
-        part5zhuzi13.scale.set(0.6,0.6);
+        // var part5zhuzi13 = createSprite("img/part5/zhuzi.png",{
+        //     x:1500,
+        //     y:40,
+        //     alpha:0
+        // });
+        // part5zhuzi13.scale.set(0.6,0.6);
 
         // 模糊的灯笼
         part5denglonghu= createSprite("img/part6/denglong1.png",{
@@ -1170,6 +1180,18 @@ function pixiFn(){
             x:2200,
             y:0,
         })
+        
+       // 水汽 
+        part6watervapor=createSprite("img/part6/watervapor.png",{
+            x:2700,
+            y:200,
+        })
+
+        // 漂落
+        part6piaoluo=createSprite("img/part6/piaoluo.png",{
+            x:2800,
+            y:200,
+        })
 
          // 历久弥新 text7
          part1text6=createSprite("img/part1/text6.png",{
@@ -1252,7 +1274,7 @@ function pixiFn(){
             y:200
         })
 
-        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtreeyun,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6peos,part6treesmount)
+        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtreeyun,part6piaoluo,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6watervapor,part6peos,part6treesmount)
 
 
         // 竹子&&门
@@ -1345,7 +1367,7 @@ function pixiFn(){
             y:60,
            })
         // 竹叶1
-        part7ye1=createSprite("img/part7/ye1.png",{
+        part7ye=createSprite("img/part7/ye.png",{
             x:3000,
             y:60,
            })
@@ -1369,19 +1391,19 @@ function pixiFn(){
             x:3000,
             y:60,
            })
-        // 蓝丝绸1
-        part7blueqiliu1=createSprite("img/part7/blueqiliu1.png",{
-            x:1000,
-            y:100,
-           })
-        // 蓝丝绸2
+        // 气流2
         part7blueqiliu2=createSprite("img/part7/blueqiliu2.png",{
-            x:2000,
+            x:-150,
+            y:200,
+           })
+        // 气流1
+        part7blueqiliu1=createSprite("img/part7/blueqiliu1.png",{
+            x:1500,
             y:180,
            })
-        // 蓝丝绸3
+        // 气流3
         part7blueqiliu3=createSprite("img/part7/blueqiliu3.png",{
-            x:2000,
+            x:1400,
             y:100,
            })
         // 新模特组
@@ -1446,7 +1468,7 @@ function pixiFn(){
 
         // 第八部分
         part8 = new PIXI.Container();
-        part8.x = 26300+700+2200+900+300+200+6000;
+        part8.x = 26300+700+2200+900+300+200+6000+250;
         part8.y = 0;
         // part8.x = 0;
         // 编钟组
@@ -1498,7 +1520,7 @@ function pixiFn(){
 
         // 丝带1
         part8ribbon1=createSprite("img/part8/ribbon1.png",{
-            x:100,
+            x:-300,
             y:0,
         });
           // var app = new PIXI.Application(800, 600);
@@ -1757,19 +1779,20 @@ function pixiFn(){
         part9stoves.addChild(part9stove1,part9stove2,part9stove3)
         part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9signboard,part9text9)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
-        part8.addChild(part8chimes,flag1,flag2,part1text9,part8dancer1,part8dancer2,part8bird,part8dancer3,part8birdfly1,part8cloud8,part8petal1,part8petal1,part8petal2,part8sichou)
+        part8.addChild(part8chimes,flag1,flag2,part1text9,part8dancer1,part8dancer2,part8bird,part8dancer3,part8birdfly1,part8cloud8,part8petal1,part8petal2,part8petal2,part8sichou)
       // img/part6/zhuzi6.png
 
       // img/part6/zhuzi4.png
-        part7nmodelzu.addChild(part7nmodel1,part7nmodel2,part7nmodel3,part7nmodel4,part1text7,part7nmodel5,part7nmodel6,part7nmodel7,part7nmodel8)
-        part7.addChild(part7blueqiliu2,part7blueqiliu3,part7zhuzi6,part7zhuzi3,part7zhuzi5,part7doorzu,part7zhuzi4,part7swallow2,part7ye1,part7ye2,part7ye3,part7ye4,part7ye5,part7book2,part7blueqiliu1,part7pink2,part7nmodelzu);
+        part7nmodelzu.addChild(part7nmodel1,part7nmodel2,part7blueqiliu3,part7nmodel3,part7nmodel4,part1text7,part7nmodel5,part7nmodel6,part7nmodel7,part7nmodel8)
+        part7.addChild(part7blueqiliu2,part7zhuzi6,part7zhuzi3,part7zhuzi5,part7doorzu,part7zhuzi4,part7swallow2,part7ye,part7book2,part7blueqiliu1,part7pink2,part7nmodelzu);
         // part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
-        part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi8,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13);
+        // part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi8,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13,part5zhuzi);
+        part5pillars.addChild(part5zhuzi);
         part5.addChild(part1changyun1,part1zhuzismoke,part5pillars,part5denglonghu,part5redsan,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5cloudzu,changpian,part5modelzu,part5bluedenglong2,part1text6);
         // part5.addChild(part5modelzu);
         
-        part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
+        part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1mountainssan,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
 
         part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
@@ -2005,15 +2028,15 @@ function scrollBegin(){
         //     // part1redsan.alpha = scrollNum(7800,8686,scrollPro,1,0);
         // }
 
-        // // 小梅花动画
-        // if(9710 < scrollPro && scrollPro < 10600){
-        //     part1sflower.x = scrollNum(9710,10600,scrollPro,300,0);
-        // }
+        // 小梅花动画
+        if(9710 < scrollPro && scrollPro < 10600){
+            part1sflower.x = scrollNum(9710,10600,scrollPro,-700,-500);
+        }
 
-        // // 大梅花动画
-        //  if(9710 < scrollPro && scrollPro < 10600){
-        //     part1bflower.x = scrollNum(9710,10600,scrollPro,400,-180);
-        // }
+        // 大梅花动画
+         if(9710 < scrollPro && scrollPro < 10600){
+            part1bflower.x = scrollNum(9710,10600,scrollPro,-600,-300);
+        }
 
         // 房屋1动画
         if(10000 < scrollPro && scrollPro < 10450){
@@ -2132,6 +2155,9 @@ function scrollBegin(){
           }
        if(11743 < scrollPro && scrollPro < 12335){
                 part1birdfly1.alpha = scrollNum(11743,12335,scrollPro,1,0);
+                part1birdfly1.scale.x = scrollNum(11743,12335,scrollPro,1,1.1);
+                part1birdfly1.scale.y = scrollNum(11743,12335,scrollPro,1,1.1);
+
             }
           if(scrollPro > 13183){
             part1birdfly1.rotation =0;
@@ -2511,11 +2537,11 @@ function scrollBegin(){
     //   }
     if(28168 < scrollPro && scrollPro < 30220){
             
-            part6peo1.x =scrollNum(28168,29294,scrollPro,-800,-100);
-            part6peo2.x =scrollNum(28168,29294,scrollPro,-600,0);
-            part6peo3.x =scrollNum(28168,29294,scrollPro,-200,200);
-            part6peo4.x =scrollNum(28168,29294,scrollPro,1400,1300);
-            part6peo5.x =scrollNum(28168,29294,scrollPro,1600,1400);
+            part6peo1.x =scrollNum(28168,30220,scrollPro,-800,0);
+            part6peo2.x =scrollNum(28168,30220,scrollPro,-600,100);
+            part6peo3.x =scrollNum(28168,30220,scrollPro,-200,400);
+            part6peo4.x =scrollNum(28168,30220,scrollPro,1400,800);
+            part6peo5.x =scrollNum(28168,30220,scrollPro,1600,700);
             
        
       }
