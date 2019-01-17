@@ -235,26 +235,15 @@ function loadThen(){
          .add("zz18sj","img/audio/zaozai18shij.mp3")
          //  声音3
          .add("jss","img/audio/jiangshishang.mp3")
-         //  声音4
-        //  .add("brwq","img/audio/baorongwanq.mp3")
-        //  //  声音5
-        //  .add("ljmx","img/audio/lijiumixin.mp3")
-        //  //  声音6
-        //  .add("zs","img/audio/zongshi.mp3")
-        //  //  声音7
-        //  .add("cggl","img/audio/conggailiang.mp3")
-        //  //  声音8
-        //  .add("yylc","img/audio/yuanyuanliuchang.mp3")
-        //  //  声音9
-        //  .add("ssys","img/audio/shishangyuansu.mp3")
-        //  //  声音10
-        //  .add("yrmg","img/audio/yirumingan.mp3")
-        //  //  声音11
-        //  .add("cdljg","img/audio/chendianljige.mp3")
-        //  //  声音12
-        //  .add("symk","img/audio/sanyuanmilk.mp3")
-        //  //  声音13
-        //  .add("zhzm","img/audio/zhonghua.mp3")
+         .add("zzjgf","img/audio/zzjgf.mp3")
+         .add("zsdl","img/audio/zsdl.mp3")
+         .add("cgl","img/audio/cgl.mp3")
+         .add("zgf","img/audio/zgf.mp3")
+         .add("cangzhe","img/audio/cangzhe.mp3")
+         .add("mingan","img/audio/mingan.mp3")
+         .add("chendian","img/audio/chendian.mp3")
+         .add("sanyuan","img/audio/sanyuan.mp3")
+         .add("chuanzhonghua","img/audio/chuanzhonghua.mp3")
   loader2.load(function(loader){
       // loader.resources.bgm.sound.loop = true;
       loadThenFlag = true;
@@ -275,25 +264,20 @@ function musicPause(){
       loader2.resources.jss.sound.pause();
        //   声音3
       loader2.resources.brwq.sound.pause();
-       //   声音4
-    //   loader2.resources.ljmx.sound.pause();
-    //    //   声音5
-    //   loader2.resources.zs.sound.pause();
-    //    //   声音6
-    //   loader2.resources.cggl.sound.pause();
-    //    //   声音8
-    //   loader2.resources.yylc.sound.pause();
+      loader2.resources.zzjgf.sound.pause();
+      loader2.resources.zsdl.sound.pause();
+      loader2.resources.brwq.sound.pause();
+      loader2.resources.cgl.sound.pause();
+      loader2.resources.zgf.sound.pause();
+      loader2.resources.cangzhe.sound.pause();
+      loader2.resources.mingan.sound.pause();
+      loader2.resources.chendian.sound.pause();
+      loader2.resources.sanyuan.sound.pause();
+      loader2.resources.chuanzhonghua.sound.pause();
 
-    //    //   声音9
-    //   loader2.resources.ssys.sound.pause();
-    //    //   声音10
-    //   loader2.resources.yrmg.sound.pause();
-    //    //   声音11
-    //   loader2.resources.cdljg.sound.pause();
-    //    //   声音12
-    //   loader2.resources.symk.sound.pause();
-    //    //   声音13
-    //   loader2.resources.zhzm.sound.pause();
+
+
+
       
   }
 }
@@ -2774,26 +2758,123 @@ function scrollBegin(){
               loader2.resources.nzdm.sound.flag = true;
           }
         //   早在18世纪 声音2
-          if(2178 < scrollPro && scrollPro < 3084){
-            if(!loader2.resources.zz18sj.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
-                loader2.resources.zz18sj.sound.volume = 1;
-                loader2.resources.zz18sj.sound.play();
-                loader2.resources.zz18sj.sound.flag = false;
-            }
-          }else{
-              loader2.resources.zz18sj.sound.flag = true;
+        if(1308 < scrollPro && scrollPro < 2202){
+          if(!loader2.resources.zz18sj.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.zz18sj.sound.volume = 1;
+              loader2.resources.zz18sj.sound.play();
+              loader2.resources.zz18sj.sound.flag = false;
           }
+        }else{
+            loader2.resources.zz18sj.sound.flag = true;
+        }
 
-          //   早在18世纪 声音3
-          if(2178 < scrollPro && scrollPro < 3084){
-            if(!loader2.resources.jss.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
-                loader2.resources.jss.sound.volume = 1;
-                loader2.resources.jss.sound.play();
-                loader2.resources.jss.sound.flag = false;
-            }
-          }else{
-              loader2.resources.jss.sound.flag = true;
+
+        if(6750 < scrollPro && scrollPro < 7778){
+          if(!loader2.resources.jss.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.jss.sound.volume = 1;
+              loader2.resources.jss.sound.play();
+              loader2.resources.jss.sound.flag = false;
           }
+        }else{
+            loader2.resources.jss.sound.flag = true;
+        }
+
+
+
+        // 14238 15524
+
+        if(14238 < scrollPro && scrollPro < 15524){
+          if(!loader2.resources.zzjgf.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.zzjgf.sound.volume = 1;
+              loader2.resources.zzjgf.sound.play();
+              loader2.resources.zzjgf.sound.flag = false;
+          }
+        }else{
+            loader2.resources.zzjgf.sound.flag = true;
+        }
+
+        // 19983 20939
+
+        if(19983 < scrollPro && scrollPro < 20939){
+          if(!loader2.resources.zsdl.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.zsdl.sound.volume = 1;
+              loader2.resources.zsdl.sound.play();
+              loader2.resources.zsdl.sound.flag = false;
+          }
+        }else{
+            loader2.resources.zsdl.sound.flag = true;
+        }
+
+        // 26819 // 27908 cgl
+
+        if(26819 < scrollPro && scrollPro < 27908){
+          if(!loader2.resources.cgl.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.cgl.sound.volume = 1;
+              loader2.resources.cgl.sound.play();
+              loader2.resources.cgl.sound.flag = false;
+          }
+        }else{
+            loader2.resources.cgl.sound.flag = true;
+        }
+
+        // 30006 // 30962 zgf
+
+
+        if(30006 < scrollPro && scrollPro < 30962){
+          if(!loader2.resources.zgf.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.zgf.sound.volume = 1;
+              loader2.resources.zgf.sound.play();
+              loader2.resources.zgf.sound.flag = false;
+          }
+        }else{
+            loader2.resources.zgf.sound.flag = true;
+        }
+
+
+        // 36051 // 37151 cangzhe
+
+
+        if(36051 < scrollPro && scrollPro < 37151){
+          if(!loader2.resources.cangzhe.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.cangzhe.sound.volume = 1;
+              loader2.resources.cangzhe.sound.play();
+              loader2.resources.cangzhe.sound.flag = false;
+          }
+        }else{
+            loader2.resources.cangzhe.sound.flag = true;
+        }
+
+        // 38354  //39375 mingan
+        if(38354 < scrollPro && scrollPro < 39375){
+          if(!loader2.resources.mingan.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+              loader2.resources.mingan.sound.volume = 1;
+              loader2.resources.mingan.sound.play();
+              loader2.resources.mingan.sound.flag = false;
+          }
+        }else{
+            loader2.resources.mingan.sound.flag = true;
+        }
+
+
+      // .add("cgl","img/audio/cgl.mp3")
+      // .add("zgf","img/audio/zgf.mp3")
+      // .add("cangzhe","img/audio/cangzhe.mp3")
+      // .add("mingan","img/audio/mingan.mp3")
+      // .add("chendian","img/audio/chendian.mp3")
+      // .add("sanyuan","img/audio/sanyuan.mp3")
+      // .add("chuanzhonghua","img/audio/chuanzhonghua.mp3")
+        
+
+          // //   早在18世纪 声音3
+          // if(2178 < scrollPro && scrollPro < 3084){
+          //   if(!loader2.resources.jss.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+          //       loader2.resources.jss.sound.volume = 1;
+          //       loader2.resources.jss.sound.play();
+          //       loader2.resources.jss.sound.flag = false;
+          //   }
+          // }else{
+          //     loader2.resources.jss.sound.flag = true;
+          // }
 
         //   //    包容万千 声音4
         //   if(2178 < scrollPro && scrollPro < 3084){
