@@ -225,7 +225,7 @@ function v(){
 }
 
 // 音乐播放
-var musicOn = true;
+var musicOn = false;
 var loadThenFlag = false;
 
 function loadThen(){
@@ -508,11 +508,11 @@ function pixiFn(){
         // part1mountain2.alpha=0;
          // 湖水
          part1hushui = createSprite("img/part2/hushui.png",{
-            x:100,
-            y:70,
+            x:6963,
+            y:0,
           });
         
-        part1BirdSun.addChild(part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
+        part1BirdSun.addChild(part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2)
 
         // 第三部分
         // 将时尚 text3
@@ -1258,7 +1258,7 @@ function pixiFn(){
         
         // 人1
          part6peo1=createSprite("img/part6/peo1.png",{
-            x:-800,
+            x:-350,
             y:0,
         })
         // 人弹琴
@@ -1268,24 +1268,24 @@ function pixiFn(){
         })
         // 人2
         part6peo2=createSprite("img/part6/peo2.png",{
-            x:-600,
+            x:-250,
             y:100,
         })
         // 人3
         part6peo3=createSprite("img/part6/peo3.png",{
-            x:-200,
+            x:-180,
             y:0,
         })
         // 人4
         part6peo4=createSprite("img/part6/peo4.png",{
-            x:200+200+600+200+200,
-            x:1400,
+            x:200+200+200+500+200,
+            // x:1400,
             y:-150,
         })
         // 人5
         part6peo5=createSprite("img/part6/peo5.png",{
-            x:200+200+600+600,
-            x:1600,
+            x:200+200+200+500+250,
+            // x:1600,
             y:0,
         })
         // text7 从改良到原创
@@ -1817,7 +1817,7 @@ function pixiFn(){
         
         part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1mountainssan,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
 
-        part1.addChild(part1ClouCover,part1HandMove,part1BirdSun,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
+        part1.addChild(part1ClouCover,part1HandMove,part1hushui,part1BirdSun,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
@@ -2530,33 +2530,38 @@ function scrollBegin(){
 
        
     //   }
-    if(28168 < scrollPro && scrollPro < 30220){
-            
-            part6peo1.x =scrollNum(28168,30220,scrollPro,-800,0);
-            part6peo2.x =scrollNum(28168,30220,scrollPro,-600,100);
-            part6peo3.x =scrollNum(28168,30220,scrollPro,-200,400);
-            part6peo4.x =scrollNum(28168,30220,scrollPro,1400,800);
-            part6peo5.x =scrollNum(28168,30220,scrollPro,1600,700);
-            
-       
+    if(28341 < scrollPro && scrollPro < 29423){
+            part6peo1.x =scrollNum(28341,29423,scrollPro,-350,50);
+            part6peo2.x =scrollNum(28341,29423,scrollPro,-250,220);
+            part6peo3.x =scrollNum(28341,29423,scrollPro,-180,400);
+            part6peo4.x =scrollNum(28341,29423,scrollPro,200+200+200+500+200,200+200+200+350);
+            part6peo5.x =scrollNum(28341,29423,scrollPro,200+200+200+500+250,200+200+200+550);
       }
-      //   弹琴人左侧
-    //   if(29176 < scrollPro && scrollPro < 29294){
-    //     part6peo2.x =scrollNum(29176,29294,scrollPro,200,700);
-    //     part6peo1.x =scrollNum(29176,29294,scrollPro,0,600);
-    //     part6peo3.x =scrollNum(29176,29294,scrollPro,400,600);
-    //     part6peoqin.x=scrollNum(29176,29294,scrollPro,200+200+10,0);
-       
-    //   }
-      //   弹琴人右侧
-    //   if(29361 < scrollPro && scrollPro < 29869){
-    //     part6zhuzi3.x =scrollNum(29361,29869,scrollPro,520,0);
-    //     part6peo4.x =scrollNum(29176,29294,scrollPro,200+200+600,0);
-    //     part6peo5.x =scrollNum(29176,29653,scrollPro,200+200+600+600,200+200+600+600-600);
-       
+
+      // 30170 31883
+
+      if(30170 < scrollPro && scrollPro < 31883){
+        part7zhuzi5.x =scrollNum(30170,31883,scrollPro,0,-300);
+        part7zhuzi4.x =scrollNum(30170,31883,scrollPro,-150,-400);
+        // part6peo3.x =scrollNum(30170,31883,scrollPro,-180,400);
+        // part7zhuzi5.x =scrollNum(30170,31883,scrollPro,200+200+200+500+200,200+200+200+350);
+        // part6peo5.x =scrollNum(30170,31883,scrollPro,200+200+200+500+250,200+200+200+550);
+      }
+      // 竹子
+      // part7zhuzi5=createSprite("img/part6/zhuzi5.png",{
+      //   x:0,
+      //   y:0,
+      // })
+
+      // part7zhuzi4=createSprite("img/part6/zhuzi4.png",{
+      //   x:-150,
+      //   y:0,
+      // }) 
+
+
     //   }
     //   三扇门动画
-      if(32445 < scrollPro && scrollPro < 32640){
+      // if(32445 < scrollPro && scrollPro < 32640){
         // part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
         // part7door1.y =scrollNum(32445,32640,scrollPro,0,70);
         // part7door1.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
@@ -2571,7 +2576,7 @@ function scrollBegin(){
         // part7door3.scale.y =scrollNum(32445,32640,scrollPro,1,1.2);
         // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
         // part7door3.scale.x =scrollNum(32445,32640,scrollPro,1,0.8);
-      }
+      // }
       // if(32990 < scrollPro && scrollPro < 33210){
       //   part7door1.x =scrollNum(32990,33210,scrollPro,500,300);
       //   part7door2.x =scrollNum(32990,33210,scrollPro,250,100);
@@ -2585,31 +2590,7 @@ function scrollBegin(){
 
        
     //   }
-    if(28168 < scrollPro && scrollPro < 30220){
-            
-            part6peo1.x =scrollNum(28168,29294,scrollPro,-800,-100);
-            part6peo2.x =scrollNum(28168,29294,scrollPro,-600,0);
-            part6peo3.x =scrollNum(28168,29294,scrollPro,-200,200);
-            part6peo4.x =scrollNum(28168,29294,scrollPro,1400,1300);
-            part6peo5.x =scrollNum(28168,29294,scrollPro,1600,1400);
-            
-       
-      }
-      //   弹琴人左侧
-    //   if(29176 < scrollPro && scrollPro < 29294){
-    //     part6peo2.x =scrollNum(29176,29294,scrollPro,200,700);
-    //     part6peo1.x =scrollNum(29176,29294,scrollPro,0,600);
-    //     part6peo3.x =scrollNum(29176,29294,scrollPro,400,600);
-    //     part6peoqin.x=scrollNum(29176,29294,scrollPro,200+200+10,0);
-       
-    //   }
-      //   弹琴人右侧
-    //   if(29361 < scrollPro && scrollPro < 29869){
-    //     part6zhuzi3.x =scrollNum(29361,29869,scrollPro,520,0);
-    //     part6peo4.x =scrollNum(29176,29294,scrollPro,200+200+600,0);
-    //     part6peo5.x =scrollNum(29176,29653,scrollPro,200+200+600+600,200+200+600+600-600);
-       
-    //   }
+  
     //   三扇门动画
       // if(32445 < scrollPro && scrollPro < 32640){
       //   part7door1.x =scrollNum(32445,32640,scrollPro,600,500);
@@ -2690,9 +2671,9 @@ function scrollBegin(){
                 loader2.resources.nzdm.sound.play();
                 loader2.resources.nzdm.sound.flag = false;
             }
-        }else{
-            loader2.resources.nzdm.sound.flag = true;
-        }
+          }else{
+              loader2.resources.nzdm.sound.flag = true;
+          }
     }
 
  
