@@ -517,7 +517,7 @@ function pixiFn(){
         // 第三部分
         // 将时尚 text3
         part1text3 = createSprite("img/part1/text3.png",{
-            x:40,
+            x:7763,
             y:306,
         });
 
@@ -569,7 +569,7 @@ function pixiFn(){
         });
         part1sailing6.scale.set(1.0,1.0);
         
-        part1Sailing.addChild(part1sailing1,part1sailing2,part1sailing3,part1sailing4,part1sailing5,part1sailing6,part1text3);
+        part1Sailing.addChild(part1sailing1,part1sailing2,part1sailing3,part1sailing4,part1sailing5,part1sailing6);
 
         // 小船组
         part1Ship = new PIXI.Container();
@@ -824,7 +824,6 @@ function pixiFn(){
             y:240,
         });
 
-        
 
         timerCount.addChild(timerOuter)
         // "img/part5/chang.png",
@@ -838,7 +837,15 @@ function pixiFn(){
         });
         chang.pivot.x = 689;
         chang.pivot.y = 689;
-        changCount.addChild(chang)
+
+        chang1= createSprite("img/part5/chang.png",{
+          x:570,
+          y:320,
+        });
+        chang1.pivot.x = 689;
+        chang1.pivot.y = 689;
+
+        changCount.addChild(chang1,chang)
 
         // 时光机后的内容
         // 第五部分
@@ -1175,6 +1182,8 @@ function pixiFn(){
             y:0,
         })
         part6leves1.height=640;
+
+
         // part6leves1.height=640;
         // 粉色伞
         part6san1=createSprite("img/part6/ɡ2.png",{
@@ -1207,6 +1216,12 @@ function pixiFn(){
         part6treesmount=createSprite("img/part6/rockery.png",{
             x:2200,
             y:0,
+        })
+
+          // text7 从改良到原创
+        part1text7=createSprite("img/part1/text7.png",{
+            x:1600,
+            y:306,
         })
         
        // 水汽 
@@ -1288,12 +1303,7 @@ function pixiFn(){
             // x:1600,
             y:0,
         })
-        // text7 从改良到原创
-        part1text7=createSprite("img/part1/text7.png",{
-            x:200+200+600+600,
-            x:1600,
-            y:306,
-        })
+
 
         part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peo4,part6peo5,part6peoqin,)
         // 竹子3
@@ -1302,7 +1312,7 @@ function pixiFn(){
             y:200
         })
 
-        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtreeyun,part6piaoluo,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6watervapor,part6peos,part6treesmount)
+        part6.addChild(part6san3,part6bluedenglong,part6wu1,part6wu2,part6bigtreeyun,part6piaoluo,part6bigtree,part6san1,part6leves1,part6trees,part6swallow1,part6zhuzi1,part6zhuzi2,part6san2,part6zhuzi7,part6swallow2,part6watervapor,part6peos,part6treesmount,part1text7)
 
 
         // 竹子&&门
@@ -1350,7 +1360,7 @@ function pixiFn(){
 
        // 贯通古今汇中国text8
        part1text8=createSprite("img/part1/text8.png",{
-        x:-450,
+        x:400,
         y:306,
       })
 
@@ -1388,7 +1398,7 @@ function pixiFn(){
     //    part7door3.alpha = 0;
 
        part7doors.addChild(part7door1,part7door2,part7door3)
-       part7doorzu.addChild(part7swallow3,part7swallow4,part7doors,part1text8);
+       part7doorzu.addChild(part7swallow3,part7swallow4,part7doors);
         // 书2
         part7book2=createSprite("img/part7/book2.png",{
             x:3000+50,
@@ -1806,8 +1816,8 @@ function pixiFn(){
       // img/part6/zhuzi6.png
 
       // img/part6/zhuzi4.png
-        part7nmodelzu.addChild(part7nmodel1,part7nmodel2,part7blueqiliu3,part7nmodel3,part7nmodel4,part1text7,part7nmodel5,part7nmodel6,part7nmodel7,part7nmodel8)
-        part7.addChild(part7blueqiliu2,part7zhuzi6,part7zhuzi3,part7zhuzi5,part7doorzu,part7zhuzi4,part7swallow2,part7ye,part7book2,part7blueqiliu1,part7pink2,part7nmodelzu);
+        part7nmodelzu.addChild(part7nmodel1,part7nmodel2,part7blueqiliu3,part7nmodel3,part7nmodel4,part7nmodel5,part7nmodel6,part7nmodel7,part7nmodel8)
+        part7.addChild(part7blueqiliu2,part7zhuzi6,part7zhuzi3,part7zhuzi5,part7doorzu,part7zhuzi4,part1text8,part7swallow2,part7ye,part7book2,part7blueqiliu1,part7pink2,part7nmodelzu);
         // part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         part5modelzu.addChild(part5model1,part5model2,part5model3,part5model4,part5model5,part5model6,part5model7,part5model8)
         // part5pillars.addChild(part5zhuzi1,part5zhuzi2,part5zhuzi3,part5zhuzi4,part5zhuzi5,part5zhuzi6,part5zhuzi8,part5zhuzi10,part5zhuzi11,part5zhuzi12,part5zhuzi13,part5zhuzi);
@@ -1817,7 +1827,7 @@ function pixiFn(){
         
         part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1mountainssan,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
 
-        part1.addChild(part1ClouCover,part1HandMove,part1hushui,part1BirdSun,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
+        part1.addChild(part1ClouCover,part1HandMove,part1hushui,part1BirdSun,part1Sailing,part1Ship,part1text3,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
@@ -2187,20 +2197,19 @@ function scrollBegin(){
             // part1shou1.rotation=0.5;
             part1birdfly1.x = scrollNum(9356,13183,scrollPro,0,3840);
             part1birdfly1.y = scrollNum(9356,13183,scrollPro,-300,200);
-            console.log('2222 '+scrollNum(9356,13183,scrollPro,0.8,0))
             part1birdfly1.rotation = scrollNum(9356,13183,scrollPro,0.8,0); 
             
           }
        if(11743 < scrollPro && scrollPro < 12335){
                 part1birdfly1.alpha = scrollNum(11743,12335,scrollPro,1,0);
-                part1birdfly1.scale.x = scrollNum(11743,12335,scrollPro,1,1.1);
-                part1birdfly1.scale.y = scrollNum(11743,12335,scrollPro,1,1.1);
+                part1birdfly1.scale.x = scrollNum(11743,12335,scrollPro,0.5,0.8);
+                part1birdfly1.scale.y = scrollNum(11743,12335,scrollPro,0.5,0.8);
 
             }
-          if(scrollPro > 13183){
-            part1birdfly1.rotation =0;
+          // if(scrollPro > 13183){
+          //   part1birdfly1.rotation =0;
            
-          }
+          // }
         // if(11555 < scrollPro && scrollPro < 13183){
         //   part1birdfly1.rotation = scrollNum(11555,13183,scrollPro,0.8,0);
         // }    
@@ -2217,32 +2226,47 @@ function scrollBegin(){
         if(16600 < scrollPro && scrollPro < 18600){
           timerang.x =scrollNum(16600,18600,scrollPro,570,570+2000);
           yumao.x =scrollNum(16600,18600,scrollPro,570,570+2000);
-          timerang.scale.x =scrollNum(16600,18600,scrollPro,1.5,3);
-          timerang.scale.y =scrollNum(16600,18600,scrollPro,1.5,3)
+          // timerang.scale.x =scrollNum(16600,18600,scrollPro,1.5,3);
+          // timerang.scale.y =scrollNum(16600,18600,scrollPro,1.5,3)
           timerang.rotation = scrollNum(16600,18600,scrollPro,3,6);
           yumao.rotation = scrollNum(16600,18600,scrollPro,-0.99,-6);
           yumao.scale.x = scrollNum(16600,18600,scrollPro,1,0.2);
           yumao.scale.y = scrollNum(16600,18600,scrollPro,1,0.2);
+          chang.scale.x = scrollNum(16600,18600,scrollPro,1,1.2);
+          chang.scale.y = scrollNum(16600,18600,scrollPro,1,1.2);
+
+          chang1.scale.x = scrollNum(16600,18600,scrollPro,1,1.2);
+          chang1.scale.y = scrollNum(16600,18600,scrollPro,1,1.2);
+
           // timerang.alpha = scrollNum(15600,16600,scrollPro,1,0.5);
         }
-        if(18600 < scrollPro && scrollPro < 19600){
-          timerang.rotation = scrollNum(18600,19600,scrollPro,6,9);
-          yumao.rotation = scrollNum(18600,19600,scrollPro,-6,-9);
+ 
+        if(18600 < scrollPro && scrollPro < 20669){
+          timerang.rotation = scrollNum(18600,20669,scrollPro,6,9);
+          yumao.rotation = scrollNum(18600,20669,scrollPro,-6,-9);
+          chang.rotation = scrollNum(18600,20669,scrollPro,0,6);
+          chang1.rotation = scrollNum(18600,19600,scrollPro,0,8);
         }
 
-        if(18750 < scrollPro && scrollPro < 20350){
-          chang.x = scrollNum(18750,20350,scrollPro,570,570+1800);
-          chang.rotation = scrollNum(18750,20350,scrollPro,0,2);
-          chang.scale.x = scrollNum(18750,20350,scrollPro,1,0.7);
-          chang.scale.y = scrollNum(18750,20350,scrollPro,1,0.7);
+
+        if(19080 < scrollPro && scrollPro < 19180){
+          chang.x = scrollNum(19080,19180,scrollPro,570,570+260);
+          chang1.x = scrollNum(19080,19180,scrollPro,570,570+260);
+          // chang.scale.x = scrollNum(18750,18980,scrollPro,1,0.7);
+          // chang.scale.y = scrollNum(18750,18980,scrollPro,1,0.7);
         }
-        if(20350 < scrollPro && scrollPro < 22350){
-          chang.x = scrollNum(20350,22350,scrollPro,570+1800,570+2000+2000);
-          chang.y = scrollNum(20350,22350,scrollPro,320,0);
-          chang.rotation = scrollNum(20350,22350,scrollPro,2,6);
-          chang.scale.x = scrollNum(20350,22350,scrollPro,0.7,0.4);
-          chang.scale.y = scrollNum(20350,22350,scrollPro,0.7,0.4);
-        }     
+        if(19490< scrollPro && scrollPro < 19700){
+          chang1.x = scrollNum(19490,19700,scrollPro,570+260,570+260+510);
+          chang1.y = scrollNum(19490,19700,scrollPro,320,600);
+        }
+
+        // if(20350 < scrollPro && scrollPro < 22350){
+        //   chang.x = scrollNum(20350,22350,scrollPro,570+1800,570+2000+2000);
+        //   chang.y = scrollNum(20350,22350,scrollPro,320,0);
+        //   chang.rotation = scrollNum(20350,22350,scrollPro,2,6);
+        //   chang.scale.x = scrollNum(20350,22350,scrollPro,0.7,0.4);
+        //   chang.scale.y = scrollNum(20350,22350,scrollPro,0.7,0.4);
+        // }     
         
         // part1mountain2 y:404+100,
         if(6400 < scrollPro && scrollPro < 7440){
@@ -2393,28 +2417,55 @@ function scrollBegin(){
     //   }
 
     // 36053 36790
-      if(36053 < scrollPro && scrollPro < 36790){
-        for(var i = 0; i < 7; i++){
-            var num1 = 36053+ (36790-36053)/7 * i;
-            var num2 = 36053+ (36790-36053)/7* (i+1);
-            if(num1 < scrollPro && scrollPro < num2){
-                for(var j = 0; j < part8chimes.children.length;j++){
-                    if(j >= i){
-                      if (part8chimes.children[j].y===-370) return;
-                         part8chimes.children[j].y = -370;
-                    }else{
-                         if ( part8chimes.children[j].y===0) return;
-                         part8chimes.children[j].y = scrollNum(36053,36790,scrollPro,-370,0);
-                    }
-                   //  if(j == 0) part5denglongzu.children[0].alpha = 1;
-                }
-            }
-        }
+      // if(36053 < scrollPro && scrollPro < 36790){
+      //   for(var i = 0; i < 7; i++){
+      //       var num1 = 36053+ (36790-36053)/7 * i;
+      //       var num2 = 36053+ (36790-36053)/7* (i+1);
+      //       if(num1 < scrollPro && scrollPro < num2){
+      //           for(var j = 0; j < part8chimes.children.length;j++){
+      //               if(j >= i){
+      //                 if (part8chimes.children[j].y===-370) return;
+      //                    part8chimes.children[j].y = -370;
+      //               }else{
+      //                    if ( part8chimes.children[j].y===0) return;
+      //                    part8chimes.children[j].y = scrollNum(36053,36790,scrollPro,-370,0);
+      //               }
+      //              //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+      //           }
+      //       }
+      //   }
+      // }
+      // 36150 37010
+
+      if(36150 < scrollPro && scrollPro < 36150+120){
+        part8chime1.y =  scrollNum(36150, 36150+120,scrollPro,-370,0)
       }
 
-      // if(35940 < scrollPro && scrollPro < 35940+50){
-      //   part8chime1.y =  scrollNum(35940, 35940+50,scrollPro,-370,0)
-      // }
+      if(36150+120 < scrollPro && scrollPro < 36150+120*2){
+        part8chime2.y =  scrollNum(36150+120, 36150+120*2,scrollPro,-370,0)
+      }
+
+      if(36150+120*2 < scrollPro && scrollPro < 36150+120*3){
+        part8chime3.y =  scrollNum(36150+120*2, 36150+120*3,scrollPro,-370,0)
+      }
+
+
+      if(36150+120*3 < scrollPro && scrollPro < 36150+120*4){
+        part8chime4.y =  scrollNum(36150+120*3, 36150+120*4,scrollPro,-370,0)
+      }
+
+      if(36150+120*4 < scrollPro && scrollPro < 36150+120*5){
+        part8chime5.y =  scrollNum(36150+120*4, 36150+120*5,scrollPro,-370,0)
+      }
+
+      if(36150+120*6 < scrollPro && scrollPro < 36150+120*7){
+        part8chime6.y =  scrollNum(36150+120*6, 36150+120*7,scrollPro,-370,0)
+      }
+
+      if(36150+120*8 < scrollPro && scrollPro < 36150+120*9){
+        part8chime7.y =  scrollNum(36150+120*8, 36150+120*9,scrollPro,-370,0)
+      }
+      
 
       // if(35940+50 < scrollPro && scrollPro < 35940+100){
       //   part8chime2.y =  scrollNum(35940+50, 35940+100,scrollPro,-370,0)
