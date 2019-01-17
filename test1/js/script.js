@@ -40,8 +40,6 @@ var imgArr = [
     "img/part4/meihua.png",
     "img/part5/timeang.png",
     "img/part4/yumao.png",
-    "img/part5/text4.png",
-    "img/part5/chang.png",
     "img/part5/zhuzi.png",
     "img/part5/men.png",
     "img/part5/redsan.png",
@@ -90,7 +88,6 @@ var imgArr = [
     "img/part7/ye3.png",
     "img/part7/ye4.png",
     "img/part7/ye5.png",
-    "img/part7/blueqiliu1.png",
     "img/part7/blueqiliu2.png",
     "img/part7/blueqiliu3.png",
     "img/part7/nmodel1.png",
@@ -484,7 +481,7 @@ function pixiFn(){
             y:25,
           });
         
-        part1BirdSun.addChild(part1bigsun,part1land,part1hushui,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
+        part1BirdSun.addChild(part1bigsun,part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
 
         // 第三部分
         // 将时尚 text3
@@ -1407,43 +1404,43 @@ function pixiFn(){
         // 编钟1
         var part8chime1= createSprite("img/part8/chime.png",{
             x:300,
-            y:-20,
+            y:-310,
         });
         part8chime1.scale.set(0.2,0.2);
         // 编钟2
         var part8chime2 = createSprite("img/part8/chime.png",{
             x:400,
-            y:-25,
+            y:-310,
         });
         part8chime2.scale.set(0.3,0.3);
         // 编钟3
         var part8chime3 = createSprite("img/part8/chime.png",{
             x:520,
-            y:-30,    
+            y:-310,
         });
         part8chime3.scale.set(0.4,0.4);
         // 编钟4
         var part8chime4 = createSprite("img/part8/chime.png",{
             x:650,
-            y:-40,
+            y:-310,
         });
         part8chime4.scale.set(0.5,0.5);
         // 编钟5
         var part8chime5 = createSprite("img/part8/chime.png",{
             x:800,
-            y:-50,
+            y:-310,
         });
         part8chime5.scale.set(0.6,0.6);
         // 编钟6
         var part8chime6 = createSprite("img/part8/chime.png",{
             x:1000,
-            y:-40,
+            y:-310,
         });
         part8chime6.scale.set(0.7,0.7);
         // 编钟7
         var part8chime7 = createSprite("img/part8/chime.png",{
             x:1200,
-            y:-10,
+            y:-310,
         });
         part8chime7.scale.set(0.8,0.8);
 
@@ -2309,6 +2306,26 @@ function scrollBegin(){
     //         }
     //     }
     //   }
+
+    // 36053 36790
+      // if(36053 < scrollPro && scrollPro < 36790){
+      //   for(var i = 0; i < 7; i++){
+      //       var num1 = 36053+ (36790-36053)/7 * i;
+      //       var num2 = 36053+ (36790-36053)/7* (i+1);
+      //       if(num1 < scrollPro && scrollPro < num2){
+      //           for(var j = 0; j < part8chimes.children.length;j++){
+      //               if(j >= i){
+      //                 if (part8chimes.children[j].y===-370) return;
+      //                    part8chimes.children[j].y = -370;
+      //               }else{
+      //                    if ( part8chimes.children[j].y===0) return;
+      //                    part8chimes.children[j].y = scrollNum(36053,36790,scrollPro,-370,0);
+      //               }
+      //              //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+      //           }
+      //       }
+      //   }
+      // }
       
      if(24244 < scrollPro && scrollPro < 24695){
       part5model2.x  = scrollNum(24244,24695,scrollPro,180-100,180-100+100);
