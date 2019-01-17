@@ -125,11 +125,6 @@ var imgArr = [
     "img/part9/text9.png",
     "img/part9/wu1.png",
     "img/part9/wu2.png",
-
-
-
-
-
 ]
 
 // 横屏内容长度
@@ -229,6 +224,35 @@ function v(){
     },300);
 }
 
+// 音乐播放
+var musicOn = true;
+var loadThenFlag = false;
+
+function loadThen(){
+  loader2 = new PIXI.loaders.Loader();
+  // test1/img/audio/nizhidaoma.mp3
+  loader2.add("nzdm","img/audio/nizhidaoma.mp3");
+
+  loader2.load(function(loader){
+      // loader.resources.bgm.sound.loop = true;
+      loadThenFlag = true;
+  });
+}
+
+function musicPlay() {
+  musicOn = true;
+}
+function musicPause(){
+  musicOn = false;
+  loader.resources.bgm.sound.pause();
+
+  if(loadThenFlag){
+      loader2.resources.nzdm.sound.pause();
+  }
+}
+
+
+
 // 创建sprite对象
 function createSprite(name,opt){
     var newSprite = new PIXI.Sprite.fromImage(name);
@@ -249,6 +273,7 @@ function pixiFn(){
     var index1 = new PIXI.DisplayGroup(1, false);
     // 预加载
     loader = new PIXI.loaders.Loader();
+    loader.add("bgm","img/audio/bgmusic.mp3")
     loader.add(imgArr)
         .onProgress.add(function(e){
         $(".loading-num").text(Math.round(e.progress) + '%');
@@ -257,6 +282,11 @@ function pixiFn(){
     container.interactive = true;
 
     loader.load(function(loader){
+
+      loader.resources.bgm.sound.loop = true;
+      // loader.resources.bgm.sound.autoplay = true;
+      // loader.resources.bgm.sound.play();
+
         // 第一部分
         part1 = new PIXI.Container();
         part1.x = 0;
@@ -1393,43 +1423,43 @@ function pixiFn(){
             x:80,
             y:60,
            })
-        // part7nmodel1.alpha = 0;
+        part7nmodel1.alpha = 0;
         // 新模特2
         part7nmodel2=createSprite("img/part7/nmodel2.png",{
         x:400,
         y:0,
         })
-        // part7nmodel2.alpha = 0;
+        part7nmodel2.alpha = 0;
         // 新模特3
         part7nmodel3=createSprite("img/part7/nmodel3.png",{
         x:600,
         y:0,
         })
-        // part7nmodel3.alpha = 0;
+        part7nmodel3.alpha = 0;
         // 新模特4
         part7nmodel4=createSprite("img/part7/nmodel4.png",{
         x:1000,
         y:0,
         })
-        // part7nmodel4.alpha = 0;
+        part7nmodel4.alpha = 0;
         // 新模特5
         part7nmodel5=createSprite("img/part7/nmodel5.png",{
         x:1350,
         y:0,
         })
-        // part7nmodel5.alpha = 0;
+        part7nmodel5.alpha = 0;
         // 新模特6
         part7nmodel6=createSprite("img/part7/nmodel6.png",{
         x:1950,
         y:0,
         })
-        // part7nmodel6.alpha = 0;
+        part7nmodel6.alpha = 0;
         // 新模特7
         part7nmodel7=createSprite("img/part7/nmodel7.png",{
         x:2350,
         y:20,
         })
-        // part7nmodel7.alpha = 0;
+        part7nmodel7.alpha = 0;
         // 新模特8
         part7nmodel8=createSprite("img/part7/nmodel8.png",{
         x:2650,
@@ -1441,7 +1471,7 @@ function pixiFn(){
             y:40,
             })
 
-        // part7nmodel8.alpha = 0;
+        part7nmodel8.alpha = 0;
 
         // 第八部分
         part8 = new PIXI.Container();
@@ -1453,43 +1483,43 @@ function pixiFn(){
         part8chimes.x = 0;
         part8chimes.y = 0;
         // 编钟1
-        var part8chime1= createSprite("img/part8/chime.png",{
+         part8chime1= createSprite("img/part8/chime.png",{
             x:300,
             y:-310,
         });
         part8chime1.scale.set(0.2,0.2);
         // 编钟2
-        var part8chime2 = createSprite("img/part8/chime.png",{
+         part8chime2 = createSprite("img/part8/chime.png",{
             x:400,
             y:-310,
         });
         part8chime2.scale.set(0.3,0.3);
         // 编钟3
-        var part8chime3 = createSprite("img/part8/chime.png",{
+         part8chime3 = createSprite("img/part8/chime.png",{
             x:520,
             y:-310,
         });
         part8chime3.scale.set(0.4,0.4);
         // 编钟4
-        var part8chime4 = createSprite("img/part8/chime.png",{
+         part8chime4 = createSprite("img/part8/chime.png",{
             x:650,
             y:-310,
         });
         part8chime4.scale.set(0.5,0.5);
         // 编钟5
-        var part8chime5 = createSprite("img/part8/chime.png",{
+         part8chime5 = createSprite("img/part8/chime.png",{
             x:800,
             y:-310,
         });
         part8chime5.scale.set(0.6,0.6);
         // 编钟6
-        var part8chime6 = createSprite("img/part8/chime.png",{
+         part8chime6 = createSprite("img/part8/chime.png",{
             x:1000,
             y:-310,
         });
         part8chime6.scale.set(0.7,0.7);
         // 编钟7
-        var part8chime7 = createSprite("img/part8/chime.png",{
+         part8chime7 = createSprite("img/part8/chime.png",{
             x:1200,
             y:-310,
         });
@@ -1500,7 +1530,7 @@ function pixiFn(){
             x:100,
             y:0,
         });
-          // var app = new PIXI.Application(800, 600);
+          //  app = new PIXI.Application(800, 600);
           // document.body.appendChild(app.view);
 
           app.stage.interactive = true;
@@ -1747,12 +1777,6 @@ function pixiFn(){
             y:400,
             });
 
-
-
-
-
-
-
         part9stoves.addChild(part9stove1,part9stove2,part9stove3)
         part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9signboard,part9text9)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
@@ -1788,9 +1812,24 @@ function init(){
     setTimeout(function(){
         $(".loading-wrap").fadeOut(600);
     },10);
+    $(".music").on("click",function(){
+      if(!loader.resources.bgm.sound.isPlaying){
+          // 播放
+          musicPlay();
+          loader.resources.bgm.sound.play();
+          $(".music").removeClass("off");
+      } else{
+          // 暂停
+          musicPause();
+          $(".music").addClass("off");
+      }
+   });
+
     changeScene();
     scrollBegin();
     scroller.setDimensions(app.view.width, app.view.height, app.view.height, contentLength);
+    // 分步加载
+    loadThen();
 }
 
 function scrollBegin(){
@@ -2300,39 +2339,6 @@ function scrollBegin(){
         part5cloudzu.x = scrollNum(23360,24070,scrollPro,3700,3700-300);
       } 
       
-    // 模特组动画
-    // 模特1
-    // if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model1.x = scrollNum(24326,25849,scrollPro,0,100);
-    // } 
-    // // 模特2
-    // if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model2.x = scrollNum(24326,25849,scrollPro,180,-100);
-    // }
-    // // 模特3
-    // if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model3.x = scrollNum(24326,25849,scrollPro,330,-300);
-    // }
-    //  // 模特4
-    //  if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model4.x = scrollNum(24326,25849,scrollPro,530,-1660);
-    // }
-    // // 模特5
-    // if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model5.x = scrollNum(24326,25849,scrollPro,930,-4000);
-    // }
-    // // 模特6
-    // if(24326 < scrollPro && scrollPro < 25849){
-    //     part5model6.x = scrollNum(24326,25849,scrollPro,1230,-6000);
-    // }
-    // // 模特7
-    // if(24576 < scrollPro && scrollPro < 25819){
-    //     part5model7.x = scrollNum(24576,25819,scrollPro,1730,1100);
-    // }
-    //  // 模特8
-    //  if(24576 < scrollPro && scrollPro < 25819){
-    //     part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
-    // }
      // 紫色伞动画
      if(25398 < scrollPro && scrollPro < 25901){
         // part6san3.rotation = scrollNum(25760,25850,scrollPro,0,Math.PI*-0.4);
@@ -2361,23 +2367,39 @@ function scrollBegin(){
     //   }
 
     // 36053 36790
-      // if(36053 < scrollPro && scrollPro < 36790){
-      //   for(var i = 0; i < 7; i++){
-      //       var num1 = 36053+ (36790-36053)/7 * i;
-      //       var num2 = 36053+ (36790-36053)/7* (i+1);
-      //       if(num1 < scrollPro && scrollPro < num2){
-      //           for(var j = 0; j < part8chimes.children.length;j++){
-      //               if(j >= i){
-      //                 if (part8chimes.children[j].y===-370) return;
-      //                    part8chimes.children[j].y = -370;
-      //               }else{
-      //                    if ( part8chimes.children[j].y===0) return;
-      //                    part8chimes.children[j].y = scrollNum(36053,36790,scrollPro,-370,0);
-      //               }
-      //              //  if(j == 0) part5denglongzu.children[0].alpha = 1;
-      //           }
-      //       }
-      //   }
+      if(36053 < scrollPro && scrollPro < 36790){
+        for(var i = 0; i < 7; i++){
+            var num1 = 36053+ (36790-36053)/7 * i;
+            var num2 = 36053+ (36790-36053)/7* (i+1);
+            if(num1 < scrollPro && scrollPro < num2){
+                for(var j = 0; j < part8chimes.children.length;j++){
+                    if(j >= i){
+                      if (part8chimes.children[j].y===-370) return;
+                         part8chimes.children[j].y = -370;
+                    }else{
+                         if ( part8chimes.children[j].y===0) return;
+                         part8chimes.children[j].y = scrollNum(36053,36790,scrollPro,-370,0);
+                    }
+                   //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+                }
+            }
+        }
+      }
+
+      // if(35940 < scrollPro && scrollPro < 35940+50){
+      //   part8chime1.y =  scrollNum(35940, 35940+50,scrollPro,-370,0)
+      // }
+
+      // if(35940+50 < scrollPro && scrollPro < 35940+100){
+      //   part8chime2.y =  scrollNum(35940+50, 35940+100,scrollPro,-370,0)
+      // }
+
+      // if(35940+100< scrollPro && scrollPro < 35940+150){
+      //   part8chime3.y =  scrollNum(35940+100, 35940+150,scrollPro,-370,0)
+      // }
+
+      // if(35940+150< scrollPro && scrollPro < 35940+200){
+      //   part8chime4.y =  scrollNum(35940+150, 35940+200,scrollPro,-370,0)
       // }
       
      if(24244 < scrollPro && scrollPro < 24695){
@@ -2399,55 +2421,6 @@ function scrollBegin(){
        part7book2.x = scrollNum(33017,33017+200,scrollPro,3000+50,3000+100);
        part7book2.alpha = scrollNum(33017,33017+200,scrollPro,0,1);
      }
-
-    //  part7book2=createSprite("img/part7/book2.png",{
-    //   x:3000+100,
-    //   y:60,
-    //  })
-
-  //    part5model2= createSprite("img/part5/model2.png",{
-  //     x:180-100,
-  //     y:180,
-  // });
-  // // part5model2.alpha = 0;
-  // // 模特3
-  // part5model3= createSprite("img/part5/model3.png",{
-  //     x:330-190,
-  //     y:48,
-  // });
-  // // part5model3.alpha = 0;
-  // // 模特4
-  // part5model4= createSprite("img/part5/model4.png",{
-  //     x:530-320,
-  //     y:60,
-  // });
-  // // part5model4.alpha = 0;
-  // // 模特5
-  // part5model5= createSprite("img/part5/model5.png",{
-  //     x:930-500,
-  //     y:10,
-  // });
-  // // part5model5.alpha = 0;
-  // // 模特6
-  // part5model6= createSprite("img/part5/model6.png",{
-  //     x:1230-660,
-  //     y:60,
-  // });
-  // // part5model6.alpha = 0;
-
-  // // 模特7
-  // part5model7= createSprite("img/part5/model7.png",{
-  //     x:1730-800,
-  //     y:135,
-  // });
-  // // part5model7.alpha = 0;
-
-  //  // 模特8
-  //  part5model8= createSprite("img/part5/model8.png",{
-  //     x:1930-900,
-  //     y:150,
-  // });
-
       // 24506.77907118165 changpianImg
       if(23700 < scrollPro && scrollPro < 25000){
         changpianImg.y = scrollNum(23700,25000,scrollPro,640,320);
@@ -2489,22 +2462,22 @@ function scrollBegin(){
       // 门组出现
       // 32068 32713
 
-    //   if(31868 < scrollPro && scrollPro < 32713){
-    //     for(var i = 0; i < 4; i++){
-    //         var num1 = 31868+ (32713-31868)/4 * i;
-    //         var num2 = 31868+ (32713-31868)/4* (i+1);
-    //         if(num1 < scrollPro && scrollPro < num2){
-    //             for(var j = 0; j < part7doors.children.length;j++){
-    //                 if(j >= i){
-    //                     part7doors.children[j].alpha = 0;
-    //                 }else{
-    //                     part7doors.children[j].alpha = 1;
-    //                 }
-    //                //  if(j == 0) part5denglongzu.children[0].alpha = 1;
-    //             }
-    //         }
-    //     }
-    //   }
+      if(33093 < scrollPro && scrollPro < 36041){
+        for(var i = 0; i < 9; i++){
+            var num1 = 33093+ (36041-33093)/9 * i;
+            var num2 = 33093+ (36041-33093)/9* (i+1);
+            if(num1 < scrollPro && scrollPro < num2){
+                for(var j = 0; j < part7nmodelzu.children.length;j++){
+                    if(j >= i){
+                        part7nmodelzu.children[j].alpha = 0;
+                    }else{
+                        part7nmodelzu.children[j].alpha = 1;
+                    }
+                   //  if(j == 0) part5denglongzu.children[0].alpha = 1;
+                }
+            }
+        }
+      }
       // 小燕子到大燕子动画
       if(29230 < scrollPro && scrollPro < 31137){     
         // part6swallow2.rotation = scrollNum(30117,31071,scrollPro,0.8,0); 
@@ -2682,6 +2655,19 @@ function scrollBegin(){
     //     part9birdfly.alpha = scrollNum(2744,3400,scrollPro,1,0);
     //   }
 
+
+    // 声音 /////////////////////////////////
+    if(loadThenFlag){
+          if(550 < scrollPro && scrollPro < 700){
+            if(!loader2.resources.nzdm.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.nzdm.sound.volume = 1;
+                loader2.resources.nzdm.sound.play();
+                loader2.resources.nzdm.sound.flag = false;
+            }
+        }else{
+            loader2.resources.nzdm.sound.flag = true;
+        }
+    }
 
  
     },{
