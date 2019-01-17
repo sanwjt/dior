@@ -413,6 +413,11 @@ function pixiFn(){
             y:0,
           });
           part1wu5.alpha=0;
+      // 大太阳
+        part1bigsun = createSprite("img/part2/bigsun.png",{
+          x:88+2000,
+          y:-1307,
+       });
         // 伞2
         // part1san2 = createSprite("img/part1/san.png",{
         //     x:1498,
@@ -424,18 +429,14 @@ function pixiFn(){
         part1shouCounter.x=0;
         part1shouCounter.y=0;
         part1shouCounter.addChild(part1san,part1shou1)
-        part1HandMove.addChild(part1flower,part1mountain1,part1shouCounter,part1wu5)
+        part1HandMove.addChild(part1bigsun,part1flower,part1mountain1,part1shouCounter,part1wu5)
         // 第二部分
         // 仙鹤群和朝阳
         var part1BirdSun = new PIXI.Container();
         part1BirdSun.x=5900;
         part1BirdSun.y=0;
 
-        // 大太阳
-        part1bigsun = createSprite("img/part2/bigsun.png",{
-            x:88,
-            y:-199,
-          });
+ 
 
         // 湿地
         part1land = createSprite("img/part2/land.png",{
@@ -481,7 +482,7 @@ function pixiFn(){
             y:25,
           });
         
-        part1BirdSun.addChild(part1bigsun,part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
+        part1BirdSun.addChild(part1land,part1bird1,part1bird2,part1bird3,part1bird4,part1mountain2,)
 
         // 第三部分
         // 将时尚 text3
@@ -1719,7 +1720,7 @@ function pixiFn(){
         
         part1BirdFly.addChild(part1house1,part1country1,part1house3,part1sflower,part1bflower,part1house2,part1mountains,part1sunrise,part1birdfly1,part1yumao1,part1meihua,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1text4);
 
-        part1.addChild(part1ClouCover,part1BirdSun,part1HandMove,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
+        part1.addChild(part1ClouCover,part1HandMove,part1BirdSun,part1Sailing,part1Ship,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
         app.stage.addChild(container);
         init() 
@@ -1855,7 +1856,7 @@ function scrollBegin(){
         // 大太阳动画
         if(4830 < scrollPro && scrollPro < 5900){
             part1bigsun.y = scrollNum(4830,5900,scrollPro,-1307,-190);
-            }
+         }
 
         // 仙鹤1动画
         if(5450 < scrollPro && scrollPro < 5500){
@@ -2281,12 +2282,12 @@ function scrollBegin(){
     //     part5model8.x = scrollNum(24576,25819,scrollPro,1930,1400);
     // }
      // 紫色伞动画
-     if(25350 < scrollPro && scrollPro < 25550){
+     if(25398 < scrollPro && scrollPro < 25901){
         // part6san3.rotation = scrollNum(25760,25850,scrollPro,0,Math.PI*-0.4);
         // part6san3.y = scrollNum(25350,25550,scrollPro,250,-420);
         // part6san3.alpha = scrollNum(25350,25550,scrollPro,1,0);
-        part6san3.rotation = scrollNum(25350,25550,scrollPro,0,Math.PI*1.8);
-        part6san3.x = scrollNum(25350,25550,scrollPro,-220,0);
+        part6san3.rotation = scrollNum(25398,25901,scrollPro,0,5);
+        part6san3.x = scrollNum(25398,25901,scrollPro,-220,0);
     }
     
     //   // 23480 模特 25470
