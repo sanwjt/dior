@@ -1,7 +1,7 @@
 var shareURL = shareURL || location.href;
-var shareTitle = shareTitle || '厂庆60年优惠接力 购宝骏汽车最高享直补5500元' ;
-var shareDesc = shareDesc || '';
-var shareImg = shareImg || UrlUtils.getBase() + '/img/share.jpg';
+var shareTitle = shareTitle || '至in中国风，竟然来自紫禁城？' ;
+var shareDesc = shareDesc || '快来一探究竟，你不知道的中国风';
+var shareImg = shareImg || 'http://event.toutiaocloud.com/north/sanyuanmilk/img/share.jpg';
 var shareObj={
     title: shareTitle,
     desc: shareDesc, // 分享描述

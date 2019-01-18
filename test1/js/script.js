@@ -190,6 +190,10 @@ function h(){
                 scroller.setDimensions(app.view.width, app.view.height, contentLength ,app.view.height);
                 scroller.scrollTo(scrollPro,0,false);
                 // 初始页提示
+                titleStart.x = ($(window).width()-541)/2;
+                titleHand.x = ($(window).width()-83)/2+65;
+                titleHandTween = TweenMax.fromTo(titleHand,1.5,{x:(($(window).width()-83)/2+65)},{x:(($(window).width()-83)/2-65),ease:Linear.easeNone}).repeat(-1);
+                titleStart.y = 276;
             },200);
         }
     },300);
@@ -215,7 +219,7 @@ function v(){
             setTimeout(function(){
                 scrollDirection = "top";
                 lastWidth = wh;
-                contentLength = 50000+lastWidth;
+                contentLength = 45000+lastWidth;
                 scroller.setDimensions(app.view.width, app.view.height, app.view.height, contentLength);
                 scroller.scrollTo(0,scrollPro,false);
                 // 初始页提示
@@ -235,6 +239,8 @@ function loadThen(){
          .add("zz18sj","img/audio/zaozai18shij.mp3")
          //  声音3
          .add("jss","img/audio/jiangshishang.mp3")
+         .add("baorongwq","img/audio/baorongwq.mp3")
+         
          .add("zzjgf","img/audio/zzjgf.mp3")
          .add("zsdl","img/audio/zsdl.mp3")
          .add("cgl","img/audio/cgl.mp3")
@@ -243,7 +249,27 @@ function loadThen(){
          .add("mingan","img/audio/mingan.mp3")
          .add("chendian","img/audio/chendian.mp3")
          .add("sanyuan","img/audio/sanyuan.mp3")
-         .add("chuanzhonghua","img/audio/chuanzhonghua.mp3")
+        //  .add("chuanzhonghua","img/audio/chuanzhonghua.mp3")
+        // 音效
+        .add("feng","img/audio/feng.mp3")
+        .add("lingdang","img/audio/lingdang.mp3")
+        .add("feng2","img/audio/feng2.mp3")
+  
+        .add("time","img/audio/time.mp3")
+        .add("liushengjis","img/audio/liushengjis.mp3")
+        .add("zhulin","img/audio/zhulin.mp3")
+        .add("guzheng","img/audio/guzheng.mp3")
+        .add("bianzhong","img/audio/bianzhong.mp3")
+        .add("hejiao","img/audio/hejiao.mp3")
+        
+        
+        
+
+        //  鹤鸣
+         .add("heming","img/audio/heming.mp3")
+         //  流水
+         .add("liushui","img/audio/liushui.mp3")
+        
   loader2.load(function(loader){
       // loader.resources.bgm.sound.loop = true;
       loadThenFlag = true;
@@ -273,7 +299,10 @@ function musicPause(){
       loader2.resources.mingan.sound.pause();
       loader2.resources.chendian.sound.pause();
       loader2.resources.sanyuan.sound.pause();
-      loader2.resources.chuanzhonghua.sound.pause();
+    //   loader2.resources.chuanzhonghua.sound.pause();
+      loader2.resources.heming.sound.pause();
+      loader2.resources.liushui.sound.pause();
+      
 
 
 
@@ -301,7 +330,7 @@ function pixiFn(){
     });
     $(".main").append(app.view);
     app.stage.displayList = new PIXI.DisplayList();
-    var index1 = new PIXI.DisplayGroup(1, false);
+    // var index1 = new PIXI.DisplayGroup(1, false);
     // 预加载
     loader = new PIXI.loaders.Loader();
     loader.add("bgm","img/audio/bgmusic.mp3")
@@ -311,6 +340,36 @@ function pixiFn(){
     });
     container = new PIXI.Container();
     container.interactive = true;
+    
+    // 滑动提示
+    titleContainer = new PIXI.Container();
+    titleContainer.x = 0;
+    titleContainer.y = 0;
+    //  titleContainer.interactive = true;
+
+     titleStart = createSprite("img/part1/title.png",{
+        x:($(window).height()-541)/2,
+        // y:($(window).width()-281)/2
+        y:276
+     });
+ 
+     // 手
+     titleHand = createSprite("img/part1/hand.png",{
+         x:($(window).height()-83)/2+65,
+         y:350
+     });
+ 
+     titleHandTween = TweenMax.fromTo(titleHand,1.5,{x:(($(window).height()-83)/2+65)},{x:(($(window).height()-83)/2-65),ease:Linear.easeNone}).repeat(-1);
+     titleHandTween.pause();
+ 
+     titleContainer.addChild(titleStart,titleHand);
+     $(".main").on("touchstart",function(){
+         TweenMax.fromTo(titleContainer,0.4,{alpha:1},{alpha:0,onComplete:function(){
+             titleContainer.visible = false;
+             titleHandTween.pause();
+         }});
+     });
+
 
     loader.load(function(loader){
 
@@ -519,7 +578,7 @@ function pixiFn(){
           });
           part1bird2.alpha=0;
         // 仙鹤3
-        part1bird3 = createSprite("img/part2/bird3.gif",{
+        part1bird3 = createSprite("img/part2/bird3.png",{
             x:400,
             y:94,
           });
@@ -1336,7 +1395,7 @@ function pixiFn(){
         })
 
 
-        part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peo4,part6peo5,part6peoqin,)
+        part6peos.addChild(part6peo1,part6peo2,part6peo3,part6peo4,part6peo5,part6peoqin)
         // 竹子3
         part6zhuzi3=createSprite("img/part6/zhuzi3.png",{
             x:520,
@@ -1834,6 +1893,15 @@ function pixiFn(){
         x:4700,
         y:200,
         });
+        // 点击牌匾
+        var textureButton=PIXI.Texture.fromImage('/img/part9/signboard.png');
+        var button = new PIXI.Sprite(textureButton);
+        button.buttonMode = true;
+        button.interactive = true;
+        button.x=4700,
+        button.y=200,
+        button.on('pointerdown', onClick);
+
         // 传中华宝技之美text9
         part9text9=createSprite("img/part9/text9.png",{
             x:4600,
@@ -1841,7 +1909,7 @@ function pixiFn(){
             });
 
         part9stoves.addChild(part9stove1,part9stove2,part9stove3)
-        part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9signboard,part9text9)
+        part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9signboard,button,part9text9)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
         part8.addChild(part8chimes,flag1,flag2,part1text9,part8dancer1,part8dancer2,part8bird,part8dancer3,part8birdfly1,part8cloud8,part8petal1,part8petal2,part8petal2,part8sichou)
       // img/part6/zhuzi6.png
@@ -1856,11 +1924,11 @@ function pixiFn(){
         part5.addChild(part1changyun1,part1zhuzismoke,part5pillars,part5denglonghu,part5redsan,part5men,part5liushengji,part5book,part5denglongzu,part5whitedenglong,part5smallsan,part5midsan,part5cloudzu,changpian,part5modelzu,part5bluedenglong2,part1text6);
         // part5.addChild(part5modelzu);
         
-        part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1mountainssan,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
+        part1BirdFly.addChild(part1house1,part1country1,part1cloud,part1house3,part1light2,part1sflower,part1bflower,part1house2,part1light1,part1mountains,part1mountainssan,part1sunrise,part1smoke,part1birdfly1,part1yumao1,part1meihua,part1bigbirdflywu,part1birdfly3,part1birdfly2,part1birdfly4,part1text4,part1yumao2,part1birdfly5,part1birdflywu,part1text5);
 
         part1.addChild(part1ClouCover,part1HandMove,part1hushui,part1BirdSun,part1Sailing,part1Ship,part1text3,part1BirdFly,changCount,timerCount);
         container.addChild(tilingSprite,part1,part5,part6,part7,part8,part9);
-        app.stage.addChild(container);
+        app.stage.addChild(container,titleContainer);
         init() 
         app.ticker.add(function() {
 	    tilingSprite.tilePosition.x += 0.4; // 在渲染砖块效果下移动，注意与position.x的区别
@@ -1873,19 +1941,26 @@ function pixiFn(){
 
 
 function init(){
+    titleHandTween.play();
     setTimeout(function(){
         $(".loading-wrap").fadeOut(600);
     },10);
+    changeScene();
+    scrollBegin();
+    scroller.setDimensions(app.view.width, app.view.height, app.view.height, contentLength);
+
     $(".music").on("click",function(){
       if(!loader.resources.bgm.sound.isPlaying){
           // 播放
           musicPlay();
           loader.resources.bgm.sound.play();
           $(".music").removeClass("off");
+        //   $(".music").atrr("src","img/music-on.png")
       } else{
           // 暂停
           musicPause();
           $(".music").addClass("off");
+        //   $(".music").atrr("src","img/music-off.png")
       }
    });
 
@@ -2742,18 +2817,34 @@ function scrollBegin(){
         part9birdfly.scale.y=scrollNum(42231,42523,scrollPro,1,0.3);
         part9birdfly.rotation = scrollNum(42231,42523,scrollPro,0,-0.4)
         part9birdfly.alpha = scrollNum(42231,42523,scrollPro,1,0);
+        part1text11.x = scrollNum(42231,42523,scrollPro,2000,2000-134);
+        part9slogan.x = scrollNum(42231,42523,scrollPro,3600,3400);
+        part9redbox.x = scrollNum(42231,42523,scrollPro,3700,3500);
+        part9bluebox.x = scrollNum(42231,42523,scrollPro,4000,3800);
       }
 
     //   奶盒缩小
-    if(42522 < scrollPro && scrollPro < 42815){
-        part9redbox.x = scrollNum(42523,42815,scrollPro,3700,3500);
-        part9redbox.y = scrollNum(42523,42815,scrollPro,20,100);
-        part9redbox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
-        part9redbox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
-        part9bluebox.x = scrollNum(42523,42815,scrollPro,4000,3800);
-        part9bluebox.y = scrollNum(42523,42815,scrollPro,10,100);
-        part9bluebox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
-        part9bluebox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
+    // if(42522 < scrollPro && scrollPro < 42815){
+    //     part9redbox.x = scrollNum(42523,42815,scrollPro,3700,3500);
+    //     part9redbox.y = scrollNum(42523,42815,scrollPro,20,100);
+    //     part9redbox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
+    //     part9redbox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
+    //     part9bluebox.x = scrollNum(42523,42815,scrollPro,4000,3800);
+    //     part9bluebox.y = scrollNum(42523,42815,scrollPro,10,100);
+    //     part9bluebox.scale.x=scrollNum(42523,42815,scrollPro,1,0.3);
+    //     part9bluebox.scale.y=scrollNum(42523,42815,scrollPro,1,0.3);
+        
+    //   }
+
+      if(42464 < scrollPro && scrollPro < 42599){
+        part9redbox.x = scrollNum(42464,42599,scrollPro,3500,3790);
+        part9redbox.y = scrollNum(42464,42599,scrollPro,20,100);
+        part9redbox.scale.x=scrollNum(42464,42599,scrollPro,1,0.3);
+        part9redbox.scale.y=scrollNum(42464,42599,scrollPro,1,0.3);
+        part9bluebox.x = scrollNum(42464,42599,scrollPro,3800,4000);
+        part9bluebox.y = scrollNum(42464,42599,scrollPro,10,100);
+        part9bluebox.scale.x=scrollNum(42464,42599,scrollPro,1,0.3);
+        part9bluebox.scale.y=scrollNum(42464,42599,scrollPro,1,0.3);
         
       }
 
@@ -2792,7 +2883,16 @@ function scrollBegin(){
             loader2.resources.jss.sound.flag = true;
         }
 
-
+        // 10400 10980
+        if(10400 < scrollPro && scrollPro < 10980){
+            if(!loader2.resources.baorongwq.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.baorongwq.sound.volume = 1;
+                loader2.resources.baorongwq.sound.play();
+                loader2.resources.baorongwq.sound.flag = false;
+            }
+          }else{
+              loader2.resources.baorongwq.sound.flag = true;
+          }
 
         // 14238 15524
 
@@ -2867,6 +2967,160 @@ function scrollBegin(){
         }else{
             loader2.resources.mingan.sound.flag = true;
         }
+
+        // 42269  //42505 mingan
+        if(42238 < scrollPro && scrollPro < 42796){
+            if(!loader2.resources.sanyuan.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.sanyuan.sound.volume = 1;
+                loader2.resources.sanyuan.sound.play();
+                loader2.resources.sanyuan.sound.flag = false;
+            }
+          }else{
+              loader2.resources.sanyuan.sound.flag = true;
+          }
+
+         // 42973  //43814 mingan
+        //  if(42973 < scrollPro && scrollPro < 43814){
+        //     if(!loader2.resources.chuanzhonghua.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.chuanzhonghua.sound.volume = 1;
+        //         loader2.resources.chuanzhonghua.sound.play();
+        //         loader2.resources.chuanzhonghua.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.chuanzhonghua.sound.flag = true;
+        //   }
+
+        //   ---音效
+        // 01
+        if(70 < scrollPro && scrollPro < 120){
+            if(!loader2.resources.feng.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.feng.sound.volume = 1;
+                loader2.resources.feng.sound.play();
+                loader2.resources.feng.sound.flag = false;
+            }
+          }else{
+              loader2.resources.feng.sound.flag = true;
+          }
+        //   02
+          if(250 < scrollPro && scrollPro < 300){
+            if(!loader2.resources.lingdang.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.lingdang.sound.volume = 1;
+                loader2.resources.lingdang.sound.play();
+                loader2.resources.lingdang.sound.flag = false;
+            }
+          }else{
+              loader2.resources.lingdang.sound.flag = true;
+          }
+
+        //   04 3973 4479
+        if(3973 < scrollPro && scrollPro < 4479){
+            if(!loader2.resources.feng2.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.feng2.sound.volume = 1;
+                loader2.resources.feng2.sound.play();
+                loader2.resources.feng2.sound.flag = false;
+            }
+          }else{
+              loader2.resources.feng2.sound.flag = true;
+          }
+
+           //   08 8528 12069
+        //    if(3973 < scrollPro && scrollPro < 4479){
+        //     if(!loader2.resources.feng2.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+        //         loader2.resources.hefeisheng.sound.volume = 1;
+        //         loader2.resources.hefeisheng.sound.play();
+        //         loader2.resources.hefeisheng.sound.flag = false;
+        //     }
+        //   }else{
+        //       loader2.resources.hefeisheng.sound.flag = true;
+        //   }
+
+          //   10 16127 16988
+        if(16127 < scrollPro && scrollPro < 16988){
+            if(!loader2.resources.time.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.time.sound.volume = 1;
+                loader2.resources.time.sound.play();
+                loader2.resources.time.sound.flag = false;
+            }
+          }else{
+              loader2.resources.time.sound.flag = true;
+          }
+
+             //   11 20252 20501
+        if(18888 < scrollPro && scrollPro < 20501){
+            if(!loader2.resources.liushengjis.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.liushengjis.sound.volume = 1;
+                loader2.resources.liushengjis.sound.play();
+                loader2.resources.liushengjis.sound.flag = false;
+            }
+          }else{
+              loader2.resources.liushengjis.flag = true;
+          }
+
+              //   14 27202 27568
+        if(27202 < scrollPro && scrollPro < 27568){
+            if(!loader2.resources.zhulin.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.zhulin.sound.volume = 1;
+                loader2.resources.zhulin.sound.play();
+                loader2.resources.zhulin.sound.flag = false;
+            }
+          }else{
+              loader2.resources.zhulin.flag = true;
+          }
+        
+                //   16 29000 29741
+        if(29000 < scrollPro && scrollPro < 29741){
+            if(!loader2.resources.guzheng.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.guzheng.sound.volume = 1;
+                loader2.resources.guzheng.sound.play();
+                loader2.resources.guzheng.sound.flag = false;
+            }
+          }else{
+              loader2.resources.guzheng.flag = true;
+          }
+
+         //   20 36290 39296
+        if(36290 < scrollPro && scrollPro < 39296){
+            if(!loader2.resources.bianzhong.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.bianzhong.sound.volume = 1;
+                loader2.resources.bianzhong.sound.play();
+                loader2.resources.bianzhong.sound.flag = false;
+            }
+          }else{
+              loader2.resources.bianzhong.flag = true;
+          }
+
+          //   20 42425 42505
+        if(42425 < scrollPro && scrollPro < 42505){
+            if(!loader2.resources.hejiao.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.hejiao.sound.volume = 1;
+                loader2.resources.hejiao.sound.play();
+                loader2.resources.hejiao.sound.flag = false;
+            }
+          }else{
+              loader2.resources.hejiao.flag = true;
+          }
+
+          
+
+        if(5535 < scrollPro && scrollPro < 6400){
+            if(!loader2.resources.heming.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.heming.sound.volume = 1;
+                loader2.resources.heming.sound.play();
+                loader2.resources.heming.sound.flag = false;
+            }
+          }else{
+              loader2.resources.heming.sound.flag = true;
+          }
+
+          if(6650 < scrollPro && scrollPro < 6900){
+            if(!loader2.resources.liushui.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.liushui.sound.volume = 1;
+                loader2.resources.liushui.sound.play();
+                loader2.resources.liushui.sound.flag = false;
+            }
+          }else{
+              loader2.resources.liushui.sound.flag = true;
+          }
 
 
       // .add("cgl","img/audio/cgl.mp3")
@@ -2998,6 +3252,7 @@ function scrollBegin(){
         //   }else{
         //       loader2.resources.jss.sound.flag = true;
         //   }
+        
     }
 
  
@@ -3034,6 +3289,9 @@ function scrollBegin(){
 function scrollNum(minNum,maxNum,top,start,end){
     var start = start + ((top - minNum)/(maxNum - minNum)*(end-start))
     return start;
+}
+function onClick(){
+    window.location.href="http://item.jd.com/100002876280.html"
 }
 
 $(function(){
