@@ -239,7 +239,7 @@ function loadThen(){
          .add("zz18sj","img/audio/zaozai18shij.mp3")
          //  声音3
          .add("jss","img/audio/jiangshishang.mp3")
-         .add("baorongwq","img/audio/baorongwq.mp3")
+         .add("brwq","img/audio/baorongwq.mp3")
          
          .add("zzjgf","img/audio/zzjgf.mp3")
          .add("zsdl","img/audio/zsdl.mp3")
@@ -277,7 +277,7 @@ function loadThen(){
 }
 
 function musicPlay() {
-  musicOn = true;
+  musicOn = false;
 }
 function musicPause(){
   musicOn = false;
@@ -292,7 +292,7 @@ function musicPause(){
       loader2.resources.brwq.sound.pause();
       loader2.resources.zzjgf.sound.pause();
       loader2.resources.zsdl.sound.pause();
-      loader2.resources.brwq.sound.pause();
+      
       loader2.resources.cgl.sound.pause();
       loader2.resources.zgf.sound.pause();
       loader2.resources.cangzhe.sound.pause();
@@ -343,7 +343,7 @@ function pixiFn(){
     
     // 滑动提示
     titleContainer = new PIXI.Container();
-    titleContainer.x = 0;
+    titleContainer.x = 100;
     titleContainer.y = 0;
     //  titleContainer.interactive = true;
 
@@ -2885,13 +2885,13 @@ function scrollBegin(){
 
         // 10400 10980
         if(10400 < scrollPro && scrollPro < 10980){
-            if(!loader2.resources.baorongwq.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
-                loader2.resources.baorongwq.sound.volume = 1;
-                loader2.resources.baorongwq.sound.play();
-                loader2.resources.baorongwq.sound.flag = false;
+            if(!loader2.resources.brwq.sound.isPlaying && loader2.resources.nzdm.sound.flag && musicOn){
+                loader2.resources.brwq.sound.volume = 1;
+                loader2.resources.brwq.sound.play();
+                loader2.resources.brwq.sound.flag = false;
             }
           }else{
-              loader2.resources.baorongwq.sound.flag = true;
+              loader2.resources.brwq.sound.flag = true;
           }
 
         // 14238 15524

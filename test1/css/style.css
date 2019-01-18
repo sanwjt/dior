@@ -210,7 +210,7 @@ body{ -wibkit-touch-callout: default; -webkit-user-select: none; }
     background-size: cover;
     -webkit-transform: scale(0.7);
 }
-.music .off{
+.music.off{
     background: url(../img/music-off.png?v=1) no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
