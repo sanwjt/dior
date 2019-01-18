@@ -1894,13 +1894,13 @@ function pixiFn(){
         y:200,
         });
         // 点击牌匾
-        var textureButton=PIXI.Texture.fromImage('/img/part9/signboard.png');
-        var button = new PIXI.Sprite(textureButton);
-        button.buttonMode = true;
-        button.interactive = true;
-        button.x=4700,
-        button.y=200,
-        button.on('pointerdown', onClick);
+        // var textureButton=PIXI.Texture.fromImage('/img/part9/signboard.png');
+        // var button = new PIXI.Sprite(textureButton);
+        part9signboard.buttonMode = true;
+        part9signboard.interactive = true;
+        // button.x=4700,
+        // button.y=200,
+        part9signboard.on('pointerdown', onClick);
 
         // 传中华宝技之美text9
         part9text9=createSprite("img/part9/text9.png",{
@@ -1909,7 +1909,7 @@ function pixiFn(){
             });
 
         part9stoves.addChild(part9stove1,part9stove2,part9stove3)
-        part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9signboard,button,part9text9)
+        part9.addChild(part1text10,part9wu1,part9maid1,part9maid2,part9men2,part9stoves,part1text11,part9slogan,part9redbox,part9bluebox,part9birdfly,part9gglogo,part9wu2,part9text9,part9signboard)
         part8chimes.addChild(part8chime1,part8chime2,part8chime3,part8chime4,part8chime5,part8chime6,part8chime7)
         part8.addChild(part8chimes,flag1,flag2,part1text9,part8dancer1,part8dancer2,part8bird,part8dancer3,part8birdfly1,part8cloud8,part8petal1,part8petal2,part8petal2,part8sichou)
       // img/part6/zhuzi6.png
@@ -3291,6 +3291,7 @@ function scrollNum(minNum,maxNum,top,start,end){
     return start;
 }
 function onClick(){
+  //  alert(1)
     window.location.href="http://item.jd.com/100002876280.html"
 }
 
